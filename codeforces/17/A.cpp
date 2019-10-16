@@ -18,6 +18,10 @@ int main() {
             }
         }
     }
-   k > 0 ? cout << "NO" : cout << "YES";
+/*    for(i = 0; i < (int) primes.size(); i++) {
+        cout << primes[i] << " ";
+    }
+    cout << "\n";
+*/    k > 0 ? cout << "NO" : cout << "YES";
     return 0;
 }
