@@ -1,50 +1,36 @@
 #include <bits/stdc++.h>
-#define cerr if(1)cerr
-#define watch(x) cerr << (#x) << " is " << (x) << endl
-#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#define endl "\n"
-#define max(a,b) (a>b?a:b)
-#define min(a,b) (a<b?a:b)
-#define MOD 1e8 + 7
-#define INF 2e9
-#define DESPACITO 1e18
-#define PI acos(-1);
-#define E 998244353
-#define pb push_back
-#define ins insert
-#define mp make_pair
-#define ff first
-#define ss second
-#define lb lower_bound
-#define ub upper_bound
-#define ll long long
-
 using namespace std;
-const int N = 1e5 + 5;
+#define long int64_t
 
 int main() {
-    IOS;
-    int q;
-    cin >> q;
-    while (q--) {
-        int n, i, a, reqd = 1;
-        bool flag = 0;
+    int t;
+    cin >> t;
+    while(t--) {
+        int n, i, j, x, f[30] = {}, done = 0, red = 0, add;
         cin >> n;
-        map <int,int> m;
-        for(i = 0; i < n; i++) 
-            cin >> a, m[(int)log2(a)]++;
-        for(i = 11; i >= 0; i--) {
-            if (m[i] >= reqd) {
-                flag = 1;
+        for(i = 0; i < n; i++) {
+            cin >> x;
+            f[(int)log2(x)]++;
+        }
+        if (f[11]) {
+            cout << "YES\n";
+            continue;
+        }
+        for(i = 10; i >= 0; i--) {
+//            add = j == -1? 0 : (int)pow(2, j);
+            if (f[i] >= (int)pow(2, 11 - i) - red) {
+                cout << "YES\n";
+                done = 1;
                 break;
             }
-            reqd -= m[i];
-            reqd *= 2;
+            else {
+                red += f[i];
+                red *= 2;
+            }
         }
-        if (flag)
-            cout << "YES" << endl;
-        else
-            cout << "NO" << endl;
-    }
+        if (!done)
+            cout << "NO\n";
+
+    }    
     return 0;
 }
