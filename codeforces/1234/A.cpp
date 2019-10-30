@@ -1,32 +1,34 @@
-/**
- 🍪 the_hyp0cr1t3
- 🍪 16.10.2020 17:14:34
-**/
-#ifdef W
-#include "k_II.h"
-#else
 #include <bits/stdc++.h>
+//#define long int64_t
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define endl "\n"
+#define max(a,b) (a>b?a:b)
+#define min(a,b) (a<b?a:b)
+#define MOD 1e8 + 7
+#define INF 2e9
+#define DESPACITO 1e18
+#define PI acos(-1);
+#define E 998244353
+#define pb push_back
+#define mp make_pair
+#define ll long long
+
 using namespace std;
-#endif
-#define pb emplace_back
-#define sz(x) int(x.size())
-#define all(x) x.begin(), x.end()
+const int N = 1e5 + 5;
 
-const int64_t DESPACITO = 2e18;
-const int INF = 2e9, MOD = 1e9+7;
-const int N = 2e5 + 5;
-
-int the_real_main() {
-    int i, n; int sum = 0;
-    cin >> n;
-    for(i = 0; i < n; i++) {
-        int x; cin >> x;
-        sum += x;
-    } cout << (sum + n-1)/n << '\n';
+int main() {
+    IOS
+    int q;
+    cin >> q;
+    while (q--) {
+        int n, i, a;
+        ll sum = 0;
+        cin >> n;
+        for(i = 0; i < n; i++) {
+            cin >> a;
+            sum += a;
+        }
+        cout << sum / n + (sum % n > 0)<< endl;
+    }
     return 0;
-}
-
-int32_t main() {
-    cin.tie(nullptr)->sync_with_stdio(false);
-    int Q; for(cin >> Q; Q; Q--) the_real_main();
 }
