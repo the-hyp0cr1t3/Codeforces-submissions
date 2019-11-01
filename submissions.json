@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF63992669": {
+    "contest_id": 1200,
+    "language": "GNU C++17",
+    "path": "codeforces\\1200\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Block Adventure",
+    "problem_url": "https://codeforces.com/contest/1200/problem/B",
+    "submission_id": "CF63992669",
+    "submission_url": "https://codeforces.com/contest/1200/submission/63992669",
+    "tags": [
+      "dp",
+      "greedy",
+      "*1200"
+    ],
+    "timestamp": "Nov/01/2019 19:07"
+  },
   "CF64000385": {
     "contest_id": 1245,
     "language": "GNU C++17",
