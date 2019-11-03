@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF64148926": {
+    "contest_id": 1249,
+    "language": "GNU C++17",
+    "path": "codeforces\\1249\\D2.cpp",
+    "problem_index": "D2",
+    "problem_name": "Too Many Segments (hard version)",
+    "problem_url": "https://codeforces.com/contest/1249/problem/D2",
+    "submission_id": "CF64148926",
+    "submission_url": "https://codeforces.com/contest/1249/submission/64148926",
+    "tags": [
+      "data structures",
+      "greedy",
+      "sortings",
+      "*1800"
+    ],
+    "timestamp": "Nov/03/2019 16:17"
+  },
   "CF64149026": {
     "contest_id": 1249,
     "language": "GNU C++17",
