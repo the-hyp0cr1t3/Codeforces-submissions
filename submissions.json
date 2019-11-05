@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF64299782": {
+    "contest_id": 1221,
+    "language": "GNU C++17",
+    "path": "codeforces\\1221\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Make The Fence Great Again",
+    "problem_url": "https://codeforces.com/contest/1221/problem/D",
+    "submission_id": "CF64299782",
+    "submission_url": "https://codeforces.com/contest/1221/submission/64299782",
+    "tags": [
+      "dp",
+      "*1800"
+    ],
+    "timestamp": "Nov/05/2019 15:09"
+  },
   "CF64301165": {
     "contest_id": 1221,
     "language": "GNU C++17",
