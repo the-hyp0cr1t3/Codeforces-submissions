@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF64423067": {
+    "contest_id": 1243,
+    "language": "GNU C++17",
+    "path": "codeforces\\1243\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Maximum Square",
+    "problem_url": "https://codeforces.com/contest/1243/problem/A",
+    "submission_id": "CF64423067",
+    "submission_url": "https://codeforces.com/contest/1243/submission/64423067",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Nov/06/2019 23:49"
+  },
   "CF64423076": {
     "contest_id": 1243,
     "language": "GNU C++17",
