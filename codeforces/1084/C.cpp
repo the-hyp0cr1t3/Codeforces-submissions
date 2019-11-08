@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define cerr if(1)cerr
+#define cerr if(0)cerr
 #define watch(x) cerr << (#x) << " is " << (x) << endl
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define endl "\n"
@@ -27,20 +27,16 @@ const int N = 1e5 + 5;
 
 int32_t main() {
     IOS;
-    int i, n, ans = 0, cnt = 0;
+    int i, n, ans = 0, ansb4bcnt = 0;
     string s;
     cin >> s;
     n = (int) s.length();
     for(i = 0; i < n; i++) {
-        if (s[i] == 'a') {
-            cnt++;
-            if (ans == 0) ans = 1;
-        }
+        if (s[i] == 'a')
+            ans = (ans + ansb4bcnt + 1) % MOD;
         if (s[i] == 'b')
-            ans = (ans * (cnt+1)) % MOD, cnt = 0;
+            ansb4bcnt = ans;
     }
-    ans = (ans * (cnt+1)) % MOD;
-    if (ans) ans--;
     cout << ans;
     return 0;
 }
