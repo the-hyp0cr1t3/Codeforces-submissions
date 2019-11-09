@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF64598206": {
+    "contest_id": 858,
+    "language": "GNU C++17",
+    "path": "codeforces\\858\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Polycarp's phone book",
+    "problem_url": "https://codeforces.com/contest/858/problem/D",
+    "submission_id": "CF64598206",
+    "submission_url": "https://codeforces.com/contest/858/submission/64598206",
+    "tags": [
+      "data structures",
+      "implementation",
+      "sortings",
+      "*1600"
+    ],
+    "timestamp": "Nov/09/2019 23:06"
+  },
   "CF64626350": {
     "contest_id": 1154,
     "language": "GNU C++17",
