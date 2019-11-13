@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF64847673": {
+    "contest_id": 630,
+    "language": "GNU C++17",
+    "path": "codeforces\\630\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "A rectangle",
+    "problem_url": "https://codeforces.com/contest/630/problem/E",
+    "submission_id": "CF64847673",
+    "submission_url": "https://codeforces.com/contest/630/submission/64847673",
+    "tags": [
+      "math",
+      "*1900"
+    ],
+    "timestamp": "Nov/13/2019 23:40"
+  },
   "CF64848398": {
     "contest_id": 630,
     "language": "GNU C++17",
