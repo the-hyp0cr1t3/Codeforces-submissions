@@ -39,8 +39,7 @@ int32_t main() {
         for(i = 1; i <= n; i++) {
             cin >> b;
             if (visited[b]) {
-                if (i - a[b].Y < a[b].X) a[b].X = i - a[b].Y;
-                a[b].Y = i;
+                if (i - a[b].Y <= a[b].X) a[b].X = i - a[b].Y, a[b].Y = i;
             }
             else {
                 a[b].X = INF, a[b].Y = i;
