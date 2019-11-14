@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF64867250": {
+    "contest_id": 630,
+    "language": "GNU C++17",
+    "path": "codeforces\\630\\M.cpp",
+    "problem_index": "M",
+    "problem_name": "Turn",
+    "problem_url": "https://codeforces.com/contest/630/problem/M",
+    "submission_id": "CF64867250",
+    "submission_url": "https://codeforces.com/contest/630/submission/64867250",
+    "tags": [
+      "geometry",
+      "math",
+      "*1800"
+    ],
+    "timestamp": "Nov/14/2019 12:16"
+  },
   "CF64868401": {
     "contest_id": 630,
     "language": "GNU C++17",
