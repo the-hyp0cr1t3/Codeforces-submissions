@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF65059589": {
+    "contest_id": 797,
+    "language": "GNU C++17",
+    "path": "codeforces\\797\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Odd sum",
+    "problem_url": "https://codeforces.com/contest/797/problem/B",
+    "submission_id": "CF65059589",
+    "submission_url": "https://codeforces.com/contest/797/submission/65059589",
+    "tags": [
+      "dp",
+      "greedy",
+      "implementation",
+      "*1400"
+    ],
+    "timestamp": "Nov/15/2019 21:55"
+  },
   "CF65078567": {
     "contest_id": 797,
     "language": "GNU C++17",
