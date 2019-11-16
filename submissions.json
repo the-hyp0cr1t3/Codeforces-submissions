@@ -609,6 +609,20 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF65163262": {
+    "contest_id": 1145,
+    "language": "GNU C++17",
+    "path": "codeforces\\1145\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Thanos Sort",
+    "problem_url": "https://codeforces.com/contest/1145/problem/A",
+    "submission_id": "CF65163262",
+    "submission_url": "https://codeforces.com/contest/1145/submission/65163262",
+    "tags": [
+      "implementation"
+    ],
+    "timestamp": "Nov/16/2019 17:46"
+  },
   "CF65166006": {
     "contest_id": 1169,
     "language": "GNU C++17",
