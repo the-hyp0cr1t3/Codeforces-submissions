@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF65321677": {
+    "contest_id": 1194,
+    "language": "GNU C++17",
+    "path": "codeforces\\1194\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Crossword Expert",
+    "problem_url": "https://codeforces.com/contest/1194/problem/F",
+    "submission_id": "CF65321677",
+    "submission_url": "https://codeforces.com/contest/1194/submission/65321677",
+    "tags": [
+      "combinatorics",
+      "dp",
+      "number theory",
+      "probabilities",
+      "two pointers",
+      "*2400"
+    ],
+    "timestamp": "Nov/19/2019 01:44"
+  },
   "CF65339049": {
     "contest_id": 977,
     "language": "GNU C++17",
