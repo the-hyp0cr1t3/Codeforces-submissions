@@ -609,6 +609,27 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF65497923": {
+    "contest_id": 385,
+    "language": "GNU C++17",
+    "path": "codeforces\\385\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Bear and Prime Numbers",
+    "problem_url": "https://codeforces.com/contest/385/problem/C",
+    "submission_id": "CF65497923",
+    "submission_url": "https://codeforces.com/contest/385/submission/65497923",
+    "tags": [
+      "binary search",
+      "brute force",
+      "data structures",
+      "dp",
+      "implementation",
+      "math",
+      "number theory",
+      "*1700"
+    ],
+    "timestamp": "Nov/21/2019 22:54"
+  },
   "CF65500710": {
     "contest_id": 671,
     "language": "GNU C++17",
