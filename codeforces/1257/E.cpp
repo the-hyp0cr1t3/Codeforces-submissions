@@ -1,25 +1,46 @@
 #include <bits/stdc++.h>
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 using namespace std;
-#define INF 2000000000 //2e9
-#define min(a,b) (a<b?a:b)
+#define pb push_back
 const int N = 2e5 + 5;
-int who[N], pref[N], minsuf[N];
+int a[N];
+vector<int> lis;
+
+bool check (int y, int search) {
+    if (a[lis[y]] <= search)
+        return 1;
+    else
+        return 0;
+}
+
+int binarySearch(int low, int high, int search) {
+    while(low < high) {
+        int mid = (low + high) / 2;
+        if(check(mid, search))
+            low = mid + 1;
+        else
+            high = mid;
+    }
+    return low; 
+}
+
 int32_t main() {
     IOS;
-    int i, n, a, k1, k2, k3, ans = INF, suf, prvsuf;
+    int i, n, len = 0, k1, k2, k3;
     cin >> k1 >> k2 >> k3;
     n = k1 + k2 + k3;
     for(i = 0; i < n; i++) 
-        cin >> a, who[a] = i < k1? 1 : i < k1+k2? 2 : 3;
-    pref[0] = k1;
-    prvsuf = minsuf[n+1] = k3;
-    for(i = 1; i <= n; i++)
-        pref[i] = pref[i-1] + (who[i]==2) - (who[i]==1);
-    for(i = n; i >= 0; i--) 
-        suf = prvsuf + (who[i]==2) - (who[i]==3), minsuf[i] = min(minsuf[i+1], suf), prvsuf = suf;
-    for(i = 0; i <= n; i++)
-        ans = min(ans, pref[i] + minsuf[i+1]);
-    cout << ans;
+        cin >> a[i];
+    sort(a, a+k1);
+    sort(a+k1, a+k1+k2);
+    sort(a+k1+k2, a+n);
+    for(i = 0; i < n; i++) {
+        int x = binarySearch(0, len, a[i]);
+        if (x == len)
+            lis.pb(i), len++;
+        else
+            lis[x] = i;
+    }
+    cout << n - len << endl;
     return 0;
 }
