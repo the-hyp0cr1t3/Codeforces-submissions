@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF65523043": {
+    "contest_id": 44,
+    "language": "GNU C++17",
+    "path": "codeforces\\44\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Anfisa the Monkey",
+    "problem_url": "https://codeforces.com/contest/44/problem/E",
+    "submission_id": "CF65523043",
+    "submission_url": "https://codeforces.com/contest/44/submission/65523043",
+    "tags": [
+      "dp",
+      "*1400"
+    ],
+    "timestamp": "Nov/22/2019 14:39"
+  },
   "CF65524419": {
     "contest_id": 1081,
     "language": "GNU C++17",
