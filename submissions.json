@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF65598274": {
+    "contest_id": 967,
+    "language": "GNU C++17",
+    "path": "codeforces\\967\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Mind the Gap",
+    "problem_url": "https://codeforces.com/contest/967/problem/A",
+    "submission_id": "CF65598274",
+    "submission_url": "https://codeforces.com/contest/967/submission/65598274",
+    "tags": [
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "Nov/23/2019 22:19"
+  },
   "CF65631372": {
     "contest_id": 1262,
     "language": "GNU C++17",
