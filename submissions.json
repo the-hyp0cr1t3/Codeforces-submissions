@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF66045089": {
+    "contest_id": 19,
+    "language": "GNU C++17",
+    "path": "codeforces\\19\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Checkout Assistant",
+    "problem_url": "https://codeforces.com/contest/19/problem/B",
+    "submission_id": "CF66045089",
+    "submission_url": "https://codeforces.com/contest/19/submission/66045089",
+    "tags": [
+      "dp",
+      "*1900"
+    ],
+    "timestamp": "Nov/30/2019 20:20"
+  },
   "CF66137693": {
     "contest_id": 1267,
     "language": "GNU C++17",
