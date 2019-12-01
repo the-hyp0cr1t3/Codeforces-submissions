@@ -1439,6 +1439,22 @@
     ],
     "timestamp": "Dec/03/2021 17:50"
   },
+  "AC8718374": {
+    "contest_id": "dp",
+    "language": "C++14 (GCC 5.4.1)",
+    "path": "atcoder/dp/H.cpp",
+    "platform": "AtCoder",
+    "problem_index": "H",
+    "problem_name": "Grid 1",
+    "problem_url": "https://atcoder.jp/contests/dp/tasks/dp_h",
+    "submission_id": "AC8718374",
+    "submission_url": "https://atcoder.jp/contests/dp/submissions/8718374",
+    "tags": [
+      "AtCoder",
+      "*100"
+    ],
+    "timestamp": "Dec/01/2019 11:25"
+  },
   "AC8903093": {
     "contest_id": "dp",
     "language": "C++14 (GCC 5.4.1)",
