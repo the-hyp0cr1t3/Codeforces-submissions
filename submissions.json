@@ -609,6 +609,20 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF66137693": {
+    "contest_id": 1267,
+    "language": "GNU C++17",
+    "path": "codeforces\\1267\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Balls of Buma",
+    "problem_url": "https://codeforces.com/contest/1267/problem/B",
+    "submission_id": "CF66137693",
+    "submission_url": "https://codeforces.com/contest/1267/submission/66137693",
+    "tags": [
+      "*900"
+    ],
+    "timestamp": "Dec/01/2019 18:27"
+  },
   "CF66140928": {
     "contest_id": 1267,
     "language": "GNU C++17",
