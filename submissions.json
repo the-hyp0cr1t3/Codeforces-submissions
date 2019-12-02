@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF66187242": {
+    "contest_id": 454,
+    "language": "GNU C++17",
+    "path": "codeforces\\454\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Little Pony and Harmony Chest",
+    "problem_url": "https://codeforces.com/contest/454/problem/D",
+    "submission_id": "CF66187242",
+    "submission_url": "https://codeforces.com/contest/454/submission/66187242",
+    "tags": [
+      "bitmasks",
+      "dp",
+      "*2000"
+    ],
+    "timestamp": "Dec/02/2019 20:30"
+  },
   "CF66192749": {
     "contest_id": 1132,
     "language": "GNU C++17",
