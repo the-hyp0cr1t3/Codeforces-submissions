@@ -2720,6 +2720,21 @@
     ],
     "timestamp": "Dec/08/2019 15:08"
   },
+  "CF66540528": {
+    "contest_id": 803,
+    "language": "GNU C++17",
+    "path": "codeforces\\803\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Distances to Zero",
+    "problem_url": "https://codeforces.com/contest/803/problem/B",
+    "submission_id": "CF66540528",
+    "submission_url": "https://codeforces.com/contest/803/submission/66540528",
+    "tags": [
+      "constructive algorithms",
+      "*1200"
+    ],
+    "timestamp": "Dec/09/2019 16:50"
+  },
   "CF66546353": {
     "contest_id": 787,
     "language": "GNU C++17",
