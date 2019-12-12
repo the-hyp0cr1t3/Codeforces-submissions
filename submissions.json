@@ -2720,6 +2720,23 @@
     ],
     "timestamp": "Dec/08/2019 15:08"
   },
+  "CF66704468": {
+    "contest_id": 1272,
+    "language": "GNU C++17",
+    "path": "codeforces\\1272\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Yet Another Broken Keyboard",
+    "problem_url": "https://codeforces.com/contest/1272/problem/C",
+    "submission_id": "CF66704468",
+    "submission_url": "https://codeforces.com/contest/1272/submission/66704468",
+    "tags": [
+      "combinatorics",
+      "dp",
+      "implementation",
+      "*1200"
+    ],
+    "timestamp": "Dec/12/2019 20:05"
+  },
   "CF66736627": {
     "contest_id": 1225,
     "language": "GNU C++17",
