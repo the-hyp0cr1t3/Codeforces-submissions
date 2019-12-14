@@ -28,6 +28,7 @@ typedef pair<int, int> pii;
 const int N = 2e5 + 5;
 int dp[N][3];
 string t = "RGB";
+//sadsa
 int32_t main() {
     IOS;
     int Q;
