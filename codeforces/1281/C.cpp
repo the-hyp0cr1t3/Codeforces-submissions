@@ -19,7 +19,7 @@ int32_t main() {
         while(sz(s) < n) {
             i++;
             int j = s[i-1]-'1';
-            string b = s.substr(i, sz(s)-i);
+            string b = s.substr(i);
             while(j--) s += b;
         }
         dp[i++] = sz(s);
