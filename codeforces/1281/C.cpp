@@ -10,18 +10,18 @@ int32_t main() {
     int Q;
     cin >> Q;
     while (Q--) {
-        int n, i = 1;
+        int n, i = 0;
         string s;
         cin >> n >> s;
         while(sz(s) < n) {
+            i++;
             int j = s[i-1]-'1';
             string b = s.substr(i, sz(s)-i);
             while(j--) s += b;
-            i++;
         }
         ll ans = sz(s);
-        for(; i <= n; i++) {
-            ans = (ans + (((1ll*(s[i-1]-'1')*(ans-i))%MOD + MOD) % MOD)) % MOD;
+        for(i++; i <= n; i++) {
+            ans = ((1ll*(s[i-1]-'0')*(ans-i))%MOD + i + MOD) % MOD;
         }
         cout << ans << endl;
     }
