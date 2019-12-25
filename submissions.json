@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF67584299": {
+    "contest_id": 723,
+    "language": "GNU C++17",
+    "path": "codeforces\\723\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Text Document Analysis",
+    "problem_url": "https://codeforces.com/contest/723/problem/B",
+    "submission_id": "CF67584299",
+    "submission_url": "https://codeforces.com/contest/723/submission/67584299",
+    "tags": [
+      "expression parsing",
+      "implementation",
+      "strings",
+      "*1100"
+    ],
+    "timestamp": "Dec/25/2019 13:06"
+  },
   "CF67590265": {
     "contest_id": 723,
     "language": "GNU C++17",
