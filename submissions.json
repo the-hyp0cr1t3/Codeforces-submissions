@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF67671918": {
+    "contest_id": 1133,
+    "language": "GNU C++17",
+    "path": "codeforces\\1133\\F1.cpp",
+    "problem_index": "F1",
+    "problem_name": "Spanning Tree with Maximum Degree",
+    "problem_url": "https://codeforces.com/contest/1133/problem/F1",
+    "submission_id": "CF67671918",
+    "submission_url": "https://codeforces.com/contest/1133/submission/67671918",
+    "tags": [
+      "graphs",
+      "*1600"
+    ],
+    "timestamp": "Dec/27/2019 02:34"
+  },
   "CF67691836": {
     "contest_id": 1133,
     "language": "GNU C++17",
