@@ -15,7 +15,10 @@ using namespace std;
 #define sz(x) (int)(x).size()
 typedef pair<ll, ll> pll;
 const int N = 30 + 5;
-const int MAXD = 59;
+const ll MAXL = -1e2;
+const ll MAXD = -1e18;
+const ll MAXR = 1e18;
+const ll MAXU = 1e18;
 int n;
 vector<int> g[N];
 vector<bool> vis;
@@ -68,7 +71,7 @@ int32_t main() {
     makeG();
     for(i = 0; i < n; i++) 
         if (sz(g[i]) > 4) return cout << "NO", 0;
-    dfs(0, 0, 0, -1, MAXD-1);
+    dfs(0, 0, 0, -1, 58);
     cout << "YES" << endl;
     for (auto& x: ans) 
         cout << x.first << " " << x.second << endl;
