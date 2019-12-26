@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF67651929": {
+    "contest_id": 638,
+    "language": "GNU C++17",
+    "path": "codeforces\\638\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Home Numbers",
+    "problem_url": "https://codeforces.com/contest/638/problem/A",
+    "submission_id": "CF67651929",
+    "submission_url": "https://codeforces.com/contest/638/submission/67651929",
+    "tags": [
+      "*special problem",
+      "constructive algorithms",
+      "math",
+      "*1100"
+    ],
+    "timestamp": "Dec/26/2019 17:57"
+  },
   "CF67654127": {
     "contest_id": 638,
     "language": "GNU C++17",
