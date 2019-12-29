@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF67870086": {
+    "contest_id": 952,
+    "language": "GNU C++17",
+    "path": "codeforces\\952\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Ravioli Sort",
+    "problem_url": "https://codeforces.com/contest/952/problem/C",
+    "submission_id": "CF67870086",
+    "submission_url": "https://codeforces.com/contest/952/submission/67870086",
+    "tags": [
+      "implementation",
+      "*1600"
+    ],
+    "timestamp": "Dec/29/2019 16:37"
+  },
   "CF67875422": {
     "contest_id": 1223,
     "language": "GNU C++17",
