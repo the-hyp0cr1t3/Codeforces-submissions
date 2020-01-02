@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF68091293": {
+    "contest_id": 1157,
+    "language": "GNU C++17",
+    "path": "codeforces\\1157\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Maximum Balanced Circle",
+    "problem_url": "https://codeforces.com/contest/1157/problem/F",
+    "submission_id": "CF68091293",
+    "submission_url": "https://codeforces.com/contest/1157/submission/68091293",
+    "tags": [
+      "constructive algorithms",
+      "dp",
+      "greedy",
+      "two pointers",
+      "*2000"
+    ],
+    "timestamp": "Jan/02/2020 23:45"
+  },
   "CF68235557": {
     "contest_id": 1284,
     "language": "GNU C++17",
