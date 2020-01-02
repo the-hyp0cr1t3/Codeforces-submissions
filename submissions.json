@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF68089219": {
+    "contest_id": 1157,
+    "language": "GNU C++17",
+    "path": "codeforces\\1157\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "N Problems During K Days",
+    "problem_url": "https://codeforces.com/contest/1157/problem/D",
+    "submission_id": "CF68089219",
+    "submission_url": "https://codeforces.com/contest/1157/submission/68089219",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "math",
+      "*1900"
+    ],
+    "timestamp": "Jan/02/2020 22:57"
+  },
   "CF68091293": {
     "contest_id": 1157,
     "language": "GNU C++17",
