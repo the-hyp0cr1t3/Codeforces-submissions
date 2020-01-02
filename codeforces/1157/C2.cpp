@@ -82,23 +82,47 @@ int32_t main() {
     }
     int l = 0, r = n-1;
     cur = 0;
-    auto left = [&] () { s += 'L'; cur = a[l]; l++; };
-    auto right = [&] () { s += 'R'; cur = a[r]; r--; };
     while (l <= r) {
         if (a[l] < a[r]) {
-            if (a[l] > cur) left();
-            else if (a[r] > cur) right();
-            else break;
+            if (a[l] > cur) {
+                s += 'L';
+                cur = a[l];
+                l++;
+            }
+            else if (a[r] > cur) {
+                s += 'R';
+                cur = a[r];
+                r--;
+            }
+            else
+                break;
         }
         else if (a[l] > a[r]) {
-            if (a[r] > cur) right();
-            else if (a[l] > cur) left();
-            else break;
+            if (a[r] > cur) {
+                s += 'R';
+                cur = a[r];
+                r--;
+            }
+            else if (a[l] > cur) {
+                s += 'L';
+                cur = a[l];
+                l++;
+            }
+            else
+                break;
         }
         else {
             if (a[l] <= cur) break;
-            if (nxt[l] - l > r - prv[r]) left();
-            else right();
+            if (nxt[l] - l > r - prv[r]) {
+                s += 'L';
+                cur = a[l];
+                l++;
+            }
+            else {
+                s += 'R';
+                cur = a[r];
+                r--;
+            }
         }
     }
     ps(sz(s));
