@@ -28,6 +28,7 @@ namespace input {
     template<typename T1, typename T2> void re(pair<T1,T2>& p) { re(p.ff); re(p.ss); }
     template<typename T> void re(vector<T>& a) { for(int i = 0; i < sz(a); i++) re(a[i]); }
     template<typename T, typename Tsize> void rea(T&& a, Tsize t) { for(int i = 0; i < t; i++) re(a[i]); }
+    template<typename T, typename Tsize> void rea1(T&& a, Tsize t) { for(int i = 1; i <= t; i++) re(a[i]); }
     template<typename T, typename... Ts> void re(T&& t, Ts&... ts) { re(t); re(ts...); }
 }
 namespace output {
@@ -66,15 +67,27 @@ using namespace output::trace;
 using pii = pair<int, int>;
 using ll = long long;
 const int N = 4e3 + 5;
-bitset<N> mask;
+int n, a, b, c, cache[N];
+
+int dp (int w) {
+    if (w == 0)
+        return 0;
+    if (w < 0)
+        return -INF;
+    int &ans = cache[w];
+    if (ans != -1)
+        return ans;
+    ans = 1 + max3(dp(w-a), dp(w-b), dp(w-c));
+    return ans;
+}
+
 int32_t main() {
-    int i, n, a, b, c, ans;
+    IOS;
     re(n, a, b, c);
-    mask[0] = 1;
-    for(i = 1; i <= n; i++) {
-        mask = ((mask << a) | (mask << b) | (mask << c));
-        if (mask[n]) ans = i;
-    }
-    ps(ans);
+    memset(cache, -1, sizeof(cache));
+    ps(dp(n));
     return 0;
 }
+//is a bruteforce possible?
+//think greedier, make more assumptions
+//stuck for more than 5 minutes? move on
