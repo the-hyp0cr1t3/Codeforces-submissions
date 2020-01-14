@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF68819508": {
+    "contest_id": 1288,
+    "language": "GNU C++17",
+    "path": "codeforces\\1288\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Two Arrays",
+    "problem_url": "https://codeforces.com/contest/1288/problem/C",
+    "submission_id": "CF68819508",
+    "submission_url": "https://codeforces.com/contest/1288/submission/68819508",
+    "tags": [
+      "combinatorics",
+      "dp",
+      "*1600"
+    ],
+    "timestamp": "Jan/14/2020 22:31"
+  },
   "CF68820489": {
     "contest_id": 1288,
     "language": "GNU C++17",

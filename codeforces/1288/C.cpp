@@ -23,34 +23,6 @@ using namespace std;
 //mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 template<class T> T chmin(T &a, T b) { a = min(a, b); return a; }
 template<class T> T chmax(T &a, T b) { a = max(a, b); return a; }
-struct num {
-    static constexpr int mod = MOD;
-    int v; 
-    using ll = long long;
-    static int inv(int a, int m) { a %= m; return a == 1 ? 1 : (int)(m - ll(inv(m, a)) * ll(m) / a); } 
-    num() : v(0) {}
-    num(ll v_) : v (int(v_ % mod)) { if (v < 0) v += mod; }
-    explicit operator int() const { return v; }
-    friend std::ostream& operator << (std::ostream& out, const num& n) { return out << int(n); }
-    friend std::istream& operator >> (std::istream& in, num& n) { ll v_; in >> v_; n = num(v_); return in; } 
-    friend bool operator == (const num& a, const num& b) { return a.v == b.v; }
-    friend bool operator != (const num& a, const num& b) { return a.v != b.v; }
-    num inv() const { num res; res.v = inv(v, mod); return res; }
-    num operator- () const { num res; res.v = v ? mod-v : 0; return res; }
-    num operator+ () const { return num(*this); }
-    num& operator ++ () { v ++; if (v == mod) v = 0; return *this; }
-    num& operator -- () { if (v == 0) v = mod; v --; return *this; }
-    num& operator += (const num& o) { v += o.v; if (v >= mod) v -= mod; return *this; }
-    num& operator -= (const num& o) { v -= o.v; if (v < 0) v += mod; return *this; }
-    num& operator *= (const num& o) { v = int(ll(v) * ll(o.v) % mod); return *this; }
-    num& operator /= (const num& o) { return *this *= o.inv(); }
-    friend num operator ++ (num& a, int) { num r = a; ++a; return r; }
-    friend num operator -- (num& a, int) { num r = a; --a; return r; }
-    friend num operator + (const num& a, const num& b) { return num(a) += b; }
-    friend num operator - (const num& a, const num& b) { return num(a) -= b; }
-    friend num operator * (const num& a, const num& b) { return num(a) *= b; }
-    friend num operator / (const num& a, const num& b) { return num(a) /= b; }
-};
 namespace input { 
     template<typename T> void re(T&& x) { cin >> x; }
     template<typename T1, typename T2> void re(pair<T1,T2>& p) { re(p.ff); re(p.ss); }
@@ -61,7 +33,6 @@ namespace input {
 }
 namespace output {
     void pr(int x) { cout << x; }
-    void pr(num x) { cout << x; }
     void pr(bool x) { cout << x; }
     void pr(long long x) { cout << x; }
     void pr(double x) { cout << x; }
@@ -98,12 +69,40 @@ using namespace output::trace;
 using pii = pair<int, int>;
 using ll = long long;
 const int N = 1e3 + 10;
-num pref[N];
 
+struct modnum {
+    static constexpr int mod = MOD;
+    int v; 
+    static int inv(int a, int m) { a %= m; return a == 1 ? 1 : (int)(m - ll(inv(m, a)) * ll(m) / a); } 
+    modnum() : v(0) {}
+    modnum(ll v_) : v (int(v_ % mod)) { if (v < 0) v += mod; }
+    explicit operator int() const { return v; }
+    friend std::ostream& operator << (std::ostream& out, const modnum& n) { return out << int(n); }
+    friend std::istream& operator >> (std::istream& in, modnum& n) { ll v_; in >> v_; n = modnum(v_); return in; } 
+    friend bool operator == (const modnum& a, const modnum& b) { return a.v == b.v; }
+    friend bool operator != (const modnum& a, const modnum& b) { return a.v != b.v; }
+    modnum inv() const { modnum res; res.v = inv(v, mod); return res; }
+    modnum operator- () const { modnum res; res.v = v ? mod-v : 0; return res; }
+    modnum operator+ () const { return modnum(*this); }
+    modnum& operator ++ () { v ++; if (v == mod) v = 0; return *this; }
+    modnum& operator -- () { if (v == 0) v = mod; v --; return *this; }
+    modnum& operator += (const modnum& o) { v += o.v; if (v >= mod) v -= mod; return *this; }
+    modnum& operator -= (const modnum& o) { v -= o.v; if (v < 0) v += mod; return *this; }
+    modnum& operator *= (const modnum& o) { v = int(ll(v) * ll(o.v) % mod); return *this; }
+    modnum& operator /= (const modnum& o) { return *this *= o.inv(); }
+    friend modnum operator ++ (modnum& a, int) { modnum r = a; ++a; return r; }
+    friend modnum operator -- (modnum& a, int) { modnum r = a; --a; return r; }
+    friend modnum operator + (const modnum& a, const modnum& b) { return modnum(a) += b; }
+    friend modnum operator - (const modnum& a, const modnum& b) { return modnum(a) -= b; }
+    friend modnum operator * (const modnum& a, const modnum& b) { return modnum(a) *= b; }
+    friend modnum operator / (const modnum& a, const modnum& b) { return modnum(a) /= b; }
+};
+
+modnum pref[N];
 int32_t main() {
     IOS;
     int i, j, n, m;
-    num ans;
+    modnum ans;
     re(n, m);
     for(i = 0; i <= n; i++)
         pref[i] = 1;
@@ -111,12 +110,12 @@ int32_t main() {
         for(j = 1; j <= n; j++)
             pref[j] += pref[j-1];
     for(int mnb = 1; mnb <= n; mnb++) {
-        num res, resb;   
+        modnum res, resb;   
         resb = pref[n-mnb];
         for(int mna = 1; mna <= mnb; mna++)
             res += pref[mnb-mna];
         ans += resb*res;
     }
-    ps(ans);
+    cout << ans;
     return 0;
 }
