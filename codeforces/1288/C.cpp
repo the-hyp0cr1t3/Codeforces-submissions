@@ -98,7 +98,7 @@ using namespace output::trace;
 using pii = pair<int, int>;
 using ll = long long;
 const int N = 1e3 + 10;
-num pref[N], pref2[N];
+num pref[N];
 
 int32_t main() {
     IOS;
@@ -110,11 +110,13 @@ int32_t main() {
     for(i = 1; i <= m-1; i++)
         for(j = 1; j <= n; j++)
             pref[j] += pref[j-1];
-    pref2[0] = pref[0];
-    for(j = 1; j <= n; j++)
-        pref2[j] = pref2[j-1] + pref[j];
-    for(int mnb = 1; mnb <= n; mnb++)
-        ans += pref[n-mnb]*pref2[mnb-1];
+    for(int mnb = 1; mnb <= n; mnb++) {
+        num res, resb;   
+        resb = pref[n-mnb];
+        for(int mna = 1; mna <= mnb; mna++)
+            res += pref[mnb-mna];
+        ans += resb*res;
+    }
     ps(ans);
     return 0;
 }
