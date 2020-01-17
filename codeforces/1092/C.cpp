@@ -1,45 +1,119 @@
-/**
- 🍪 the_hyp0cr1t3
- 🍪 16.11.2020 12:11:57
-**/
-#ifdef W
-#include "k_II.h"
-#else
 #include <bits/stdc++.h>
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define e "\n"
 using namespace std;
-#endif
-#define pb emplace_back
-#define sz(x) int(x.size())
-#define all(x) x.begin(), x.end()
-
-const int64_t DESPACITO = 2e18;
-const int INF = 2e9, MOD = 1e9+7;
-const int N = 2e5 + 5;
-
-int main() {
-    cin.tie(nullptr)->sync_with_stdio(false);
-    int i, n;
-    cin >> n; n = 2*n - 2;
-    vector<pair<string, int>> a(n);
-    for(i = 0; i < n; i++) {
-        cin >> a[i].first;
-        a[i].second = i;
+#define Tp template<class T>
+#define Tp2 template<class T1, class T2>
+#define Tps template<class T, class... Ts>
+#define Tps2 template<class T1, class T2, class... Ts>
+#define ff first
+#define ss second
+#define rev(a) reverse(a.begin(),a.end())
+#define all(a) a.begin(),a.end()
+#define rall(a) a.rbegin(),a.rend()
+#define lb lower_bound
+#define ub upper_bound
+#define rsz resize
+#define ins insert
+#define pb push_back
+#define sz(x) (int)(x).size()
+#define MOD 1000000007  //1e9 + 7
+#define INF 2000000000 //2e9
+#define DESPACITO 1000000000000000000 //1e18
+//mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+namespace maxmin {
+    Tp T max (T&& a) { return a; }
+    Tp T min (T&& a) { return a; }
+    Tp T max (T&& a, T&& b) { return a>b?a:b; }
+    Tp T min (T&& a, T&& b) { return a<b?a:b; }
+    Tps T max (T&& a, Ts&&... ts) { T b = max(ts...); return a>b?a:b; }
+    Tps T min (T&& a, Ts&&... ts) { T b = min(ts...); return a<b?a:b; }
+    Tps T chmax(T&& a, Ts&&... ts) { a = max(a, ts...); return a; }
+    Tps T chmin(T&& a, Ts&&... ts) { a = min(a, ts...); return a; }
+}
+namespace input { 
+    Tp void re(T&& x) { cin >> x; }
+    Tp2 void re(pair<T1,T2>& p) { re(p.ff); re(p.ss); }
+    Tp void re(vector<T>& a) { for(int i = 0; i < sz(a); i++) re(a[i]); }
+    Tp2 void rea(T1&& a, T2 t) { for(int i = 0; i < t; i++) re(a[i]); }
+    Tp2 void rea1(T1&& a, T2 t) { for(int i = 1; i <= t; i++) re(a[i]); }
+    Tps void re(T&& t, Ts&... ts) { re(t); re(ts...); }
+}
+namespace output {
+    void pr(int x) { cout << x; }
+    //void pr(num x) { cout << x; }
+    void pr(bool x) { cout << x; }
+    void pr(long long x) { cout << x; }
+    void pr(long long unsigned x) { cout << x; }
+    void pr(double x) { cout << x; }
+    void pr(char x) { cout << x; }
+    void pr(const string& x) { cout << x; }
+    void pr(const char* x) { cout << x; }
+    void pr(const char* x, size_t len) { cout << string(x, len); }
+    void ps() { pr("\n"); }
+    void pw() { pr(" "); }
+    void pc() { pr("]\n"); }
+    bool parse(const char* t) { if(t == e) return true; return false;}
+    Tp void pr(const T&);
+    Tp bool parse(T&& t) { return false;}
+    Tp2 void psa(T1&& a, T2 t) { for(int i = 0; i < t; i++) pr(a[i]), pr(" "); ps(); }
+    Tp2 void psa2(T1&& a, T2 t1, T2 t2) { for(int i = 0; i < t1; i++) {for(int j = 0; j < t2; j++) pr(a[i][j]), pr(" "); ps();} }
+    Tp2 void pr(const pair<T1,T2>& x) { pr("{"); pr(x.ff); pr(", "); pr(x.ss); pr("}"); }
+    Tp void pr(const T& x) { pr("{"); bool fst = 1; for (const auto& a: x) pr(!fst?", ":""), pr(a), fst = 0; pr("}"); }
+    Tps void pr(const T& t, const Ts&... ts) { pr(t); pr(ts...); }
+    Tps void ps(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) {if (!parse(t)) pr(" "); } ps(ts...); }
+    Tp void pwv(const T& x) { for (const auto& a: x) pr(a), pw(); ps(); }
+    Tps void pw(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) pr(" "); pw(ts...); }
+    Tps void pc(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) pr(", "); pc(ts...); }
+    namespace trace {
+        #define tr(x...) pr("[",#x,"] = ["), pc(x);
+        #define tra(x, y...) __f0(#x, x, y)
+        #define tran(n, x) __fn(n, #x, x) // TO DO~ variadic multidimensional
+        Tp2 void __f(const char* name, const T1& x, const T2& y){ pr("[",y,"] = "); ps(x); }
+        Tps2 void __f(const char* name, const T1& x, const T2& y, const Ts&... rest){ const char *open = strchr(name, '['); pr("[",y,"]"); __f(open+1, x, rest...); }
+        Tps2 void __f0(const char* name, const T1& x, const T2& y, const Ts&... rest){ const char *open = strchr(name, '['); pr(name, size_t(open-name)); __f(name, x, y, rest...); }
+        Tp void __fn(int n, const char* name, const T& x) { for(int i = 0; i < n; i++) pr(name), __f(name, x[i], i); }
     }
-    sort(all(a), [](const auto& A, const auto& B) { return sz(A.first) > sz(B.first); });
+}
+using namespace maxmin;
+using namespace input;
+using namespace output;
+using namespace output::trace;
+using pii = pair<int, int>;
+using ll = long long;
+const int N = 200 + 5;
+int n;
+vector<int> g[N];
+string s[N];
+vector<bool> vis;
+vector<int> ans;
 
-    auto Try = [&](int pref) -> string {
-        string ans(n, 'S');
-        ans[a[pref].second] = 'P';
-        for(i = 2; i < n; i += 2) {
-            if(a[i].first == a[pref].first.substr(0, sz(a[i].first))
-                and a[i+1].first == a[pref^1].first.substr(sz(a[pref^1].first)-sz(a[i+1].first)))
-                ans[a[i].second] = 'P';
-            else if(a[i+1].first == a[pref].first.substr(0, sz(a[i+1].first))
-                and a[i].first == a[pref^1].first.substr(sz(a[pref^1].first)-sz(a[i].first)))
-                ans[a[i+1].second] = 'P';
-            else return "";
-        } return ans;
-    };
+bool dfs(int v, int i, int j) {
+    bool ret = 0;
+    if (v == n-1) {
+        ans[i] = 1;
+        return 1;
+    }
+    for (int k = 0; k < 2; k++) {
+        if (s[i] == s[g[v+1][k]].substr(0, v) and s[j] == s[g[v+1][k^1]].substr(1, v)) 
+            ret |= dfs(v+1, g[v+1][k], g[v+1][k^1]);
+        if (ret)
+            return ans[i] = 1;
+    }
+    return ret;
+}
 
-    cout << max(Try(0), Try(1)) << '\n';
-} // ~W
+int32_t main() {
+    IOS;
+    int i;
+    re(n);
+    ans.rsz(2*n-2);
+    for(i = 0; i < 2*n-2; i++) {
+        re(s[i]); g[sz(s[i])].pb(i);
+    }
+    if(!dfs(1, g[1][0], g[1][1])) dfs(1, g[1][1], g[1][0]);
+    for(i = 0; i < 2*n-2; i++) 
+        pr(ans[i]?'P':'S');
+    ps(); 
+    return 0;
+}
