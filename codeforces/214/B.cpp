@@ -100,7 +100,7 @@ int32_t main() {
             int bad = 2;
             for(i = sum%3==1?2:1; i <= 9; i+=3) {
                 if (frq[i]) {
-                    int x = min(bad, frq[i]);
+                    int x = min(2, frq[i]);
                     frq[i]-=x; bad -= x;
                 }
                 if (!bad) break;
