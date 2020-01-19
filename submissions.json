@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF69160995": {
+    "contest_id": 294,
+    "language": "GNU C++17",
+    "path": "codeforces\\294\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Shaass and Bookshelf",
+    "problem_url": "https://codeforces.com/contest/294/problem/B",
+    "submission_id": "CF69160995",
+    "submission_url": "https://codeforces.com/contest/294/submission/69160995",
+    "tags": [
+      "dp",
+      "greedy",
+      "*1700"
+    ],
+    "timestamp": "Jan/20/2020 05:07"
+  },
   "CF69176552": {
     "contest_id": 363,
     "language": "GNU C++17",
