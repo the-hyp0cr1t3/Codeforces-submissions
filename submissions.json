@@ -627,6 +627,23 @@
     ],
     "timestamp": "Jan/19/2020 16:48"
   },
+  "CF69100400": {
+    "contest_id": 1293,
+    "language": "GNU C++17",
+    "path": "codeforces\\1293\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "ConneR and the A.R.C. Markland-N",
+    "problem_url": "https://codeforces.com/contest/1293/problem/A",
+    "submission_id": "CF69100400",
+    "submission_url": "https://codeforces.com/contest/1293/submission/69100400",
+    "tags": [
+      "binary search",
+      "brute force",
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "Jan/19/2020 19:10"
+  },
   "CF69104277": {
     "contest_id": 1293,
     "language": "GNU C++17",
