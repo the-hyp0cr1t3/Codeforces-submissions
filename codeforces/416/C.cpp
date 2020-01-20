@@ -1,49 +1,115 @@
-/**
- 🍪 the_hyp0cr1t3
- 🍪 09.11.2020 19:14:16
-**/
-#ifdef W
-#include "k_II.h"
-#else
 #include <bits/stdc++.h>
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define e "\n"
+#define endl "\n"
 using namespace std;
-#endif
+#define Tp template<class T>
+#define Tp2 template<class T1, class T2>
+#define Tps template<class T, class... Ts>
+#define Tps2 template<class T1, class T2, class... Ts>
+#define ff first
+#define ss second
+#define rev(a) reverse(a.begin(),a.end())
+#define all(a) a.begin(),a.end()
+#define rall(a) a.rbegin(),a.rend()
+#define lb lower_bound
+#define ub upper_bound
+#define rsz resize
+#define ins insert
+#define mp make_pair
 #define pb push_back
-#define sz(x) int(x.size())
-#define all(x) x.begin(), x.end()
-
-const int64_t DESPACITO = 2e18;
-const int INF = 2e9, MOD = 1e9+7;
-const int N = 2e5 + 5;
-
-int main() {
-    cin.tie(nullptr)->sync_with_stdio(false);
-    int i, n, k;
-    cin >> n;
-    vector<array<int, 3>> a(n);
-    for(i = 0; i < n; i++)
-        cin >> a[i][1] >> a[i][0], a[i][2] = i+1;
-    sort(all(a), [](const auto& A, const auto& B) { 
-        return A[0] == B[0]? A[1] < B[1] : A[0] > B[0]; 
-    });
-    
-    cin >> k;
-    multiset<array<int, 2>> r;
-    for(i = 0; i < k; i++) {
-        int x; cin >> x;
-        r.insert({x, i+1});
+#define sz(x) (int)(x).size()
+#define MOD 1000000007  //1e9 + 7
+#define INF 2000000000 //2e9
+#define DESPACITO 1000000000000000000 //1e18
+//mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+namespace maxmin {
+    Tp T max (T&& a) { return a; }
+    Tp T min (T&& a) { return a; }
+    Tp T max (T&& a, T&& b) { return a>b?a:b; }
+    Tp T min (T&& a, T&& b) { return a<b?a:b; }
+    Tps T max (T&& a, Ts&&... ts) { T b = max(ts...); return a>b?a:b; }
+    Tps T min (T&& a, Ts&&... ts) { T b = min(ts...); return a<b?a:b; }
+    Tps T chmax(T&& a, Ts&&... ts) { a = max(a, ts...); return a; }
+    Tps T chmin(T&& a, Ts&&... ts) { a = min(a, ts...); return a; }
+}
+namespace input { 
+    Tp void re(T&& x) { cin >> x; }
+    Tp2 void re(pair<T1,T2>& p) { re(p.ff); re(p.ss); }
+    Tp void re(vector<T>& a) { for(int i = 0; i < sz(a); i++) re(a[i]); }
+    Tp2 void rea(T1&& a, T2 t) { for(int i = 0; i < t; i++) re(a[i]); }
+    Tps2 void rea(T1&& a, T2 t, Ts&... ts) { rea(a, t); rea(ts...); }
+    Tp2 void rea1(T1&& a, T2 t) { for(int i = 1; i <= t; i++) re(a[i]); }
+    Tps2 void rea1(T1&& a, T2 t, Ts&... ts) { rea1(a, t); rea1(ts...); }
+    Tps void re(T&& t, Ts&... ts) { re(t); re(ts...); }
+}
+namespace output {
+    void pr(int x) { cout << x; }
+    //void pr(num x) { cout << x; }
+    void pr(bool x) { cout << x; }
+    void pr(long long x) { cout << x; }
+    void pr(long long unsigned x) { cout << x; }
+    void pr(double x) { cout << x; }
+    void pr(char x) { cout << x; }
+    void pr(const string& x) { cout << x; }
+    void pr(const char* x) { cout << x; }
+    void pr(const char* x, size_t len) { cout << string(x, len); }
+    void ps() { cout << endl; }
+    void pw() { pr(" "); }
+    void pc() { pr("]"); ps(); }
+    bool parse(const char* t) { if(t == e) return true; return false;}
+    Tp void pr(const T&);
+    Tp bool parse(T&& t) { return false;}
+    Tp2 void psa(T1&& a, T2 t) { for(int i = 0; i < t; i++) pr(a[i]), pw(); ps(); }
+    Tp2 void psa2(T1&& a, T2 t1, T2 t2) { for(int i = 0; i < t1; i++) {for(int j = 0; j < t2; j++) pr(a[i][j]), pw(); ps();} }
+    Tp2 void pr(const pair<T1,T2>& x) { pr("{"); pr(x.ff); pr(", "); pr(x.ss); pr("}"); }
+    Tp void pr(const T& x) { bool fst = 1; for (const auto& a: x) pr(!fst?" ":""), pr(a), fst = 0; }
+    Tps void pr(const T& t, const Ts&... ts) { pr(t); pr(ts...); }
+    Tps void ps(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) {if (!parse(t)) pw(); } ps(ts...); }
+    Tps void pw(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) pw(); pw(ts...); }
+    Tps void pc(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) pr(", "); pc(ts...); }
+    namespace trace {
+        #define tr(x...) pr("[",#x,"] = ["), pc(x);
+        #define tra(x, y...) __f0(#x, x, y)
+        #define tran(n, x) __fn(n, #x, x) // TO DO~ variadic multidimensional
+        Tp2 void __f(const char* name, const T1& x, const T2& y){ pr("[",y,"] = "); ps(x); }
+        Tps2 void __f(const char* name, const T1& x, const T2& y, const Ts&... rest){ const char *open = strchr(name, '['); pr("[",y,"]"); __f(open+1, x, rest...); }
+        Tps2 void __f0(const char* name, const T1& x, const T2& y, const Ts&... rest){ const char *open = strchr(name, '['); pr(name, size_t(open-name)); __f(name, x, y, rest...); }
+        Tp void __fn(int n, const char* name, const T& x) { for(int i = 0; i < n; i++) pr(name), __f(name, x[i], i); }
     }
-
-    int ans = 0;
-    vector<pair<int, int>> chosen;
-    for(auto& [gain, reqd, id]: a) {
-        auto it = r.lower_bound({reqd, -1});
-        if(it == r.end()) continue;
-        chosen.pb({id, (*it)[1]});
-        ans += gain; r.erase(it);
+}
+using namespace maxmin;
+using namespace input;
+using namespace output;
+using namespace output::trace;
+using ll = long long;
+using pii = pair<int, int>;
+const int N = 1000 + 5;
+pair<pii, int> peeps[N];
+set <pii> r;
+vector<pii> ans;
+int32_t main() {
+    IOS;
+    int i, j, n, k, sum = 0;
+    re(n);
+    for(i = 0; i < n; i++) 
+        re(j, k), peeps[i] = mp(mp(j, k), i);
+    sort(peeps, peeps+n, [] (pair<pii, int> a, pair<pii, int> b) { if(a.ff.ss == b.ff.ss) return a.ff.ff < b.ff.ff; return a.ff.ss > b.ff.ss; });
+    re(k); 
+    for(i = 0; i < k; i++) 
+        re(j), r.ins({j, i});
+    for(i = 0; i < n; i++) {
+        auto it = r.ub(mp(peeps[i].ff.ff, -1));
+        if (it == r.end()) continue;
+        sum += peeps[i].ff.ss;
+        ans.pb(mp(peeps[i].ss+1, (it->ss)+1));
+        r.erase(it);
     }
-
-    cout << sz(chosen) << ' ' << ans << '\n';
-    for(auto& [x, y]: chosen)
-        cout << x << ' ' << y << '\n';
-} // ~W
+    ps(sz(ans), sum);
+    for (auto& x: ans) 
+        ps(x.ff, x.ss);
+    return 0;
+}
+//is a bruteforce possible?
+//think greedier, make more assumptions
+//stuck for more than 5 minutes? move on
