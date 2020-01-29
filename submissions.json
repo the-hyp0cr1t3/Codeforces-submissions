@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF69746269": {
+    "contest_id": 1295,
+    "language": "GNU C++17",
+    "path": "codeforces\\1295\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Obtain The String",
+    "problem_url": "https://codeforces.com/contest/1295/problem/C",
+    "submission_id": "CF69746269",
+    "submission_url": "https://codeforces.com/contest/1295/submission/69746269",
+    "tags": [
+      "dp",
+      "greedy",
+      "strings",
+      "*1600"
+    ],
+    "timestamp": "Jan/29/2020 20:26"
+  },
   "CF69794309": {
     "contest_id": 514,
     "language": "GNU C++17",
