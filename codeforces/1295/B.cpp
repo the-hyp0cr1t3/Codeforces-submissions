@@ -117,7 +117,7 @@ int solve () {
     for(i = 0; i < n; i++) {
         bal += s[i]=='0'? 1 : -1;
         if (1ll*(x-bal)*totbal < 0) continue;
-        if (mod(abs(x-bal), abs(totbal)) == 0) ans++;
+        if (mod(x-bal, totbal) == 0) ans++;
     }
     ps(ans);
     return 0;
