@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF69969121": {
+    "contest_id": 584,
+    "language": "GNU C++17",
+    "path": "codeforces\\584\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Olesya and Rodion",
+    "problem_url": "https://codeforces.com/contest/584/problem/A",
+    "submission_id": "CF69969121",
+    "submission_url": "https://codeforces.com/contest/584/submission/69969121",
+    "tags": [
+      "math",
+      "*1000"
+    ],
+    "timestamp": "Feb/01/2020 18:56"
+  },
   "CF70020232": {
     "contest_id": 1217,
     "language": "GNU C++17",
