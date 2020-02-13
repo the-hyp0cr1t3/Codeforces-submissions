@@ -115,7 +115,7 @@ int solve () {
         return ret;
     };
     int ans, k, ans1 = tryavg((mx+mn)/2), ans2 = tryavg((mx+mn+1)/2);
-    if (0) ans = ans2, k = (mx+mn+1)/2;
+    if (ans2 < ans1) ans = ans2, k = (mx+mn+1)/2;
     else ans = ans1, k = (mx+mn)/2;
     ps(ans, k);
     return 0;
