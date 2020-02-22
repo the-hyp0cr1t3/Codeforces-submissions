@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF71596611": {
+    "contest_id": 807,
+    "language": "GNU C++17",
+    "path": "codeforces\\807\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Success Rate",
+    "problem_url": "https://codeforces.com/contest/807/problem/C",
+    "submission_id": "CF71596611",
+    "submission_url": "https://codeforces.com/contest/807/submission/71596611",
+    "tags": [
+      "binary search",
+      "math",
+      "*1700"
+    ],
+    "timestamp": "Feb/22/2020 13:35"
+  },
   "CF71597527": {
     "contest_id": 807,
     "language": "GNU C++17",
