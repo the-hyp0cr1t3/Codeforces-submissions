@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF71597527": {
+    "contest_id": 807,
+    "language": "GNU C++17",
+    "path": "codeforces\\807\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "T-Shirt Hunt",
+    "problem_url": "https://codeforces.com/contest/807/problem/B",
+    "submission_id": "CF71597527",
+    "submission_url": "https://codeforces.com/contest/807/submission/71597527",
+    "tags": [
+      "brute force",
+      "implementation",
+      "*1300"
+    ],
+    "timestamp": "Feb/22/2020 13:51"
+  },
   "CF71654865": {
     "contest_id": 1313,
     "language": "GNU C++17",
