@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF71932538": {
+    "contest_id": 33,
+    "language": "GNU C++17",
+    "path": "codeforces\\33\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "String Problem",
+    "problem_url": "https://codeforces.com/contest/33/problem/B",
+    "submission_id": "CF71932538",
+    "submission_url": "https://codeforces.com/contest/33/submission/71932538",
+    "tags": [
+      "shortest paths",
+      "*1800"
+    ],
+    "timestamp": "Feb/26/2020 23:42"
+  },
   "CF71933240": {
     "contest_id": 25,
     "language": "GNU C++17",
