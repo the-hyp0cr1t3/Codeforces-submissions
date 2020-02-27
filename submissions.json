@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF72002687": {
+    "contest_id": 1189,
+    "language": "GNU C++17",
+    "path": "codeforces\\1189\\D2.cpp",
+    "problem_index": "D2",
+    "problem_name": "Add on a Tree: Revolution",
+    "problem_url": "https://codeforces.com/contest/1189/problem/D2",
+    "submission_id": "CF72002687",
+    "submission_url": "https://codeforces.com/contest/1189/submission/72002687",
+    "tags": [
+      "dfs and similar",
+      "implementation",
+      "trees",
+      "*2500"
+    ],
+    "timestamp": "Feb/28/2020 02:20"
+  },
   "CF72024721": {
     "contest_id": 1186,
     "language": "GNU C++17",
