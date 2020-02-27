@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF72001561": {
+    "contest_id": 1189,
+    "language": "GNU C++17",
+    "path": "codeforces\\1189\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Count Pairs",
+    "problem_url": "https://codeforces.com/contest/1189/problem/E",
+    "submission_id": "CF72001561",
+    "submission_url": "https://codeforces.com/contest/1189/submission/72001561",
+    "tags": [
+      "number theory",
+      "*2300"
+    ],
+    "timestamp": "Feb/28/2020 01:52"
+  },
   "CF72002687": {
     "contest_id": 1189,
     "language": "GNU C++17",
