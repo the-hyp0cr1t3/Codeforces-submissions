@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF72399484": {
+    "contest_id": 1305,
+    "language": "GNU C++17",
+    "path": "codeforces\\1305\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Kuroni and the Score Distribution",
+    "problem_url": "https://codeforces.com/contest/1305/problem/E",
+    "submission_id": "CF72399484",
+    "submission_url": "https://codeforces.com/contest/1305/submission/72399484",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "implementation",
+      "math",
+      "*2200"
+    ],
+    "timestamp": "Mar/04/2020 14:21"
+  },
   "CF72422385": {
     "contest_id": 1316,
     "language": "GNU C++17",
