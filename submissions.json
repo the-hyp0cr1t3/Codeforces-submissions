@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF72955716": {
+    "contest_id": 1185,
+    "language": "GNU C++17",
+    "path": "codeforces\\1185\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Ropewalkers",
+    "problem_url": "https://codeforces.com/contest/1185/problem/A",
+    "submission_id": "CF72955716",
+    "submission_url": "https://codeforces.com/contest/1185/submission/72955716",
+    "tags": [
+      "math",
+      "*800"
+    ],
+    "timestamp": "Mar/11/2020 18:34"
+  },
   "CF72957357": {
     "contest_id": 1185,
     "language": "GNU C++17",
