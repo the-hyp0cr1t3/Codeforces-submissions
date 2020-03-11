@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF72960682": {
+    "contest_id": 1185,
+    "language": "GNU C++17",
+    "path": "codeforces\\1185\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Extra Element",
+    "problem_url": "https://codeforces.com/contest/1185/problem/D",
+    "submission_id": "CF72960682",
+    "submission_url": "https://codeforces.com/contest/1185/submission/72960682",
+    "tags": [
+      "implementation",
+      "math",
+      "*1700"
+    ],
+    "timestamp": "Mar/11/2020 19:43"
+  },
   "CF72963326": {
     "contest_id": 1185,
     "language": "GNU C++17",
