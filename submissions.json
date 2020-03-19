@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF73644893": {
+    "contest_id": 1195,
+    "language": "GNU C++17",
+    "path": "codeforces\\1195\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Basketball Exercise",
+    "problem_url": "https://codeforces.com/contest/1195/problem/C",
+    "submission_id": "CF73644893",
+    "submission_url": "https://codeforces.com/contest/1195/submission/73644893",
+    "tags": [
+      "dp",
+      "*1400"
+    ],
+    "timestamp": "Mar/19/2020 16:13"
+  },
   "CF73666473": {
     "contest_id": 1326,
     "language": "GNU C++17",
