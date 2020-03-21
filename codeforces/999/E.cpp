@@ -92,10 +92,11 @@ using namespace output;
 using namespace output::trace;
 using ll = long long;
 using pii = pair<int, int>;
-const int N = 2e5 + 5;
-int n, m, s, sccount = 0, indeg[N];
-vector<int> g[N], rg[N], comp;
-vector<bool> vis;
+const int N = 5e3 + 5;
+
+int n, m, s, id = 1, sccount = 0, indeg[N];
+vector<int> g[N], ids, low;
+vector<bool> onstack;
 stack<int> st;
 
 void makeG() {
@@ -104,34 +105,32 @@ void makeG() {
         re(u, v);
         u--, v--;
         g[u].pb(v);
-        rg[v].pb(u);
     }
-    vis.rsz(n);
-    comp.rsz(n);
+    ids.rsz(n);
+    low.rsz(n);
+    onstack.rsz(n);
 }
 
-void dfs1(int v) {
-    vis[v] = 1;
-    for (auto x: g[v]) 
-        if (!vis[x]) dfs1(x);
+// Tarjan's SCC
+void dfs(int v) {
+    ids[v] = low[v] = id++;
+    onstack[v] = 1;
     st.push(v);
-}
-
-void dfs2(int v, int k) {
-    comp[v] = k;
-    for (auto& x: rg[v]) 
-        if(!comp[x]) dfs2(x, k);
-}
-
-// Kosaraju's SCC
-void scc() {
-    int i;
-    for(i = 0; i < n; i++) 
-        if(!vis[i]) dfs1(i);
-    while(!st.empty()) {
+    for (auto& x: g[v]) {
+        if(!ids[x]) 
+            dfs(x), chmin(low[v], low[x]);
+        if(onstack[x]) 
+            chmin(low[v], low[x]);
+    }
+    if(low[v] == ids[v]) {
+        while(!st.empty() and st.top() != v) {
+            int x = st.top();
+            onstack[x] = 0;
+            st.pop();
+        }
+        onstack[v] = 0;
+        st.pop();
         sccount++;
-        dfs2(st.top(), sccount);
-        while(!st.empty() and comp[st.top()]) st.pop();
     }
 }
 
@@ -140,14 +139,22 @@ int32_t main() {
     int i, ans = 0;
     re(n, m, s);
     s--;
+    if(n == 1) return ps(0), 0;
     makeG();
-    scc();
-    for(i = 0; i < n; i++)
+    for(i = 0; i < n; i++) 
+        if(!ids[i]) dfs(i);
+    for(i = 0; i < n; i++) {
         for (auto& x: g[i]) 
-            if(comp[i] != comp[x])
-                indeg[comp[x]]++;
-    for(i = 1; i <= sccount; i++) 
-        if(i != comp[s] and !indeg[i]) ans++;
+            if(low[i] != low[x])
+                indeg[low[x]]++;
+    }
+    set<int> ss(all(low));
+    ss.erase(low[s]);
+    // tran(low, n);
+    // tran(indeg, n+1);
+    // tr(ss);
+    for (auto& x: ss)
+        if(!indeg[x]) ans++;
     ps(ans);
     return 0;
 }
