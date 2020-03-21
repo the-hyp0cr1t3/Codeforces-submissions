@@ -1,160 +1,108 @@
 #include <bits/stdc++.h>
-#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#define e "\n"
-#define endl "\n"
 using namespace std;
-#define Tp template<class T>
-#define Tp2 template<class T1, class T2>
-#define Tps template<class T, class... Ts>
-#define Tps2 template<class T1, class T2, class... Ts>
-#define ff first
-#define ss second
-#define rev(Aa) reverse(Aa.begin(),Aa.end())
-#define all(Aa) Aa.begin(),Aa.end()
-#define rall(Aa) Aa.rbegin(),Aa.rend()
-#define lb lower_bound
-#define ub upper_bound
-#define rsz resize
-#define ins insert
-#define mp make_pair
-#define pb emplace_back
-#define pf push_front
-#define popb pop_back
-#define popf pop_front
-#define sz(Xx) (int)(Xx).size()
-#define MOD 1000000007  //1e9 + 7
-#define INF 2000000000 //2e9
-#define DESPACITO 1000000000000000000 //1e18
-//mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-namespace minmax {
-    Tp T max (T&& A) { return A; }
-    Tp T min (T&& A) { return A; }
-    Tp T max (T&& A, T&& B) { return A>B?A:B; }
-    Tp T min (T&& A, T&& B) { return A<B?A:B; }
-    Tps T max (T&& A, Ts&&... ts) { T B = max(ts...); return A>B?A:B; }
-    Tps T min (T&& A, Ts&&... ts) { T B = min(ts...); return A<B?A:B; }
-    Tps T chmax(T&& A, Ts&&... ts) { A = max(A, ts...); return A; }
-    Tps T chmin(T&& A, Ts&&... ts) { A = min(A, ts...); return A; }
+ 
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define endl "\n"
+#define int long long
+ 
+const int N=5005;
+ 
+int n, m, s, ans=0, grp=0; //grp stores the number of SCCs
+vector<int> g[N], newg[N], rg[N], todo;
+int comp[N], indeg[N]; 
+bool vis[N];
+vector<int> gr[N];
+ 
+void dfs(int k)
+{
+    vis[k]=1;
+    for(auto it:g[k])
+    {
+        if(!vis[it])
+            dfs(it);
+    }
+    todo.push_back(k);
 }
-namespace input { 
-    Tp void re(T&& Xx) { cin >> Xx; }
-    Tp2 void re(pair<T1,T2>& Pp) { re(Pp.first); re(Pp.second); }
-    Tp void re(vector<T>& Aa) { for(int i = 0; i < sz(Aa); i++) re(Aa[i]); }
-    Tp2 void rea(T1&& Aa, T2 t) { for(int i = 0; i < t; i++) re(Aa[i]); }
-    Tps2 void rea(T1&& Aa, T2 t, Ts&&... ts) { rea(Aa, t); rea(ts...); }
-    Tp2 void rea1(T1&& Aa, T2 t) { for(int i = 1; i <= t; i++) re(Aa[i]); }
-    Tps2 void rea1(T1&& Aa, T2 t, Ts&... ts) { rea1(Aa, t); rea1(ts...); }
-    Tps void re(T&& t, Ts&... ts) { re(t); re(ts...); }
-}
-namespace output {
-    void pr(int Xx) { cout << Xx; }
-    // void pr(num Xx) { cout << Xx; }
-    void pr(bool Xx) { cout << Xx; }
-    void pr(long long Xx) { cout << Xx; }
-    void pr(long long unsigned Xx) { cout << Xx; }
-    void pr(double Xx) { cout << Xx; }
-    void pr(char Xx) { cout << Xx; }
-    void pr(const string& Xx) { cout << Xx; }
-    void pr(const char* Xx) { cout << Xx; }
-    void pr(const char* Xx, size_t len) { cout << string(Xx, len); }
-    void ps() { cout << endl; }
-    void pn() { /*do nothing*/ }
-    void pw() { pr(" "); }
-    void pc() { pr("]"); ps(); }
-    Tp2 void pr(const pair<T1,T2>& Xx) { pr(Xx.first); pw(); pr(Xx.second);}
-    Tp void pr(const T&);
-    bool parse(const char* t) { if(t == e) return true; return false;}
-    Tp bool parse(T&& t) { return false;}
-    Tp2 bool parsepair(const pair<T1,T2>& Xx) { return true; }
-    Tp bool parsepair(T&& t) { return false;}
-    Tp2 void psa(T1&& Aa, T2 t) { for(int i = 0; i < t; i++) pr(Aa[i]), pw(); ps(); }
-    Tp2 void pna(T1&& Aa, T2 t) { for(int i = 0; i < t; i++) pr(Aa[i]), ps(); }
-    Tp2 void psa2(T1&& Aa, T2 t1, T2 t2) { for(int i = 0; i < t1; i++) {for(int j = 0; j < t2; j++) pr(Aa[i][j]), pw(); ps();} }
-    Tp void pr(const T& Xx) { bool fst = 1; bool op = 0; if (parsepair(*Xx.begin())) op = 1; for (const auto& Aa: Xx) {if(!fst) pw(); if(op) pr("{"); pr(Aa), fst = 0; if(op) pr("}"); } }
-    Tps void pr(const T& t, const Ts&... ts) { pr(t); pr(ts...); }
-    Tps void ps(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) {if (!parse(t)) pw(); } ps(ts...); }
-    Tp void pn(const T& t) { for (const auto& Aa: t) ps(Aa); }
-    Tps void pw(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) pw(); pw(ts...); }
-    Tps void pc(const T& t, const Ts&... ts) { bool op = 0; if (parsepair(t)) op = 1; if(op) pr("{"); pr(t); if(op) pr("}"); if (sizeof...(ts)) pr(", "); pc(ts...); }
-    namespace trace {
-        #define tr(Xx...) pr("[",#Xx,"] = ["), pc(Xx);
-        #define tra(Xx, y...) __f0(#Xx, Xx, y)
-        #define tran(Xx, n) __fn(n, #Xx, Xx) // TO DO~ variadic multidimensional
-        Tp2 void __f(const char* name, const T1& Xx, const T2& y){ pr("[",y,"] = "); ps(Xx); }
-        Tps2 void __f(const char* name, const T1& Xx, const T2& y, const Ts&... rest){ const char *open = strchr(name, '['); pr("[",y,"]"); __f(open+1, Xx, rest...); }
-        Tps2 void __f0(const char* name, const T1& Xx, const T2& y, const Ts&... rest){ const char *open = strchr(name, '['); pr(name, size_t(open-name)); __f(name, Xx, y, rest...); }
-        Tp void __fn(int n, const char* name, const T& Xx) { for(int i = 0; i < n; i++) pr(name), __f(name, Xx[i], i); }
+ 
+void dfs2(int k, int val)
+{
+    comp[k]=val;
+    for(auto it:rg[k])
+    {
+        if(comp[it]==-1)
+            dfs2(it, val);
     }
 }
-using namespace minmax;
-using namespace input;
-using namespace output;
-using namespace output::trace;
-using ll = long long;
-using pii = pair<int, int>;
-const int N = 5e3 + 5;
-
-int n, m, s, id = 1, sccount = 0, indeg[N];
-vector<int> g[N], ids, low;
-vector<bool> onstack;
-stack<int> st;
-
-void makeG() {
-    for(int i = 0; i < m; i++) {
-        int u, v;
-        re(u, v);
-        u--, v--;
-        g[u].pb(v);
-    }
-    ids.rsz(n);
-    low.rsz(n);
-    onstack.rsz(n);
+ 
+void sccAddEdge(int from, int to)
+{
+    g[from].push_back(to);
+    rg[to].push_back(from);
 }
-
-// Tarjan's SCC
-void dfs(int v) {
-    ids[v] = low[v] = id++;
-    onstack[v] = 1;
-    st.push(v);
-    for (auto& x: g[v]) {
-        if(!ids[x]) 
-            dfs(x), chmin(low[v], low[x]);
-        if(onstack[x]) 
-            chmin(low[v], low[x]);
+ 
+void scc()
+{
+    for(int i=1;i<=n;i++)
+        comp[i]=-1;
+ 
+    for(int i=1;i<=n;i++)
+    {
+        if(!vis[i])
+            dfs(i);
     }
-    if(low[v] == ids[v]) {
-        while(!st.empty() and st.top() != v) {
-            int x = st.top();
-            onstack[x] = 0;
-            st.pop();
+ 
+    reverse(todo.begin(), todo.end());
+ 
+    for(auto it:todo)
+    {
+        if(comp[it]==-1)
+        {
+            dfs2(it, ++grp);
         }
-        onstack[v] = 0;
-        st.pop();
-        sccount++;
     }
 }
-
-int32_t main() {
+ 
+void newdfs(int k)
+{
+    if(vis[k])
+        return;
+    vis[k]=1;
+    for(auto it:newg[k])
+        newdfs(it);
+}
+ 
+int32_t main()
+{
     IOS;
-    int i, ans = 0;
-    re(n, m, s);
-    s--;
-    if(n == 1) return ps(0), 0;
-    makeG();
-    for(i = 0; i < n; i++) 
-        if(!ids[i]) dfs(i);
-    for(i = 0; i < n; i++) {
-        for (auto& x: g[i]) 
-            if(low[i] != low[x])
-                indeg[low[x]]++;
+    cin>>n>>m>>s;
+    for(int i=1;i<=m;i++)
+    {
+        int u, v;
+        cin>>u>>v;
+        sccAddEdge(u, v);
     }
-    set<int> ss(all(low));
-    ss.erase(low[s]);
-    // tran(low, n);
-    // tran(indeg, n+1);
-    // tr(ss);
-    for (auto& x: ss)
-        if(!indeg[x]) ans++;
-    ps(ans);
-    return 0;
-}
+    scc();
+    for(int i=1;i<=n;i++)
+    {
+        for(auto it:g[i])
+        {
+            if(comp[i]!=comp[it])
+            {
+                newg[comp[i]].push_back(comp[it]);
+                indeg[comp[it]]++;
+            }
+        }
+    }
+    // memset(vis, 0, sizeof(vis));
+    // newdfs(comp[s]);
+    for(int i=1;i<=grp;i++)
+    {
+        if(/*!vis[i] &&*/i != comp[s] && !indeg[i])
+        {
+            ans++;
+            // newdfs(i);
+        }
+    }
+    cout<<ans;
+    return 0;   
+} 
