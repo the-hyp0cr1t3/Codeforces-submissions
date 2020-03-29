@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF74740799": {
+    "contest_id": 609,
+    "language": "GNU C++17",
+    "path": "codeforces\\609\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Minimum spanning tree for each edge",
+    "problem_url": "https://codeforces.com/contest/609/problem/E",
+    "submission_id": "CF74740799",
+    "submission_url": "https://codeforces.com/contest/609/submission/74740799",
+    "tags": [
+      "data structures",
+      "dfs and similar",
+      "dsu",
+      "graphs",
+      "trees",
+      "*2100"
+    ],
+    "timestamp": "Mar/29/2020 20:34"
+  },
   "CF74823073": {
     "contest_id": 1328,
     "language": "GNU C++17",
