@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF74858663": {
+    "contest_id": 1327,
+    "language": "GNU C++17",
+    "path": "codeforces\\1327\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Infinite Path",
+    "problem_url": "https://codeforces.com/contest/1327/problem/D",
+    "submission_id": "CF74858663",
+    "submission_url": "https://codeforces.com/contest/1327/submission/74858663",
+    "tags": [
+      "brute force",
+      "dfs and similar",
+      "graphs",
+      "math",
+      "number theory",
+      "*2200"
+    ],
+    "timestamp": "Mar/31/2020 00:00"
+  },
   "CF74930973": {
     "contest_id": 1332,
     "language": "GNU C++17",
