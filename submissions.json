@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF75428560": {
+    "contest_id": 1288,
+    "language": "GNU C++17",
+    "path": "codeforces\\1288\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Minimax Problem",
+    "problem_url": "https://codeforces.com/contest/1288/problem/D",
+    "submission_id": "CF75428560",
+    "submission_url": "https://codeforces.com/contest/1288/submission/75428560",
+    "tags": [
+      "binary search",
+      "bitmasks",
+      "dp",
+      "*2000"
+    ],
+    "timestamp": "Apr/04/2020 00:34"
+  },
   "CF75431076": {
     "contest_id": 1283,
     "language": "GNU C++17",
