@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF75576838": {
+    "contest_id": 545,
+    "language": "GNU C++17",
+    "path": "codeforces\\545\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Paths and Trees",
+    "problem_url": "https://codeforces.com/contest/545/problem/E",
+    "submission_id": "CF75576838",
+    "submission_url": "https://codeforces.com/contest/545/submission/75576838",
+    "tags": [
+      "graphs",
+      "greedy",
+      "shortest paths",
+      "*2000"
+    ],
+    "timestamp": "Apr/05/2020 19:41"
+  },
   "CF75592849": {
     "contest_id": 144,
     "language": "GNU C++17",
