@@ -91,14 +91,22 @@ namespace output {
         Tp void __fn(int n, const char* name, const T& Xx) { for(int i = 0; i < n; i++) pr(name), __f(name, Xx[i], i); }
     }
 }
-const int NN = 1e5 + 5;
+using namespace minmax;
+using namespace input;
+using namespace output;
+using namespace output::trace;
+//mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+const int N = 3e5 + 5;
+int n, m, k, Q, d[N], ans[N], p[N];
+vector<pii> g[N], queries[N];
+vector<pair<int, pii>> oldedges, edges;
+const int NN = 3e5 + 5;
 namespace DSU {
-    int nn, par[NN], size_[NN];
+    int nn, par[NN];
     void build (int Q) {
         nn = Q;
         for(int i = 0; i < nn; i++) {
             par[i] = i;
-            size_[i] = 1;
         }
     }
     int getpar(int x) {
@@ -112,27 +120,20 @@ namespace DSU {
         }
         return pp;
     }
-    bool merge(int x, int y) {
+    void merge(int x, int y, int w) {
         x = getpar(x);
         y = getpar(y);
-        if (x == y) return false;
-        if (size_[x] < size_[y]) swap(x, y);
-        par[y] = x, size_[x] += size_[y];
-        return true;
+        if (x == y) return;
+        if (sz(queries[x]) < sz(queries[y])) swap(x, y);
+        for(auto& u: queries[y]) {
+            if(getpar(u.ff) == x) ans[u.ss] = w;
+            else queries[x].pb(u);
+        }
+        queries[y].clear();
+        par[y] = x;
     }
 }
 using namespace DSU;
-using namespace minmax;
-using namespace input;
-using namespace output;
-using namespace output::trace;
-//mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-const int N = 3e5 + 5;
-const int LG = 20;
-int n, m, k, Q, d[N], p[N];
-int anc[LG][N], best[LG][N];
-vector<pii> g[N], tree[N];
-vector<pair<int, pii>> oldedges, edges;
 
 void makeG() {
     for(int i = 0; i < m; i++) {
@@ -164,40 +165,10 @@ void dijkstra() {
             }
         }
     }
+    for(i = 0; i < n; i++) 
+        assert(~p[i]);
 }
-
-void dfs(int v, int par) {
-    anc[0][v] = par;
-    for(int kk = 1; kk < LG; kk++) {
-        anc[kk][v] = ~anc[kk-1][v]? anc[kk-1][anc[kk-1][v]] : -1;
-        best[kk][v] = ~anc[kk-1][v]? max(best[kk-1][v], best[kk-1][anc[kk-1][v]]) : -1;
-    }
-    for (auto [x, w]: tree[v]) 
-        if(x^par)
-            d[x] = d[v]+1, best[0][x] = w, dfs(x, v);
-}
-
-int LCA(int u, int v) {
-    if(d[u] < d[v])
-        swap(u, v);
-    for(int i = LG-1; ~i; --i) 
-        if(d[u]-(1<<i) >= d[v])
-            u = anc[i][u];
-    if(u == v)
-        return u;
-    for(int i = LG-1; ~i; --i)
-        if(anc[i][u]^anc[i][v])
-            u = anc[i][u], v = anc[i][v];
-    return anc[0][u];
-}
-
-int getpath(int v, int lca) {
-    int diff = d[v] - d[lca], res = -1;
-    for(int i = LG-1; ~i; i--)
-        if(diff & (1<<i)) chmax(res, best[i][v]), v = anc[i][v];
-    return res;
-}
-
+ 
 int32_t main() {
     IOS;
     int i;
@@ -208,22 +179,16 @@ int32_t main() {
         if(p[ed.ff] != p[ed.ss]) 
             edges.pb(w + d[ed.ff] + d[ed.ss], mp(p[ed.ff], p[ed.ss]));
     sort(all(edges));
-    build(n);
-    for(auto& [w, ed]: edges) {
-        if(merge(ed.ff, ed.ss)) {
-            tree[ed.ss].pb(ed.ff, w);
-            tree[ed.ff].pb(ed.ss, w);
-        }
-    }
-    for(i = 0; i < n; i++) 
-        d[i] = 0;
-    memset(best, -1, sizeof(best));
-    dfs(0, -1);
     for(i = 0; i < Q; i++) {
         int u, v; re(u, v);
         --u; --v;
-        int lca = LCA(u, v);
-        ps(max(getpath(u, lca), getpath(v, lca)));
+        queries[u].pb(v, i);
+        queries[v].pb(u, i);
     }
+    build(n);
+    for(auto& [w, ed]: edges)
+        merge(ed.ff, ed.ss, w);
+    for(i = 0; i < Q; i++) 
+        ps(ans[i]);
     return 0;
 }
