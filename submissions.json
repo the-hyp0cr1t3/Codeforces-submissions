@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF76249274": {
+    "contest_id": 1253,
+    "language": "GNU C++17",
+    "path": "codeforces\\1253\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Antenna Coverage",
+    "problem_url": "https://codeforces.com/contest/1253/problem/E",
+    "submission_id": "CF76249274",
+    "submission_url": "https://codeforces.com/contest/1253/submission/76249274",
+    "tags": [
+      "data structures",
+      "dp",
+      "greedy",
+      "sortings",
+      "*2200"
+    ],
+    "timestamp": "Apr/11/2020 18:04"
+  },
   "CF76334705": {
     "contest_id": 1339,
     "language": "GNU C++14",
