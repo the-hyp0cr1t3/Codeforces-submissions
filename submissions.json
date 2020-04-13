@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF76634751": {
+    "contest_id": 1312,
+    "language": "GNU C++14",
+    "path": "codeforces\\1312\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Array Shrinking",
+    "problem_url": "https://codeforces.com/contest/1312/problem/E",
+    "submission_id": "CF76634751",
+    "submission_url": "https://codeforces.com/contest/1312/submission/76634751",
+    "tags": [
+      "dp",
+      "greedy",
+      "*2100"
+    ],
+    "timestamp": "Apr/14/2020 01:40"
+  },
   "CF76635767": {
     "contest_id": 1107,
     "language": "GNU C++14",
