@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF76797870": {
+    "contest_id": 1107,
+    "language": "GNU C++14",
+    "path": "codeforces\\1107\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Vasya and Binary String",
+    "problem_url": "https://codeforces.com/contest/1107/problem/E",
+    "submission_id": "CF76797870",
+    "submission_url": "https://codeforces.com/contest/1107/submission/76797870",
+    "tags": [
+      "dp",
+      "*2400"
+    ],
+    "timestamp": "Apr/15/2020 18:49"
+  },
   "CF76800514": {
     "contest_id": 1082,
     "language": "GNU C++14",
