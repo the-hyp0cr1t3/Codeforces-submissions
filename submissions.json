@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF77257238": {
+    "contest_id": 1267,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1267\\J.cpp",
+    "problem_index": "J",
+    "problem_name": "Just Arrange the Icons",
+    "problem_url": "https://codeforces.com/contest/1267/problem/J",
+    "submission_id": "CF77257238",
+    "submission_url": "https://codeforces.com/contest/1267/submission/77257238",
+    "tags": [
+      "greedy",
+      "implementation",
+      "math",
+      "*1800"
+    ],
+    "timestamp": "Apr/19/2020 14:29"
+  },
   "CF77263958": {
     "contest_id": 1244,
     "language": "GNU C++17 (64)",
