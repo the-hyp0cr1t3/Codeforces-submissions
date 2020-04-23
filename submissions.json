@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF77751462": {
+    "contest_id": 1231,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1231\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Middle-Out",
+    "problem_url": "https://codeforces.com/contest/1231/problem/E",
+    "submission_id": "CF77751462",
+    "submission_url": "https://codeforces.com/contest/1231/submission/77751462",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "strings",
+      "*2200"
+    ],
+    "timestamp": "Apr/23/2020 17:53"
+  },
   "CF77769157": {
     "contest_id": 1341,
     "language": "GNU C++17 (64)",
