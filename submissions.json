@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF78278613": {
+    "contest_id": 939,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\939\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Love Rescue",
+    "problem_url": "https://codeforces.com/contest/939/problem/D",
+    "submission_id": "CF78278613",
+    "submission_url": "https://codeforces.com/contest/939/submission/78278613",
+    "tags": [
+      "dfs and similar",
+      "dsu",
+      "graphs",
+      "greedy",
+      "strings",
+      "*1600"
+    ],
+    "timestamp": "Apr/27/2020 16:10"
+  },
   "CF78280580": {
     "contest_id": 875,
     "language": "GNU C++17 (64)",
