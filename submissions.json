@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF78288978": {
+    "contest_id": 131,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\131\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Subway",
+    "problem_url": "https://codeforces.com/contest/131/problem/D",
+    "submission_id": "CF78288978",
+    "submission_url": "https://codeforces.com/contest/131/submission/78288978",
+    "tags": [
+      "dfs and similar",
+      "graphs",
+      "*1600"
+    ],
+    "timestamp": "Apr/27/2020 17:53"
+  },
   "CF78324416": {
     "contest_id": 148,
     "language": "GNU C++17 (64)",
