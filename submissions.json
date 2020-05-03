@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF78882343": {
+    "contest_id": 319,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\319\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Psychos in a Line",
+    "problem_url": "https://codeforces.com/contest/319/problem/B",
+    "submission_id": "CF78882343",
+    "submission_url": "https://codeforces.com/contest/319/submission/78882343",
+    "tags": [
+      "data structures",
+      "implementation",
+      "*1900"
+    ],
+    "timestamp": "May/03/2020 16:16"
+  },
   "CF78908001": {
     "contest_id": 359,
     "language": "GNU C++17 (64)",
