@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF78876417": {
+    "contest_id": 297,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\297\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Fish Weight",
+    "problem_url": "https://codeforces.com/contest/297/problem/B",
+    "submission_id": "CF78876417",
+    "submission_url": "https://codeforces.com/contest/297/submission/78876417",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "*1600"
+    ],
+    "timestamp": "May/03/2020 15:10"
+  },
   "CF78882343": {
     "contest_id": 319,
     "language": "GNU C++17 (64)",
