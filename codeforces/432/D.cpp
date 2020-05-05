@@ -99,13 +99,18 @@ using namespace output::trace;
 const int N = 2e5 + 5;
 
 vector<int> generate_pi(string s) {
-    // pass s as (s + '#' + s)
-    int i, n = sz(s);
+    int i, j, n, m, cnt = 0;
+    n = sz(s);
     vector<int> pi(n);
-    for(i = 1; i < n; i++) {
-        int p = pi[i-1];
-        while(p and s[i] != s[p]) p = pi[p-1];
-        pi[i] = p + (s[i] == s[p]);
+    for(i = 1, j = 0; i < n; i++) {
+        if (s[i] == s[j])
+            pi[i] = pi[i-1] + 1, j++;
+        else {
+            while(j and s[i] != s[j])
+                j = pi[j-1];
+            if (s[i] == s[j]) j++;
+            pi[i] = j;
+        }
     }
     return pi;
 }
