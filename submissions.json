@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF79133108": {
+    "contest_id": 439,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\439\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Devu and his Brother",
+    "problem_url": "https://codeforces.com/contest/439/problem/D",
+    "submission_id": "CF79133108",
+    "submission_url": "https://codeforces.com/contest/439/submission/79133108",
+    "tags": [
+      "binary search",
+      "sortings",
+      "ternary search",
+      "two pointers",
+      "*1700"
+    ],
+    "timestamp": "May/06/2020 16:41"
+  },
   "CF79138703": {
     "contest_id": 446,
     "language": "GNU C++17 (64)",
