@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF79364121": {
+    "contest_id": 315,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\315\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Sereja and Bottles",
+    "problem_url": "https://codeforces.com/contest/315/problem/A",
+    "submission_id": "CF79364121",
+    "submission_url": "https://codeforces.com/contest/315/submission/79364121",
+    "tags": [
+      "brute force",
+      "*1400"
+    ],
+    "timestamp": "May/08/2020 15:08"
+  },
   "CF79369702": {
     "contest_id": 453,
     "language": "GNU C++17 (64)",
