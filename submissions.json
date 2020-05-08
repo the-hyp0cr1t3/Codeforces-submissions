@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF79383213": {
+    "contest_id": 1167,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1167\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Lost Numbers",
+    "problem_url": "https://codeforces.com/contest/1167/problem/B",
+    "submission_id": "CF79383213",
+    "submission_url": "https://codeforces.com/contest/1167/submission/79383213",
+    "tags": [
+      "brute force",
+      "divide and conquer",
+      "interactive",
+      "math",
+      "*1400"
+    ],
+    "timestamp": "May/08/2020 19:13"
+  },
   "CF79384357": {
     "contest_id": 264,
     "language": "GNU C++17 (64)",
