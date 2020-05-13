@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF79965040": {
+    "contest_id": 1345,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1345\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Quantifier Question",
+    "problem_url": "https://codeforces.com/contest/1345/problem/E",
+    "submission_id": "CF79965040",
+    "submission_url": "https://codeforces.com/contest/1345/submission/79965040",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "graphs",
+      "*2600"
+    ],
+    "timestamp": "May/13/2020 15:17"
+  },
   "CF79970338": {
     "contest_id": 461,
     "language": "GNU C++17 (64)",
