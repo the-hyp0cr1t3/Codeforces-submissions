@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF79970338": {
+    "contest_id": 461,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\461\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Appleman and Tree",
+    "problem_url": "https://codeforces.com/contest/461/problem/B",
+    "submission_id": "CF79970338",
+    "submission_url": "https://codeforces.com/contest/461/submission/79970338",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "trees",
+      "*2000"
+    ],
+    "timestamp": "May/13/2020 16:20"
+  },
   "CF79987200": {
     "contest_id": 228,
     "language": "GNU C++17 (64)",
