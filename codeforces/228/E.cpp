@@ -150,7 +150,7 @@ int32_t main() {
     scc();
     for(i = 0; i < 2*n; i+=2) {
         if(comp[i] == comp[i^1]) return ps("Impossible"), 0;
-        if(comp[i] < comp[i^1]) ans.pb(i/2+1);
+        if(comp[i] > comp[i^1]) ans.pb(i/2+1);
     }
     ps(sz(ans));
     for(auto& x: ans) 
