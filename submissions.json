@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF80054411": {
+    "contest_id": 476,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\476\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Dreamoon and Sets",
+    "problem_url": "https://codeforces.com/contest/476/problem/D",
+    "submission_id": "CF80054411",
+    "submission_url": "https://codeforces.com/contest/476/submission/80054411",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "math",
+      "*1900"
+    ],
+    "timestamp": "May/14/2020 15:11"
+  },
   "CF80082368": {
     "contest_id": 1353,
     "language": "GNU C++17 (64)",
