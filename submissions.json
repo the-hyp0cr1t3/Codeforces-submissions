@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF80222175": {
+    "contest_id": 1247,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1247\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Power Products",
+    "problem_url": "https://codeforces.com/contest/1247/problem/D",
+    "submission_id": "CF80222175",
+    "submission_url": "https://codeforces.com/contest/1247/submission/80222175",
+    "tags": [
+      "number theory",
+      "*1800"
+    ],
+    "timestamp": "May/15/2020 17:28"
+  },
   "CF80292913": {
     "contest_id": 802,
     "language": "GNU C++17 (64)",
