@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF80292931": {
+    "contest_id": 802,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\802\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Heidi and Library (medium)",
+    "problem_url": "https://codeforces.com/contest/802/problem/B",
+    "submission_id": "CF80292931",
+    "submission_url": "https://codeforces.com/contest/802/submission/80292931",
+    "tags": [
+      "data structures",
+      "greedy",
+      "*1800"
+    ],
+    "timestamp": "May/16/2020 13:37"
+  },
   "CF80300277": {
     "contest_id": 1223,
     "language": "GNU C++17 (64)",
