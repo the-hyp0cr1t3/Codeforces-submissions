@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF80300277": {
+    "contest_id": 1223,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1223\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Paint the Tree",
+    "problem_url": "https://codeforces.com/contest/1223/problem/E",
+    "submission_id": "CF80300277",
+    "submission_url": "https://codeforces.com/contest/1223/submission/80300277",
+    "tags": [
+      "dp",
+      "sortings",
+      "trees",
+      "*2100"
+    ],
+    "timestamp": "May/16/2020 15:08"
+  },
   "CF80311418": {
     "contest_id": 1355,
     "language": "GNU C++17 (64)",
