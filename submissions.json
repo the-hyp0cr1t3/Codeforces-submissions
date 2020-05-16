@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF80292913": {
+    "contest_id": 802,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\802\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Heidi and Library (easy)",
+    "problem_url": "https://codeforces.com/contest/802/problem/A",
+    "submission_id": "CF80292913",
+    "submission_url": "https://codeforces.com/contest/802/submission/80292913",
+    "tags": [
+      "greedy",
+      "*1800"
+    ],
+    "timestamp": "May/16/2020 13:36"
+  },
   "CF80292931": {
     "contest_id": 802,
     "language": "GNU C++17 (64)",
