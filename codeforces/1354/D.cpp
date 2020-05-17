@@ -96,117 +96,97 @@ using namespace input;
 using namespace output;
 using namespace output::trace;
 //mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-const int N = 1e6 + 5;
+const int N = 1e6+1;
+int tree[4*N];
+int arr[N];
+int n;
 
-struct Data {
-    int val;
-    Data() : val(0) {};
-};
-
-struct SegTree {
-    int N;
-    vector<Data> st;
-
-    void merge(Data &cur, Data &l, Data &r) {
-        cur.val = l.val + r.val;        // .
+void build(int i,int l,int r)
+{
+    if(l==r)
+    {
+        tree[i]=arr[l];
+        return;
     }
-
-    void build(int node, int L, int R) {
-        if(L == R)
-            return;
-        int M = (L+R)/2;
-        build(node*2, L, M);
-        build(node*2 + 1, M + 1, R);
-        merge(st[node], st[node*2], st[node*2+1]);
-    }
-
-    SegTree(int n) : N(n) {
-        st.rsz(4*n + 5);
-    }
-
-    Data Query(int node, int L, int R, int i, int j) {
-        if(i > R or j < L)
-            return Data();
-        if(i <= L and j >= R)
-            return st[node];
-        int M = (L + R)/2;
-        Data left = Query(node*2, L, M, i, j);
-        Data right = Query(node*2 + 1, M + 1, R, i, j);
-        Data cur;
-        merge(cur, left, right);
-        return cur;
-    } 
-
-    void Update(int node, int L, int R, int i, int j, int val) {
-        if(i > R or j < L)
-            return;
-        if(i <= L and j >= R) {
-            st[node].val++;
-            return;
+    int mid=(l+r)/2;
+    build(i*2,l,mid);
+    build(i*2+1,mid+1,r);
+    tree[i]= tree[i*2] + tree[i*2+1];
+}
+void check(int i,int l,int r)
+{
+    if(l==r)
+    {
+        if(tree[i]) {
+            ps(l);
+            exit(0);
         }
-        int M = (L + R)/2;
-        Update(node*2, L, M, i, j, val);
-        Update(node*2 + 1, M + 1, R, i, j, val);
-        merge(st[node], st[node*2], st[node*2 + 1]);
+        return;
     }
-
-    void Remove(int node, int L, int R, int k) {
-        if(L == R) {
-            st[node].val--;
-            return;
-        }
-        int M = (L + R)/2;
-        if(k <= st[node*2].val)
-            Remove(node*2, L, M, k);
-        else
-            Remove(node*2 + 1, M+1, R, k-st[node*2].val);
-        merge(st[node], st[node*2], st[node*2 + 1]);
+    int mid=(l+r)/2;
+    check(i*2,l,mid);
+    check(i*2+1,mid+1,r);
+}
+void update(int i,int l,int r,int l1,int r1)
+{
+    if(l1>r1 || l>r1 || l1>r)
+        return;
+    if(l1<=l && r<=r1)
+    {
+        tree[i]++;
+        return;
     }
-
-    int Retrieve(int node, int L, int R) {
-        if(L == R)
-            return st[node].val? L : 0;
-        int M = (L+R)/2;
-        return max(Retrieve(node*2, L, M), Retrieve(node*2 + 1, M + 1, R));
+    int mid=(l+r)/2;
+    update(i*2,l,mid,l1,r1);
+    update(i*2+1,mid+1,r,l1,r1);
+    tree[i]= tree[i*2] + tree[i*2+1];
+}
+void up_rem(int i,int l,int r,int l1,int r1, int k)
+{
+    if(l==r)
+    {
+        tree[i]--;
+        chmax(tree[i], 0);
+        return;
     }
+    int mid=(l+r)/2;
 
-    Data query(int pos) {
-        return Query(1, 1, N, pos, pos);
+    if(k <= tree[2*i]) {
+        up_rem(i*2,l,mid,l1,r1, k);
     }
-
-    Data query(int l, int r) {
-        return Query(1, 1, N, l, r);
+    else {
+        up_rem(i*2+1,mid+1,r,l1,r1, k-tree[2*i]);
     }
-
-    void update(int pos, int val) {
-        Update(1, 1, N, pos, pos, val);
-    }
-
-    void remove(int k) {
-        Remove(1, 1, N, k);
-    }
-
-    int retrieve() {
-        return Retrieve(1, 1, N);
-    }
-
-} st(N);
-
+    tree[i]= tree[i*2] + tree[i*2+1];
+}
+int query(int i,int l,int r,int l1,int r1)
+{
+    if(l1>r1 || l>r1 || l1>r)
+        return INF;
+    if(l1<=l && r<=r1)
+        return tree[i];
+    int mid=(l+r)/2;
+    return min(query(i*2,l,mid,l1,r1),query(i*2+1,mid+1,r,l1,r1));
+}
 int32_t main() {
     IOS;
-    int i, n, Q;
-    re(n, Q);
-    for(i = 0; i < n; i++) {
-        int a; re(a); 
-        st.update(a, 1);
+    int i, nn, Q; re(nn, Q);
+    for(i = 0; i < nn; i++) {
+        int a; re(a); arr[a]++;
     }
-    while(Q--) {
+    n = 1e6;
+    build(1, 1, n);
+    while (Q--) {
         int k; re(k);
-        if(k > 0)
-            st.update(k, 1);
-        else
-            st.remove(-k);
+        if(k > 0) {
+            update(1, 1, n, k, k);
+        }
+        else {
+            k = -k;
+            up_rem(1, 1, n, -1, -1, k);
+        }
     }
-    ps(st.retrieve());
+    check(1, 1, n);
+    ps(0);
     return 0;
 }
