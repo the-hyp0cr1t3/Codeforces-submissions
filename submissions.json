@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF80695096": {
+    "contest_id": 1108,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1108\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Diverse Garland",
+    "problem_url": "https://codeforces.com/contest/1108/problem/D",
+    "submission_id": "CF80695096",
+    "submission_url": "https://codeforces.com/contest/1108/submission/80695096",
+    "tags": [
+      "constructive algorithms",
+      "dp",
+      "greedy",
+      "*1400"
+    ],
+    "timestamp": "May/19/2020 19:31"
+  },
   "CF80699219": {
     "contest_id": 1108,
     "language": "GNU C++17 (64)",
