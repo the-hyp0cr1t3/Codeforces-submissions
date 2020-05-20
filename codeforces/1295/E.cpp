@@ -1,149 +1,204 @@
-/**
- 🍪 the_hyp0cr1t3
- 🍪 14.08.2020 04:53:07
-**/
 #include <bits/stdc++.h>
-// #define int long long
-#define k_II cin.tie(nullptr)->sync_with_stdio(false);
-#define W return 0;
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+#define int long long
+using namespace std;
+#define e "\n"
 #define endl "\n"
+#define Tp template<class T>
+#define Tp2 template<class T1, class T2>
+#define Tps template<class T, class... Ts>
+#define Tps2 template<class T1, class T2, class... Ts>
 #define ff first
 #define ss second
 #define rev(Aa) reverse(Aa.begin(),Aa.end())
 #define all(Aa) Aa.begin(),Aa.end()
+#define lb lower_bound
+#define ub upper_bound
+#define rsz resize
 #define ins insert
 #define mp make_pair
 #define pb emplace_back
+#define pf push_front
+#define popb pop_back
+#define popf pop_front
 #define sz(Xx) (int)(Xx).size()
-#define Lu(...) [&](auto&& u) { return __VA_ARGS__; }
-#define Luv(...) [&](auto&& u, auto&& v) { return __VA_ARGS__; }
-
-using namespace std;
-using ll = long long;
+typedef long long ll;
+typedef long double ld;
+typedef double db;
 using pii = pair<int, int>;
-constexpr int MOD = 1e9 + 7;
-constexpr int INF = 2e9;
-constexpr ll DESPACITO = 1e18;
-
-#ifdef LOCAL
-    constexpr bool loc = true;
-    #define tr(...) cout << "(" << __LINE__ << ")["#__VA_ARGS__"]: [", pr(__VA_ARGS__), cout << "]\n"
-    #define tra(arg, args...) ptrace(#arg, arg, args)
-#else
-    constexpr bool loc = false;
-    #define tr(...) "🍪"
-    #define tra(...) "🍪"
-#endif
-
-#define SFINAE(x, ...)  template <class, class = void> struct x : false_type {}; template <class T> struct x<T, void_t<__VA_ARGS__>> : true_type {};
-SFINAE(DefaultIO, decltype(cout << declval<T&>())) SFINAE(IsTuple, typename tuple_size<T>::type) SFINAE(Iterable, decltype(begin(declval<T>())))
-auto chmax = [](auto& A, auto&& B) { return B > A? A = B, true : false; };
-auto chmin = [](auto& A, auto&& B) { return B < A? A = B, true : false; };
-auto isLOC = [](auto A, string B = "") { return loc? A : B; };
-template<class T> void re(T& t) {
-    if constexpr(DefaultIO<T>::value) cin >> t;
-    else if constexpr(Iterable<T>::value) for(auto& x: t) re(x);
-    else if constexpr(IsTuple<T>::value) apply([&](auto&... args) { (re(args), ...); }, t);
-    else static_assert(DefaultIO<T>::value, "No read type");
+const int MOD = 1000000007;  //1e9 + 7
+const int INF = 2000000000;  //2e9
+const ll DESPACITO = 1000000000000000000;  //1e18
+namespace minmax {
+    Tp T max(T&& A) { return A; }
+    Tp T min(T&& A) { return A; }
+    Tp T max(T&& A, T&& B) { return A>B?A:B; }
+    Tp T chmin2(T&& A, T&& B) { return A<B?A:B; }
+    Tps T max(T&& A, Ts&&... ts) { T B = max(ts...); return A>B?A:B; }
+    Tps T min(T&& A, Ts&&... ts) { T B = min(ts...); return A<B?A:B; }
+    Tps T chmax(T&& A, Ts&&... ts) { A = max(A, ts...); return A; }
+    Tps T chmin(T&& A, Ts&&... ts) { A = min(A, ts...); return A; }
+    Tp2 void chmin2(T1&& A, T2&& Aa, T1&& B, T2&& Bb) { if(B < A) A = B, Aa = Bb; }
+    Tp2 void chmax2(T1&& A, T2&& Aa, T1&& B, T2&& Bb) { if(B > A) A = B, Aa = Bb; }
 }
-template<typename T> void re(T* beg, T* end) { for(T* it = beg; it != end; ++it) cin >> *it; }
-template<class... Ts> void re(Ts&... ts) { (re(ts), ...); }
-template<class T> constexpr void space(T) { if constexpr(DefaultIO<T>::value) cout << isLOC(", "," "); else cout << isLOC(",") << endl; }
-void pr() {}
-template<class T> void pr(const T& t) {
-    if constexpr(DefaultIO<T>::value) cout << t;
-    else if constexpr(Iterable<T>::value) { cout << isLOC("{"); bool fst = 1; 
-        for(auto&& x: t) { if(fst) fst = 0; else space(x); pr(x); } cout << isLOC("}"); }
-    else if constexpr(IsTuple<T>::value) { cout << isLOC("("); apply([&](const auto&... args) 
-        { bool fst = 1; ((fst ? (fst = 0, pr(args)) : (space(args), pr(args))), ...); }, t); cout << isLOC(")"); }
-    else static_assert(DefaultIO<T>::value, "No write type");
+namespace input { 
+    Tp void re(T&& Xx) { cin >> Xx; }
+    Tp2 void re(pair<T1,T2>& Pp) { re(Pp.first); re(Pp.second); }
+    Tp void re(vector<T>& Aa) { for(int i = 0; i < sz(Aa); i++) re(Aa[i]); }
+    Tp2 void rea(T1&& Aa, T2 t) { for(int i = 0; i < t; i++) re(Aa[i]); }
+    Tps2 void rea(T1&& Aa, T2 t, Ts&&... ts) { rea(Aa, t); rea(ts...); }
+    Tp2 void rea1(T1&& Aa, T2 t) { for(int i = 1; i <= t; i++) re(Aa[i]); }
+    Tps2 void rea1(T1&& Aa, T2 t, Ts&... ts) { rea1(Aa, t); rea1(ts...); }
+    Tps void re(T&& t, Ts&... ts) { re(t); re(ts...); }
 }
-template<typename T> void pr(T* beg, T* end) { cout << isLOC("{");
-for(T* it = beg; it != end; ++it) { if(it != beg) space(*it); pr(*it); } cout << isLOC("}"); }
-template<class T, class... Ts> void pr(const T& t, const Ts&... ts) { pr(t), ((space(ts), pr(ts)), ...); }
-template<class... Ts> void ps(Ts&&... ts) { pr(ts...); cout << endl; }
-template<class... Ts> void pw(Ts&&... ts) { pr(ts...); cout << ' '; }
-template<class T, class... Ts> void ptrace(const char* name, T&& A, Ts&&... rest) {
-    const char* open = strchr(name, '['); cout.write(name, open-name);
-    ((cout << '[' << rest << ']'), ...); cout << " = "; ps(A);
+namespace output {
+    void pr(int32_t Xx) { cout << Xx; }
+    // void pr(num Xx) { cout << Xx; }
+    void pr(bool Xx) { cout << Xx; }
+    void pr(long long Xx) { cout << Xx; }
+    void pr(long long unsigned Xx) { cout << Xx; }
+    void pr(double Xx) { cout << Xx; }
+    void pr(char Xx) { cout << Xx; }
+    void pr(const string& Xx) { cout << Xx; }
+    void pr(const char* Xx) { cout << Xx; }
+    void pr(const char* Xx, size_t len) { cout << string(Xx, len); }
+    void ps() { cout << endl; }
+    void pn() { /*do nothing*/ }
+    void pw() { pr(" "); }
+    void pc() { pr("]"); ps(); }
+    Tp2 void pr(const pair<T1,T2>& Xx) { pr(Xx.first); pw(); pr(Xx.second);}
+    Tp void pr(const T&);
+    bool parse(const char* t) { if(t == e) return true; return false;}
+    Tp bool parse(T&& t) { return false;}
+    Tp2 bool parsepair(const pair<T1,T2>& Xx) { return true; }
+    Tp bool parsepair(T&& t) { return false;}
+    Tp2 void psa(T1&& Aa, T2 t) { for(int i = 0; i < t; i++) pr(Aa[i]), pw(); ps(); }
+    Tp2 void pna(T1&& Aa, T2 t) { for(int i = 0; i < t; i++) pr(Aa[i]), ps(); }
+    Tp2 void psa2(T1&& Aa, T2 t1, T2 t2) { for(int i = 0; i < t1; i++) {for(int j = 0; j < t2; j++) pr(Aa[i][j]), pw(); ps();} }
+    Tp void pr(const T& Xx) { if(!sz(Xx)) return; bool fst = 1; bool op = 0; if (parsepair(*Xx.begin())) op = 1; for (const auto& Aa: Xx) {if(!fst) pw(); if(op) pr("{"); pr(Aa), fst = 0; if(op) pr("}"); } }
+    Tps void pr(const T& t, const Ts&... ts) { pr(t); pr(ts...); }
+    Tps void ps(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) {if (!parse(t)) pw(); } ps(ts...); }
+    Tp void pn(const T& t) { for (const auto& Aa: t) ps(Aa); }
+    Tps void pw(const T& t, const Ts&... ts) { pr(t); if (sizeof...(ts)) pw(); pw(ts...); }
+    Tps void pc(const T& t, const Ts&... ts) { bool op = 0; if (parsepair(t)) op = 1; if(op) pr("{"); pr(t); if(op) pr("}"); if (sizeof...(ts)) pr(", "); pc(ts...); }
+    namespace trace {
+        #define tr(Xx...) pr("[",#Xx,"] = ["), pc(Xx);
+        #define tra(Xx, y...) __f0(#Xx, Xx, y)
+        #define tran(Xx, n) __fn(n, #Xx, Xx) // TO DO~ variadic multidimensional
+        Tp2 void __f(const char* name, const T1& Xx, const T2& y){ pr("[",y,"] = "); ps(Xx); }
+        Tps2 void __f(const char* name, const T1& Xx, const T2& y, const Ts&... rest){ const char *open = strchr(name, '['); pr("[",y,"]"); __f(open+1, Xx, rest...); }
+        Tps2 void __f0(const char* name, const T1& Xx, const T2& y, const Ts&... rest){ const char *open = strchr(name, '['); pr(name, size_t(open-name)); __f(name, Xx, y, rest...); }
+        Tp void __fn(int n, const char* name, const T& Xx) { for(int i = 0; i < n; i++) pr(name), __f(name, Xx[i], i); }
+    }
 }
-
+using namespace minmax;
+using namespace input;
+using namespace output;
+using namespace output::trace;
+//mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 const int N = 2e5 + 5;
-int p[N], a[N]; ll b[N];
+int p[N], a[N], b[N];
+struct Data {
+    int val;
+    Data() : val(DESPACITO) {};        // .
+};
 
-template<class T, class U = int>
 struct SegTree {
-    int N; vector<T> st; vector<U> lazy; vector<bool> pending;
-    SegTree(int N): N(N), st(vector<T>(4*N+5)), 
-        lazy(vector<U>(4*N+5)), pending(vector<bool>(4*N+5)) {}
+    int N;
+    vector<Data> st;
+    vector<bool> cLazy;
+    vector<int> lazy;
+
+    void merge(Data &cur, Data &l, Data &r) {
+        cur.val = min(l.val, r.val);        // .
+    }
+
+    void lazymerge(Data &cur, int delta) {
+        cur.val += delta;      // .
+    }
 
     void build(int node, int L, int R) {
-        if(L == R) return st[node] <<= L;
-        int M = L+R>>1;
-        build(node*2, L, M); build(node*2+1, M+1, R);
-        st[node] = T(st[node*2], st[node*2+1]);
+        if(L == R) {
+            st[node].val = b[L];       // .
+            return;
+        }
+        int M = (L+R)/2;
+        build(node*2, L, M);
+        build(node*2 + 1, M + 1, R);
+        merge(st[node], st[node*2], st[node*2+1]);
+    }
+
+    SegTree(int n) : N(n) {
+        st.rsz(4*n + 5);
+        cLazy.assign(4*n + 5, false);
+        lazy.assign(4*n + 5, 0);
     }
     
-    void prop(int node, int L, int R) {
+    void propagate(int node, int L, int R) {
         if(L != R) {
-            pending[node*2] = pending[node*2+1] = true;
+            cLazy[node*2] = 1;
+            cLazy[node*2 + 1] = 1;
             lazy[node*2] += lazy[node];
-            lazy[node*2+1] += lazy[node]; 
+            lazy[node*2 + 1] += lazy[node]; 
         }
-        st[node] << lazy[node];
-        pending[node] = false;
-        lazy[node] = U();
+        lazymerge(st[node], lazy[node]);
+        cLazy[node] = 0;
+        lazy[node] = 0;
     }
 
-    T Query(int node, int L, int R, int i, int j) {
-        if(pending[node]) prop(node, L, R);
-        if(i > R or j < L) return T();
-        if(i <= L and j >= R) return st[node];
-        int M = L+R>>1;
-        return T(Query(node*2, L, M, i, j), Query(node*2+1, M+1, R, i, j));
-    }
+    Data Query(int node, int L, int R, int i, int j) {
+        if(cLazy[node])
+            propagate(node, L, R);
+        if(i > R or j < L)
+            return Data();
+        if(i <= L and j >= R)
+            return st[node];
+        int M = (L + R)/2;
+        Data left = Query(node*2, L, M, i, j);
+        Data right = Query(node*2 + 1, M + 1, R, i, j);
+        Data cur;
+        merge(cur, left, right);
+        return cur;
+    } 
 
     void Update(int node, int L, int R, int i, int j, int val) {
-        if(pending[node]) prop(node, L, R);
-        if(i > R or j < L) return;
-        if(i <= L and j >= R) return lazy[node] += val, prop(node, L, R);
-        int M = L+R>>1;
+        if(cLazy[node])
+            propagate(node, L, R);
+        if(i > R or j < L)
+            return;
+        if(i <= L and j >= R) {
+            cLazy[node] = 1;
+            lazy[node] = val;
+            propagate(node, L, R);
+            return;
+        }
+        int M = (L + R)/2;
         Update(node*2, L, M, i, j, val);
-        Update(node*2+1, M+1, R, i, j, val);
-        st[node] = T(st[node*2], st[node*2+1]);
+        Update(node*2 + 1, M + 1, R, i, j, val);
+        merge(st[node], st[node*2], st[node*2 + 1]);
     }
 
-    auto query() { return Query(1, 1, N, 1, N).val; }
-    void update(int pos, int val) { Update(1, 1, N, pos, pos, val); }
-    void update(int l, int r, int val) { Update(1, 1, N, l, r, val); }
-};
+    int query() {
+        return Query(1, 1, N, 1, N).val;
+    }
 
-struct Lazy {
-    ll val;
-    Lazy(ll val = 0): val(val) {}    
-    void operator+=(const int& rhs) { val += rhs; }
-    void operator+=(const Lazy& rhs) { val += rhs.val; }
-};
+    void update(int l, int r, int val) {
+        Update(1, 1, N, l, r, val);
+    }
 
-struct Node {
-    ll val;
-    Node(ll val = DESPACITO): val(val) {}    
-    Node(const Node& l, const Node& r): val(min(l.val, r.val)) {}
-    void operator<<=(int idx) { val = b[idx]; }
-    void operator<<(const Lazy& lzy) { val += lzy.val; }
 };
 
 int32_t main() {
-    k_II
-    int i, n; ll sum = 0, ans = DESPACITO;
-    re(n); re(p+1, p+n+1);
+    IOS;
+    int i, n, sum = 0, ans = DESPACITO;
+    re(n); rea1(p, n);
     for(i = 1; i <= n; i++)
         re(a[p[i]]);
     for(i = 1; i <= n+1; i++) {
         b[i] += sum;
         sum += a[i];
     }
-    SegTree<Node, Lazy> st(n+1);
+    SegTree st(n+1);
     st.build(1, 1, n+1);
     for(i = 1; i < n; i++) {
         st.update(1, p[i], a[p[i]]);
@@ -151,10 +206,5 @@ int32_t main() {
         chmin(ans, st.query());
     }
     ps(ans);
-    W
+    return 0;
 }
-
-/**
-    New levClsu nwn devill
-
-**/
