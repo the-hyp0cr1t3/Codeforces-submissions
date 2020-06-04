@@ -609,6 +609,27 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF82540131": {
+    "contest_id": 1362,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1362\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Johnny and Grandmaster",
+    "problem_url": "https://codeforces.com/contest/1362/problem/E",
+    "submission_id": "CF82540131",
+    "submission_url": "https://codeforces.com/contest/1362/submission/82540131",
+    "tags": [
+      "data structures",
+      "greedy",
+      "implementation",
+      "math",
+      "number theory",
+      "sortings",
+      "two pointers",
+      "*1900"
+    ],
+    "timestamp": "Jun/04/2020 21:35"
+  },
   "CF82875054": {
     "contest_id": 1213,
     "language": "GNU C++17 (64)",
