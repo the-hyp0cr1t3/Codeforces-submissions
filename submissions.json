@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF83243238": {
+    "contest_id": 110,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\110\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Lucky Tree",
+    "problem_url": "https://codeforces.com/contest/110/problem/E",
+    "submission_id": "CF83243238",
+    "submission_url": "https://codeforces.com/contest/110/submission/83243238",
+    "tags": [
+      "combinatorics",
+      "dfs and similar",
+      "trees",
+      "*1900"
+    ],
+    "timestamp": "Jun/09/2020 23:01"
+  },
   "CF83247214": {
     "contest_id": 1249,
     "language": "GNU C++17 (64)",
