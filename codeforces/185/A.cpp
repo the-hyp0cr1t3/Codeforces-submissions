@@ -170,8 +170,10 @@ int32_t main() {
     IOS;
     int i, n;
     re(n);
+    if(!n) return ps(1), 0;
     matrix<num> F{{3, 1}, {1, 3}};
-    ps(expo(F, n)[0][0]);
+    auto res = expo(F, n);
+    ps(res[0][0]);
     return 0;
 }
 
