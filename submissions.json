@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF85062813": {
+    "contest_id": 1373,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1373\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Sum of Digits",
+    "problem_url": "https://codeforces.com/contest/1373/problem/E",
+    "submission_id": "CF85062813",
+    "submission_url": "https://codeforces.com/contest/1373/submission/85062813",
+    "tags": [
+      "brute force",
+      "constructive algorithms",
+      "dp",
+      "greedy",
+      "*2200"
+    ],
+    "timestamp": "Jun/25/2020 23:30"
+  },
   "CF85138137": {
     "contest_id": 441,
     "language": "GNU C++17 (64)",
