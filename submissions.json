@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF85247040": {
+    "contest_id": 71,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\71\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Nuclear Fusion",
+    "problem_url": "https://codeforces.com/contest/71/problem/E",
+    "submission_id": "CF85247040",
+    "submission_url": "https://codeforces.com/contest/71/submission/85247040",
+    "tags": [
+      "bitmasks",
+      "dp",
+      "*2200"
+    ],
+    "timestamp": "Jun/28/2020 03:11"
+  },
   "CF85274494": {
     "contest_id": 1051,
     "language": "GNU C++17 (64)",
