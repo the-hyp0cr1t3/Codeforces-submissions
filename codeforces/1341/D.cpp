@@ -104,8 +104,18 @@ using namespace output::trace;
 const int N = 2000 + 5;
 const vector<string> dict{"1110111", "0010010", "1011101", "1011011", "0111010", "1101011", "1101111", "1010010", "1111111", "1111011"};
 // dp[i][k left] = dp[i+1][k-cnt]
-int cache[N][N], n, k, path[N][N], req[N][10];
+int cache[N][N], n, k, path[N][N];
 vector<string> a;
+
+auto req = [] (const string& s, const string& t) {
+    int res = 0;
+    for(int i = 0; i < sz(s); i++) {
+        if(s[i] == t[i]) continue;
+        if(t[i] == '0') return -1;
+        res++;
+    }
+    return res;
+};
 
 int dp(int idx, int left) {
     if(idx == n)
@@ -115,7 +125,7 @@ int dp(int idx, int left) {
         return ans;
     ans = -1;
     for(int i = 0; i < 10; i++) {
-        int cost = req[idx][i];
+        int cost = req(a[idx], dict[i]);
         if(cost == -1 or cost > left) continue;
         if(~dp(idx+1, left-cost)) ans = 1, path[idx][left] = i;
     }
@@ -126,30 +136,15 @@ string getpath(int idx, int left) {
     if(idx == n)
         return "";
     int d = path[idx][left];
-    int cost = req[idx][d];
+    int cost = req(a[idx], dict[d]);
     string ans = char(d+'0') + getpath(idx+1, left-cost);
     return ans;
 }
 
 int32_t main() {
     IOS;
-    int i, j;
+    int i;
     re(n, k); a.rsz(n); re(a);
-
-    auto calc = [] (const string& s, const string& t) {
-        int res = 0;
-        for(int i = 0; i < sz(s); i++) {
-            if(s[i] == t[i]) continue;
-            if(t[i] == '0') return -1;
-            res++;
-        }
-        return res;
-    };
-
-    for(i = 0; i < n; i++)
-        for(j = 0; j < 10; j++) 
-            req[i][j] = calc(a[i], dict[j]);
-
     if(dp(0, k) == -1)
         return ps(-1), 0;
     ps(getpath(0, k));
