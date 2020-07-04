@@ -63,14 +63,15 @@ int32_t main() {
     vector<int> v(k); re(v);
     sort(all(v));
 
-    ps(Y([&](auto self, int l, int r) -> int {
+    auto solve = Y([&](auto self, int l, int r) -> int {
         int cnt = upper_bound(all(v), r) - lower_bound(all(v), l);
         if(!cnt) return A;
         if(l == r) return B * cnt;
         int mid = l + r >> 1;
         return min(B * (r-l+1) * cnt, self(l, mid) + self(mid+1, r));
-    })(1, 1<<n));
+    });
 
+    ps(solve(1, 1<<n));
     return 0;
 }
 
