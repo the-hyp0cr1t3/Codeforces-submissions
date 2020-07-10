@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF86421663": {
+    "contest_id": 628,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\628\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Magic Numbers",
+    "problem_url": "https://codeforces.com/contest/628/problem/D",
+    "submission_id": "CF86421663",
+    "submission_url": "https://codeforces.com/contest/628/submission/86421663",
+    "tags": [
+      "dp",
+      "*2200"
+    ],
+    "timestamp": "Jul/10/2020 16:53"
+  },
   "CF86431997": {
     "contest_id": 78,
     "language": "GNU C++17",
