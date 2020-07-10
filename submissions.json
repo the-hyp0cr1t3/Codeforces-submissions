@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF86434674": {
+    "contest_id": 78,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\78\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Beaver Game",
+    "problem_url": "https://codeforces.com/contest/78/problem/C",
+    "submission_id": "CF86434674",
+    "submission_url": "https://codeforces.com/contest/78/submission/86434674",
+    "tags": [
+      "dp",
+      "games",
+      "number theory",
+      "*2000"
+    ],
+    "timestamp": "Jul/10/2020 19:45"
+  },
   "CF86452339": {
     "contest_id": 77,
     "language": "GNU C++17 (64)",
