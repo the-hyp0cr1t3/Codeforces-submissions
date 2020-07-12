@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF86689275": {
+    "contest_id": 1380,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1380\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Berserk And Fireball",
+    "problem_url": "https://codeforces.com/contest/1380/problem/D",
+    "submission_id": "CF86689275",
+    "submission_url": "https://codeforces.com/contest/1380/submission/86689275",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "implementation",
+      "math",
+      "two pointers",
+      "*2000"
+    ],
+    "timestamp": "Jul/12/2020 22:08"
+  },
   "CF86699066": {
     "contest_id": 1380,
     "language": "GNU C++17 (64)",
