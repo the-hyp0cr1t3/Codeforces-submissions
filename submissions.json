@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF86699066": {
+    "contest_id": 1380,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1380\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Merging Towers",
+    "problem_url": "https://codeforces.com/contest/1380/problem/E",
+    "submission_id": "CF86699066",
+    "submission_url": "https://codeforces.com/contest/1380/submission/86699066",
+    "tags": [
+      "data structures",
+      "dsu",
+      "implementation",
+      "trees",
+      "*2300"
+    ],
+    "timestamp": "Jul/12/2020 23:49"
+  },
   "CF86781400": {
     "contest_id": 180,
     "language": "GNU C++17 (64)",
