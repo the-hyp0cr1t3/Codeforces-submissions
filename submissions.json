@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF86781400": {
+    "contest_id": 180,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\180\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Letter",
+    "problem_url": "https://codeforces.com/contest/180/problem/C",
+    "submission_id": "CF86781400",
+    "submission_url": "https://codeforces.com/contest/180/submission/86781400",
+    "tags": [
+      "dp",
+      "*1400"
+    ],
+    "timestamp": "Jul/14/2020 01:39"
+  },
   "CF86781671": {
     "contest_id": 180,
     "language": "GNU C++17 (64)",
