@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF86936205": {
+    "contest_id": 574,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\574\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Bear and Three Musketeers",
+    "problem_url": "https://codeforces.com/contest/574/problem/B",
+    "submission_id": "CF86936205",
+    "submission_url": "https://codeforces.com/contest/574/submission/86936205",
+    "tags": [
+      "brute force",
+      "dfs and similar",
+      "graphs",
+      "hashing",
+      "*1500"
+    ],
+    "timestamp": "Jul/15/2020 23:31"
+  },
   "CF87289869": {
     "contest_id": 1379,
     "language": "GNU C++17 (64)",
