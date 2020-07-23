@@ -161,14 +161,15 @@ struct Matrix {
                 a[i][j] *= x;
         return *this;
     }
-    template<typename K>
-    Matrix operator^(K x) {
-        Matrix res(1), A = *this; while(x) {
-            if(x & 1) res = res * A;
-            x >>= 1; A = A * A;
-        } return res;
-    }
 };
+
+template<typename T>
+T expo(T A, ll B) {
+    T res{1}; while(B) {
+        if(B & 1) res = res * A;
+        B >>= 1; A = A * A;
+    } return res;
+}
 
 const int N = 2e5 + 5;
 
@@ -196,7 +197,7 @@ int32_t main() {
         if(!cnt[0]) F[0] = {1, 1, 0};
         if(!cnt[1]) F[1] = {1, 1, 1};
         if(!cnt[2]) F[2] = {0, 1, 1};
-        cur = (F ^ len) * cur;
+        cur = expo(F, len) * cur;
     }
     ps(cur[1][0]);
     return 0;
