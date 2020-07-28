@@ -67,13 +67,12 @@ public:
 template<class T> Y(T) -> Y<T>;
 
 const int N = 1e5 + 5;
-const int LG = 20;
-int d[N], anc[LG][N], dp[N], ans[N];
+int n, dp[N], ans[N];
 vector<pii> g[N];
 
 int32_t main() {
     Kuii
-    int i, n;
+    int i, j, k;
     re(n);
 
     for(i = 0; i < n-1; i++) {
@@ -82,35 +81,84 @@ int32_t main() {
         u--, v--;
         g[u].pb(v, i);
         g[v].pb(u, i);
-    }
+    }   
     
-    auto dfs1 = Y([&](auto self, int v, int p) -> void {
-        anc[0][v] = p;
-        for(int k = 1; k < LG; k++)
-            anc[k][v] = ~anc[k-1][v]? anc[k-1][anc[k-1][v]] : -1;
-        for(auto& [x, j]: g[v]) {
+    int len = 2*n-1;
+    vector<int> log2(len+1, -1);
+    for(i = 1; i <= len; i++) 
+        log2[i] = log2[i/2] + 1;
+    int b = max(1, log2[len]/2);
+    int cntb = (len+b-1)/b;
+    vector<int> tin(n), d(n), tree, bmask(cntb);
+    vector<vector<vector<int>>> best(1<<b-1);
+    vector<vector<int>> sparse(log2[cntb]+1, vector<int>(cntb));
+    tree.reserve(len);
+    
+    Y([&](auto dfs, int v, int p) -> void {
+        tin[v] = sz(tree);
+        tree.pb(v);
+        for(auto [x, z]: g[v]) { 
             if(x == p) continue;
-            d[x] = d[v]+1;
-            self(x, v);
-        }
-    });
-
-    dfs1(0, -1);
+            d[x] = d[v] + 1;
+            dfs(x, v);
+            tree.pb(v);
+        }    
+    })(0, -1);
     
-    auto LCA = [&] (int u, int v) {
-        if(d[u] < d[v])
-            swap(u, v);
-        for(int z = LG-1; ~z; --z) 
-            if(d[u]-(1<<z) >= d[v])
-                u = anc[z][u];
-        if(u == v)
-            return u;
-        for(int z = LG-1; ~z; --z)
-            if(anc[z][u]^anc[z][v])
-                u = anc[z][u], v = anc[z][v];
-        return anc[0][u];
+    auto lower = [&](int p, int q) {
+        return d[tree[p]] < d[tree[q]]? p : q;
     };
-    
+
+    for(i = 0; i < len; i++) {
+        int curb = i/b; j = i%b;
+        if(!j or lower(sparse[0][curb], i) == i)
+            sparse[0][curb] = i;
+        if(j and lower(i-1, i) == i-1)
+            bmask[curb] |= 1<<j-1;
+    }
+
+    for(k = 1; k <= log2[cntb]; k++) {
+        for(i = 0; i < cntb; i++) {
+            j = i + (1<<k-1);
+            sparse[k][i] = sparse[k-1][i];
+            if(j < cntb)
+                sparse[k][i] = lower(sparse[k-1][i], sparse[k-1][j]);
+        }
+    }
+
+    for(int curb = 0; curb < cntb; curb++) {
+        int mask = bmask[curb];
+        if(sz(best[mask])) continue;
+        best[mask].resize(b, vector<int>(b));
+        for(i = 0; i < b; i++) {
+            best[mask][i][i] = i;
+            for(j = i+1; j < b; j++) {
+                if(b*curb+j >= len) break;
+                best[mask][i][j] = lower(b*curb+best[mask][i][j-1], b*curb+j);
+                best[mask][i][j] -= b*curb;
+            }
+        }
+    }
+
+    auto geti = [&](int curb, int l, int r) {
+        return best[bmask[curb]][l][r] + b*curb;
+    };
+
+    auto LCA = [&](int u, int v) {
+        u = tin[u];
+        v = tin[v];
+        if(u > v) swap(u, v);
+        int bu = u/b, bv = v/b;
+        if(bu == bv)
+            return tree[geti(bu, u%b, v%b)];
+        int res = lower(geti(bu, u%b, b-1), geti(bv, 0, v%b));
+        if(bv-bu > 1) {
+            int z = log2[bv-bu-1];
+            res = lower(res, lower(sparse[z][bu+1], sparse[z][bv-(1<<z)]));
+        }
+        return tree[res];
+    };
+
     int Q; re(Q);
     while(Q--) {
         int u, v; re(u, v); u--; v--;
