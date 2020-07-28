@@ -69,102 +69,124 @@ template<class T> Y(T) -> Y<T>;
 const int N = 1e5 + 5;
 int n, dp[N], ans[N];
 vector<pii> g[N];
-int b, cntb;
-vector<int> tin, d, lg2, tree, bmask;
-vector<vector<int>> sparse;
-vector<vector<vector<int>>> best;
+int block_size, block_cnt;
+vector<int> first_visit;
+vector<int> euler_tour;
+vector<int> height;
+vector<int> log_2;
+vector<vector<int>> st;
+vector<vector<vector<int>>> blocks;
+vector<int> block_mask;
 
-void dfs(int v, int p) {
-    tin[v] = sz(tree);
-    tree.pb(v);
-    for(auto [x, z]: g[v]) { 
-        if(x == p) continue;
-        d[x] = d[v] + 1;
-        dfs(x, v);
-        tree.pb(v);
+void dfs(int v, int p, int h) {
+    first_visit[v] = euler_tour.size();
+    euler_tour.push_back(v);
+    height[v] = h;
+
+    for (auto [u, j] : g[v]) {
+        if (u == p)
+            continue;
+        dfs(u, v, h + 1);
+        euler_tour.push_back(v);
     }
 }
 
-int lower(int p, int q) {
-    return d[tree[p]] < d[tree[q]]? p : q;
+int min_by_h(int i, int j) {
+    return height[euler_tour[i]] < height[euler_tour[j]] ? i : j;
 }
 
-void build() {
-    int i, j, k, len = 2*n-1;
-    tin.assign(n, -1);
-    d.assign(n, 0);
-    tree.reserve(2*n);
-    dfs(0, -1);
-    assert(len == sz(tree));
-    len = sz(tree);
+void precompute_lca(int root) {
+    // get euler tour & indices of first occurences
+    first_visit.assign(n, -1);
+    height.assign(n, 0);
+    euler_tour.reserve(2 * n);
+    dfs(root, -1, 0);
 
-    lg2.reserve(len+1);
-    lg2.pb(-1);
-    for(i = 1; i <= len; i++) 
-        lg2.pb(lg2[i/2] + 1);
-    
-    b = max(1, lg2[len]/2);
-    cntb = (len+b-1)/b;
+    // precompute all log values
+    int m = euler_tour.size();
+    log_2.reserve(m + 1);
+    log_2.push_back(-1);
+    for (int i = 1; i <= m; i++)
+        log_2.push_back(log_2[i / 2] + 1);
 
+    block_size = max(1, log_2[m] / 2);
+    block_cnt = (m + block_size - 1) / block_size;
 
-    sparse.assign(cntb, vector<int>(lg2[cntb]+1));
-    bmask.assign(cntb, 0);
-    for(i = 0; i < len; i++) {
-        int curb = i/b; j = i%b;
-        if(!j or lower(sparse[curb][0], i) == i)
-            sparse[curb][0] = i;
-        if(j and lower(i-1, i) == i-1)
-            bmask[curb] |= 1<<(j-1);
+    // precompsadute minimum of each block and build sparse table
+    st.assign(block_cnt, vector<int>(log_2[block_cnt] + 1));
+    for (int i = 0, j = 0, b = 0; i < m; i++, j++) {
+        if (j == block_size)
+            j = 0, b++;
+        if (j == 0 || min_by_h(i, st[b][0]) == i)
+            st[b][0] = i;
     }
-
-    for(k = 1; k <= lg2[cntb]; k++) {
-        for(i = 0; i < cntb; i++) {
-            j = i + (1<<(k-1));
-            sparse[i][k] = sparse[i][k-1];
-            if(j < cntb)
-                sparse[i][k] = lower(sparse[i][k-1], sparse[j][k-1]);
+    for (int l = 1; l <= log_2[block_cnt]; l++) {
+        for (int i = 0; i < block_cnt; i++) {
+            int ni = i + (1 << (l - 1));
+            if (ni >= block_cnt)
+                st[i][l] = st[i][l-1];
+            else
+                st[i][l] = min_by_h(st[i][l-1], st[ni][l-1]);
         }
     }
 
-    best.resize(1<<(b-1));
-    for(int curb = 0; curb < cntb; curb++) {
-        int mask = bmask[curb];
-        if(!best[mask].empty()) continue;
-        best[mask].resize(b, vector<int>(b));
-        for(i = 0; i < b; i++) {
-            best[mask][i][i] = i;
-            for(j = i+1; j < b; j++) {
-                if(b*curb+j >= len) break;
-                best[mask][i][j] = lower(b*curb+best[mask][i][j-1], b*curb+j);
-                best[mask][i][j] -= b*curb;
+    // precompute mask for each block
+    block_mask.assign(block_cnt, 0);
+    for (int i = 0, j = 0, b = 0; i < m; i++, j++) {
+        if (j == block_size)
+            j = 0, b++;
+        if (j > 0 && (i >= m || min_by_h(i - 1, i) == i - 1))
+            block_mask[b] += 1 << (j - 1);
+    }
+
+    // precompute RMQ for each unique block
+    int possibilities = 1 << (block_size - 1);
+    blocks.resize(possibilities);
+    for (int b = 0; b < block_cnt; b++) {
+        int mask = block_mask[b];
+        if (!blocks[mask].empty())
+            continue;
+        blocks[mask].assign(block_size, vector<int>(block_size));
+        for (int l = 0; l < block_size; l++) {
+            blocks[mask][l][l] = l;
+            for (int r = l + 1; r < block_size; r++) {
+                blocks[mask][l][r] = blocks[mask][l][r - 1];
+                if (b * block_size + r < m)
+                    blocks[mask][l][r] = min_by_h(b * block_size + blocks[mask][l][r], 
+                            b * block_size + r) - b * block_size;
             }
         }
     }
-
 }
 
-int geti(int curb, int l, int r) {
-    return best[bmask[curb]][l][r] + b*curb;
+int lca_in_block(int b, int l, int r) {
+    return blocks[block_mask[b]][l][r] + b * block_size;
 }
 
-int LCA(int u, int v) {
-    u = tin[u];
-    v = tin[v];
-    if(u > v) swap(u, v);
-    int bu = u/b, bv = v/b;
-    if(bu == bv)
-        return tree[geti(bu, u%b, v%b)];
-    int res = lower(geti(bu, u%b, b-1), geti(bv, 0, v%b));
-    if(bv-bu > 1) {
-        int z = lg2[bv-bu-1];
-        res = lower(res, lower(sparse[bu+1][z], sparse[bv-(1<<z)][z]));
+int LCA(int v, int u) {
+    int l = first_visit[v];
+    int r = first_visit[u];
+    if (l > r)
+        swap(l, r);
+    int bl = l / block_size;
+    int br = r / block_size;
+    if (bl == br)
+        return euler_tour[lca_in_block(bl, l % block_size, r % block_size)];
+    int ans1 = lca_in_block(bl, l % block_size, block_size - 1);
+    int ans2 = lca_in_block(br, 0, r % block_size);
+    int ans = min_by_h(ans1, ans2);
+    if (bl + 1 < br) {
+        int l = log_2[br - bl - 1];
+        int ans3 = st[bl+1][l];
+        int ans4 = st[br - (1 << l)][l];
+        ans = min_by_h(ans, min_by_h(ans3, ans4));
     }
-    return tree[res];
+    return euler_tour[ans];
 }
 
 int32_t main() {
     Kuii
-    int i, j, k;
+    int i;
     re(n);
 
     for(i = 0; i < n-1; i++) {
@@ -173,9 +195,9 @@ int32_t main() {
         u--, v--;
         g[u].pb(v, i);
         g[v].pb(u, i);
-    }
-
-    build();
+    }   
+    
+    precompute_lca(0);
 
     int Q; re(Q);
     while(Q--) {
