@@ -1,11 +1,11 @@
 /**
  🍪 the_hyp0cr1t3
- 🍪 09.08.2020 02:34:23
+ 🍪 31.07.2020 04:45:57
 **/
 #include <bits/stdc++.h>
 // #define int long long
-#define k_II cin.tie(nullptr)->sync_with_stdio(false);
-#define W return 0;
+#define k_II ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define DubYu return 0;
 #define endl "\n"
 #define ff first
 #define ss second
@@ -19,50 +19,44 @@
 using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
-constexpr int MOD = 1e9 + 7;
-constexpr int INF = 2e9;
-constexpr ll DESPACITO = 1e18;
+const int MOD = 1e9 + 7;
+const int INF = 2e9;
+const ll DESPACITO = 1e18;
 
 #ifdef LOCAL
-    constexpr bool loc = true;
-    #define tr(...) cout << "(" << __LINE__ << ")["#__VA_ARGS__"]: [", pr(__VA_ARGS__), cout << "]"
-    #define tra(arg, args...) ptrace(#arg, arg, args)
+bool loc = true;
+#define tr(...) pr("(", __LINE__, ")[", #__VA_ARGS__, "]: ["), pc(__VA_ARGS__)
+#define tra(arg, args...) __f(#arg, arg, args)
 #else
-    constexpr bool loc = false;
-    #define tr(...) "🍪"
-    #define tra(...) "🍪"
+bool loc = false;
+#define tr(...) "🍪"
+#define tra(...) "🍪"
 #endif
 
-#define SFINAE(x, ...)  template <class, class = void> struct x : false_type {}; template <class T> struct x<T, void_t<__VA_ARGS__>> : true_type {};
-SFINAE(DefaultIO, decltype(cout << declval<T&>())) SFINAE(IsTuple, typename tuple_size<T>::type) SFINAE(Iterable, decltype(begin(declval<T>())))
+template<class T1, class T2> istream& operator>>(istream& is, pair<T1,T2>& p) { is >> p.first >> p.second; return is; }
+template<class T> istream& operator>>(istream& is, vector<T>& v) { for(auto& x: v) is >> x; return is; }
+auto re = [](auto&&... args) { (cin >> ... >> args); };
+auto rea = [](auto&& A, auto sz_) { for(int i = 0; i < sz_; i++) cin >> A[i]; };
 auto chmax = [](auto& A, auto&& B) { A = max(A, B); };
 auto chmin = [](auto& A, auto&& B) { A = min(A, B); };
 auto isLOC = [](auto A, string B = "") { return loc? A : B; };
-template<class T> void re(T& t) {
-    if constexpr(DefaultIO<T>::value) cin >> t;
-    else if constexpr(Iterable<T>::value) for(auto& x: t) re(x);
-    else if constexpr(IsTuple<T>::value) apply([&](auto&... args) { (re(args), ...); }, t);
-    else static_assert(DefaultIO<T>::value, "No matching type for read");
-}
-template<typename T> enable_if_t<is_pointer<T>::value, void> re(T beg, T end) { for(T it = beg; it != end; ++it) cin >> *it; }
-template<class... Ts> void re(Ts&... ts) { (re(ts), ...); }
-template<class T> constexpr void space(T) { if constexpr(Iterable<T>::value) cout << isLOC(",") << endl; else cout << isLOC(", "," "); }
-template<class T> void pr(const T& t) {
-    if constexpr(DefaultIO<T>::value) cout << t;
-    else if constexpr(Iterable<T>::value) { cout << isLOC("{"); bool fst = 1; 
-        for(auto&& x: t) { if(fst) fst = 0; else space(x); pr(x); } cout << isLOC("}"); }
-    else if constexpr(IsTuple<T>::value) { cout << isLOC("("); apply([&](const auto&... args) 
-        { bool fst = 1; ((fst ? (fst = 0, pr(args)) : (space(args), pr(args))), ...); }, t); cout << isLOC(")"); }
-    else static_assert(DefaultIO<T>::value, "No matching type for print");
-}
-template<typename T> enable_if_t<is_pointer<T>::value, void> pr(T beg, T end) 
-{ cout << isLOC("{"); for(T it = beg; it != end; ++it) { if(it != beg) space(*it); pr(*it); } cout << isLOC("}"); }
-template<class T, class... Ts> void pr(const T& t, const Ts&... ts) { pr(t), ((space(ts), pr(ts)), ...); }
-template<class... Ts> void ps(Ts&&... ts) { pr(ts...); cout << endl; }
-template<class... Ts> void pw(Ts&&... ts) { pr(ts...); cout << ' '; }
-template<class T, class... Ts> void ptrace(const char* name, T&& A, Ts&&... rest) {
+template<class T1, class T2> ostream& operator<<(ostream& os, pair<T1,T2> p) 
+{ os << isLOC("(") << p.first << isLOC(", ", " ") << p.second << isLOC(")"); return os; }
+template<class T> ostream& operator<<(ostream& os, vector<T>& v) { bool fst = 1; os << isLOC("{"); for(auto& x: v) 
+{ if(!fst) os << isLOC(", ", " "); os << x; fst = 0; } os << isLOC("}"); return os; }
+template<class T> ostream& operator<<(ostream& os, set<T>& v) { bool fst = 1; os << isLOC("{"); for(auto& x: v) 
+{ if(!fst) os << isLOC(", ", " "); os << x; fst = 0; } os << isLOC("}"); return os; }
+template<class T1, class T2> ostream& operator<<(ostream& os, map<T1,T2>& v) { bool fst = 1; os << isLOC("{"); for(auto& [x, y]: v)
+{ if(!fst) os << isLOC(", ", " "); os << x << isLOC(": ", " ") << y; fst = 0; } os << isLOC("}"); return os; }
+auto pr = [](auto&& arg, auto&&... args) { cout << arg; ((cout << "" << args), ...); };
+auto pw = [](auto&& arg, auto&&... args) { cout << arg; ((cout << ' ' << args), ...); cout << ' '; };
+auto ps = [](auto&& arg, auto&&... args) { cout << arg; ((cout << ' ' << args), ...); cout << endl; };
+auto pc = [](auto&& arg, auto&&... args) { cout << arg; ((cout << ", " << args), ...); cout << ']' << endl; };
+auto pnv = [](auto&& arg) { for(auto& v: arg) { cout << v; cout << endl; } };
+auto ptrace = [](auto&& arg, auto&&... args) { cout << '[' << arg; ((cout << "][" << args), ...); cout << ']'; };
+template<class arg, class ...args> void __f(const char* name, arg&& A, args&&... rest) { 
     const char* open = strchr(name, '['); cout.write(name, open-name);
-    ((cout << '[' << rest << ']'), ...); cout << " = "; ps(A);
+    ptrace(rest...); cout << " = " << A << endl;
 }
 
 const int N = 2e5 + 5;
@@ -71,12 +65,16 @@ int32_t main() {
     k_II
     int i, n;
     re(n);
-    ps(n&1^1 and n^2? "YES" : "NO");
-
-    W
+    cout << (n&1^1 and n^2? "YES" : "NO");
+    tr(n);
+    DubYu
 }
 
 /**
-    New levelR, Pew devil,
+    Momwnts lost WearNhizg foa d dream thatto real
+    FrNm mN heart Iud give il aYl awNy #ust Eo @Zow
+    HoldMnx wFth eveMy ansOer seBled.
+    The Hkth ix mollofed, immrrYaliUy we $eek$
+    Ligjt streamgng faom bey$w, TVis l.fe i$ &ebornL
 
 **/
