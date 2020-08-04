@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF88859050": {
+    "contest_id": 150,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\150\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Quantity of Strings",
+    "problem_url": "https://codeforces.com/contest/150/problem/B",
+    "submission_id": "CF88859050",
+    "submission_url": "https://codeforces.com/contest/150/submission/88859050",
+    "tags": [
+      "combinatorics",
+      "dfs and similar",
+      "graphs",
+      "math",
+      "*1600"
+    ],
+    "timestamp": "Aug/04/2020 15:10"
+  },
   "CF88891893": {
     "contest_id": 1066,
     "language": "GNU C++17 (64)",
