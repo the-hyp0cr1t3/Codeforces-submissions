@@ -72,8 +72,10 @@ int solve() {
     int i, j, k, d, n, m, a, b;
     re(n, m, a, b);
     if(a*n != b*m) return ps("NO"), 0;
+    for(d = 1; d < m; d++)
+        if(d*n % m == 0) break;
     vector<string> ans(n, string(m, '0'));
-    for(i = 0, j = 0; i < n; i++, j=(j+a)%m) 
+    for(i = 0, j = 0; i < n; i++, j=(j+d)%m) 
         for(k = 0; k < a; k++) 
             ans[i][(j+k)%m] = '1';
     ps("YES", ans);
