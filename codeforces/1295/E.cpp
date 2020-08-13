@@ -118,12 +118,19 @@ struct SegTree {
     void update(int l, int r, int val) { Update(1, 1, N, l, r, val); }
 };
 
+struct Lazy {
+    ll val;
+    Lazy(ll val = 0): val(val) {}    
+    void operator+=(const int& rhs) { val += rhs; }
+    void operator+=(const Lazy& rhs) { val += rhs.val; }
+};
+
 struct Node {
     ll val;
     Node(ll val = DESPACITO): val(val) {}    
     Node(const Node& l, const Node& r): val(min(l.val, r.val)) {}
     void operator<<=(int idx) { val = b[idx]; }
-    void operator<<(const ll& lzy) { val += lzy; }
+    void operator<<(const Lazy& lzy) { val += lzy.val; }
 };
 
 int32_t main() {
@@ -136,7 +143,7 @@ int32_t main() {
         b[i] += sum;
         sum += a[i];
     }
-    SegTree<Node, ll> st(n+1);
+    SegTree<Node, Lazy> st(n+1);
     st.build(1, 1, n+1);
     for(i = 1; i < n; i++) {
         st.update(1, p[i], a[p[i]]);
