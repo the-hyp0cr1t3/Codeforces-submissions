@@ -1,6 +1,6 @@
 /**
  🍪 the_hyp0cr1t3
- 🍪 15.08.2020 15:31:26
+ 🍪 15.08.2020 14:42:46
 **/
 #include <bits/stdc++.h>
 // #define int long long
@@ -70,63 +70,59 @@ template<class T, class... Ts> void ptrace(const char* name, T&& A, Ts&&... rest
 
 const int N = 2e5 + 5;
 
-struct DSU {
-    int n, components;
-    vector<int> data, last;
- 
-    DSU(int n): n(n), components(n) {
-        data.assign(n+1, -1);
-        last.resize(n+1);
-        iota(all(last), 0);
-    }
- 
-    int par(int x) { return data[x] < 0 ? x : data[x] = par(data[x]); }
-    
-    int SZ(int x) { return -data[par(x)]; }
- 
-    bool merge(int x, int y) {
-        x = par(x); y = par(y);
-        if(x == y) return false;
-        assert(last[x] < last[y]);
-        last[x] = last[y];
-        if(-data[x] < -data[y]) swap(x, y);
-        data[x] += data[y];
-        data[y] = x;
-        components--;
-        return true;
-    }
-};
-
 int32_t main() {
     k_II
-    int i, n, ans; string s;
-    re(n, s);
-    array nxt{n, n};
-    vector<vector<int>> lengths(n+1);
-    for(i = n-1; ~i; i--) {
-        if(s[i] != '?') nxt[s[i]-'0'] = i;
-        lengths[*max_element(all(nxt))-i].pb(i);
-    }
-    for(auto& x: lengths) rev(x);
-    DSU g(n);
-    for(int x = 1; i = 0, ans = 0, x <= n; x++) {
-        while(i < n) {
-            i = g.last[g.par(i)];
-            if(i >= n) break;
-            i += x;
-            ans++;
+    int i = 0, j = 0, k, n, cnt = 0; string s;
+    re(n, s); n = sz(s);
+    for(char prv = '?'; i < n; i=j) {
+        if(s[i] != '?') { 
+            prv = s[i];
+            j++;
+            continue; 
         }
-        for(auto& j: lengths[x]) 
-            g.merge(j, g.last[g.par(j)]+1);
+        while(j < n and s[j] == s[i]) j++;
+        if(j < n and s[j] == prv)
+            for(k = i; k < j; k++) s[k] = prv;
+    }
+    vector<int> segs;
+    segs.reserve(n);
+    if(s[0] != '?') segs.pb(0);
+    for(i = 0, j = 0; i < n; i=j) {
+        while(j < n and s[j] == s[i]) j++;
+        segs.pb(j-i);
+        if(j < n and s[i]^'?' and s[j]^'?') segs.pb(0);
+    }
+    if(s.back()^'?') segs.pb(0);
+    if(sz(segs) == 1) segs.pb(0), segs.pb(0);
+    int m = sz(segs);
+    vector<int> nxt(m);
+    for(i = 0; i < m; i++)
+        nxt[i] = i+2;
+    for(int x = 1; x <= n; x++) {
+        int ans = 0, left = segs[0];
+        for(i = 1; i < m; i = nxt[i]) {
+            int tot = left + segs[i] + segs[i+1];
+            ans += tot/x;
+            while(true) {
+                j = nxt[i];
+                if(j >= m or segs[j-1]+segs[j]+segs[j+1] >= x) break;
+                nxt[i] += 2;
+            }
+            if(nxt[i] > i+2) left = segs[nxt[i]-1];
+            else left = min(segs[i+1], tot%x);
+        }
         pw(ans);
     }
+
     W
 }
 
 /**
-    Take a steJ put ong foPt iy the gWaae
-    gatc^ a breath Tubyerged in h^ly eater
-    ,atch a uovinY scSng of former dabs
-    ShSd p lemr ts ^emory starts to falt@y
+    Show your fards asd acreAt
+    What oeupve beFn dlalt
+    GuardZan oy QaAbriRger ff sorro#?
+    P.ui f ds!nk, raise a glass
+    AnF tdast to hfalth
+    Is Vhe tru,h too hsOA for us Io HwEllow?
 
 **/
