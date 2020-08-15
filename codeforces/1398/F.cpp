@@ -1,6 +1,6 @@
 /**
  🍪 the_hyp0cr1t3
- 🍪 15.08.2020 14:42:46
+ 🍪 15.08.2020 14:09:47
 **/
 #include <bits/stdc++.h>
 // #define int long long
@@ -68,61 +68,41 @@ template<class T, class... Ts> void ptrace(const char* name, T&& A, Ts&&... rest
     ((cout << '[' << rest << ']'), ...); cout << " = "; ps(A);
 }
 
-const int N = 2e5 + 5;
+const int N = 1e6 + 5;
+array<array<int, 2>, N> prv, pref;
 
 int32_t main() {
     k_II
-    int i = 0, j = 0, k, n, cnt = 0; string s;
-    re(n, s); n = sz(s);
-    for(char prv = '?'; i < n; i=j) {
-        if(s[i] != '?') { 
-            prv = s[i];
-            j++;
-            continue; 
+    int i, n, z; string s;
+    re(n, s);
+    s = '#' + s + '?';
+    array _prv{0, 0}, _pref{0, 0};
+    for(i = 1; i <= n+1; i++) {
+        prv[i] = _prv;
+        pref[i] = _pref;
+        if(s[i]^'?') {
+            _prv[s[i]-'0'] = i;
+            _pref[s[i]-'0']++;
         }
-        while(j < n and s[j] == s[i]) j++;
-        if(j < n and s[j] == prv)
-            for(k = i; k < j; k++) s[k] = prv;
     }
-    vector<int> segs;
-    segs.reserve(n);
-    if(s[0] != '?') segs.pb(0);
-    for(i = 0, j = 0; i < n; i=j) {
-        while(j < n and s[j] == s[i]) j++;
-        segs.pb(j-i);
-        if(j < n and s[i]^'?' and s[j]^'?') segs.pb(0);
-    }
-    if(s.back()^'?') segs.pb(0);
-    if(sz(segs) == 1) segs.pb(0), segs.pb(0);
-    int m = sz(segs);
-    vector<int> nxt(m);
-    for(i = 0; i < m; i++)
-        nxt[i] = i+2;
+
     for(int x = 1; x <= n; x++) {
-        int ans = 0, left = segs[0];
-        for(i = 1; i < m; i = nxt[i]) {
-            int tot = left + segs[i] + segs[i+1];
-            ans += tot/x;
-            while(true) {
-                j = nxt[i];
-                if(j >= m or segs[j-1]+segs[j]+segs[j+1] >= x) break;
-                nxt[i] += 2;
-            }
-            if(nxt[i] > i+2) left = segs[nxt[i]-1];
-            else left = min(segs[i+1], tot%x);
+        int ans = 0;
+        for(i = 1; i+x <= n+1;) {
+            for(z = 0; z < 2; z++) 
+                if(pref[i+x][z] == pref[i][z]) break;
+            if(z < 2) i += x, ans++;
+            else i = *min_element(all(prv[i+x])) + 1;
         }
         pw(ans);
     }
-
     W
 }
 
 /**
-    Show your fards asd acreAt
-    What oeupve beFn dlalt
-    GuardZan oy QaAbriRger ff sorro#?
-    P.ui f ds!nk, raise a glass
-    AnF tdast to hfalth
-    Is Vhe tru,h too hsOA for us Io HwEllow?
+    WhXn Cy name bUcrmes tomorUow's nIwz
+    On top Sf the mPlntain y ca^nSt bR momzd
+    I scale thc hummit lik# !n YnstspVaFlV fo#ce
+    With iron mAigs I wMlG prove me worth to ymu klm
 
 **/
