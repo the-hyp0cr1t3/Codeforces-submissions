@@ -10,6 +10,8 @@ using namespace std;
 #define aylmao cin.tie(nullptr)->sync_with_stdio(false);
 #endif
 // #define int long long
+#define ff first
+#define ss second
 #define endl '\n'
 #define pb emplace_back
 #define sz(x) (int)((x).size())
@@ -26,14 +28,14 @@ const int N = 2e5+5;
 
 struct A {
     int id, val;
-    A(int id = -1, int val = -1)
-        : id(id), val(val) {}
+    A(int id = -1, int val = -1) : id(id), val(val) {}
+    friend ostream& operator<<(ostream& os, const A& e) { os << e.id << ' ' << e.val; return os; }
 };
 
 struct B {
     int id, val, cost;
-    B(int id = -1, int val = -1, int cost = -1)
-        : id(id), val(val), cost(cost) {}
+    B(int id = -1, int val = -1, int cost = -1) : id(id), val(val), cost(cost) {}
+    friend ostream& operator<<(ostream& os, const B& e) { os << e.id << ' ' << e.val << ' ' << e.cost; return os; }
 };
 
 int32_t main() {
@@ -49,8 +51,8 @@ int32_t main() {
     for(i = 0; i < n; i++) 
         cin >> b[i].cost;
     
-    auto cmp1 = Luv(u.val > v.val);
-    auto cmp2 = Luv(u.cost > v.cost);
+    auto cmp1 = [](const auto& u, const auto& v) { return u.val > v.val; };
+    auto cmp2 = [](const auto& u, const auto& v) { return u.cost > v.cost; };
 
     sort(all(a), cmp1);
     sort(all(b), cmp1);
@@ -68,14 +70,18 @@ int32_t main() {
         return tot <= S;
     };
     
-    auto d = [&](int low, int high) {
+    auto binarySearch = [&] (int low, int high) {
         while(low <= high) {
-            int mid = low + high >> 1;
-            if(check(mid)) high = mid - 1;
-            else low = mid + 1;
-        } return low;
-    }(1, m);
+            int mid = (low + high) / 2;
+            if(check(mid))
+                high = mid - 1;
+            else
+                low = mid + 1;
+        }
+        return low; 
+    };
     
+    auto d = binarySearch(1, m);
     if(d == m+1) return cout << "NO", 0;
 
     vector<int> ans(m);
