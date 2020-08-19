@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF90357892": {
+    "contest_id": 959,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\959\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Mahmoud and Ehab and another array construction task",
+    "problem_url": "https://codeforces.com/contest/959/problem/D",
+    "submission_id": "CF90357892",
+    "submission_url": "https://codeforces.com/contest/959/submission/90357892",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "math",
+      "number theory",
+      "*1900"
+    ],
+    "timestamp": "Aug/19/2020 10:27"
+  },
   "CF90358550": {
     "contest_id": 1392,
     "language": "GNU C++17 (64)",
