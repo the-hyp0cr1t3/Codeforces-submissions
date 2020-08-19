@@ -52,20 +52,20 @@ int32_t main() {
         cin >> b[i].cost;
     
     auto cmp1 = [](const auto& u, const auto& v) { return u.val > v.val; };
-    auto cmp2 = [](const auto& u, const auto& v) { return u.cost > v.cost; };
+    auto cmp2 = [](const auto& u, const auto& v) { return u.cost == v.cost? u.id < v.id : u.cost < v.cost; };
 
     sort(all(a), cmp1);
     sort(all(b), cmp1);
 
     auto check = [&] (int x) {
         ll tot = 0;
-        priority_queue<B, vector<B>, decltype(cmp2)>pq(cmp2);
+        set<B, decltype(cmp2)> s(cmp2);
         for(i = 0, j = 0; j < m; j+=x) {
             for(; i < n and b[i].val >= a[j].val; i++)
-                pq.push(b[i]);
-            if(pq.empty()) return false;
-            tot += pq.top().cost;
-            pq.pop();
+                s.insert(b[i]);
+            if(s.empty()) return false;
+            tot += s.begin()->cost;
+            s.erase(s.begin());
         }
         return tot <= S;
     };
@@ -85,13 +85,13 @@ int32_t main() {
     if(d == m+1) return cout << "NO", 0;
 
     vector<int> ans(m);
-    priority_queue<B, vector<B>, decltype(cmp2)>pq(cmp2);
+    set<B, decltype(cmp2)> s(cmp2);
     for(i = 0, j = 0; j < m; j+=d) {
         for(; i < n and b[i].val >= a[j].val; i++)
-            pq.push(b[i]);
+            s.insert(b[i]);
         for(k = 0; k < d and j+k < m; k++) 
-            ans[a[j+k].id] = pq.top().id+1;
-        pq.pop();
+            ans[a[j+k].id] = s.begin()->id+1;
+        s.erase(s.begin());
     }
 
     cout << "YES" << endl;
