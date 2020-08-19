@@ -32,14 +32,27 @@ int32_t main() {
 
     set<int> primes;
     vector<int> spf;
+    vector<bool> prime;
     [&](int maxn) {
-        spf.resize(maxn);
-        iota(all(spf), 0);
-        for(i = 2; i < maxn; i++) {
-            if(spf[i] == i) {
+        prime.assign(maxn, true);
+        spf.assign(maxn, 0);
+        prime[0] = prime[1] = false;
+        primes.insert(2);
+        spf[2] = 2;
+        for(i = 4; i < maxn; i+=2)
+            prime[i] = false, spf[i] = 2;
+        for(i = 3; i*i < maxn; i+=2) {
+            if(prime[i]) {
+                for(int j = i*i; j < maxn; j+=i*2) {
+                    if(prime[j]) 
+                        prime[j] = false, spf[j] = i;
+                }
+            }
+        }
+        for(i = 3; i < maxn; i+=2) {
+            if(prime[i]) {
                 primes.insert(i);
-                for(int j = 2*i; j < maxn; j+=i)    
-                    if(spf[j] == j) spf[j] = i;
+                spf[i] = i;
             }
         }
     }(N);
