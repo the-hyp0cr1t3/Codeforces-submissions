@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF90508636": {
+    "contest_id": 488,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\488\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Strip",
+    "problem_url": "https://codeforces.com/contest/488/problem/D",
+    "submission_id": "CF90508636",
+    "submission_url": "https://codeforces.com/contest/488/submission/90508636",
+    "tags": [
+      "data structures",
+      "dp",
+      "two pointers",
+      "*2000"
+    ],
+    "timestamp": "Aug/21/2020 12:22"
+  },
   "CF90524065": {
     "contest_id": 464,
     "language": "GNU C++17 (64)",
