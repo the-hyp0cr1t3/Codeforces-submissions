@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF90853799": {
+    "contest_id": 1029,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1029\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Concatenated Multiples",
+    "problem_url": "https://codeforces.com/contest/1029/problem/D",
+    "submission_id": "CF90853799",
+    "submission_url": "https://codeforces.com/contest/1029/submission/90853799",
+    "tags": [
+      "implementation",
+      "math",
+      "*1900"
+    ],
+    "timestamp": "Aug/25/2020 00:25"
+  },
   "CF90856441": {
     "contest_id": 1029,
     "language": "GNU C++17 (64)",
