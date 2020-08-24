@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF90856441": {
+    "contest_id": 1029,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1029\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Tree with Small Distances",
+    "problem_url": "https://codeforces.com/contest/1029/problem/E",
+    "submission_id": "CF90856441",
+    "submission_url": "https://codeforces.com/contest/1029/submission/90856441",
+    "tags": [
+      "dp",
+      "graphs",
+      "greedy",
+      "*2100"
+    ],
+    "timestamp": "Aug/25/2020 01:21"
+  },
   "CF90857459": {
     "contest_id": 1029,
     "language": "GNU C++17 (64)",
