@@ -7,10 +7,12 @@
 #else
 #include <bits/stdc++.h>
 using namespace std;
+#define tr(...) 
 #define aylmao cin.tie(nullptr)->sync_with_stdio(false);
 #endif
 #define endl '\n'
 #define pb emplace_back
+#define int int64_t
 #define sz(x) (int)((x).size())
 #define all(x) x.begin(), x.end()
 #define Luv(...) [&](auto&& u, auto&& v) { return __VA_ARGS__; }
@@ -32,7 +34,7 @@ public:
 }; template<class T> Y(T) -> Y<T>;
 
 const int N = 2e5+5;
-ll pref[N], a[N];
+int pref[N], a[N];
 
 int32_t main() {
     aylmao
@@ -40,24 +42,32 @@ int32_t main() {
     cin >> n;
     for(int i = 1; i <= n; i++) {
         cin >> a[i];
-        pref[i] = pref[i-1] + !!a[i];
+        pref[i] = pref[i-1];
+        pref[i] += !!a[i];
     }
 
     auto ans = Y([&](auto self, int l, int r, int removed) -> int64_t {
-        if(l > r) return 0ll;
-        if(l == r) return !!(a[l]-removed);
+        if(l > r) return int64_t(0);
+        if(l == r) return int64_t(1);
         auto mn = *min_element(a+l, a+r+1);
-        ll res = mn-removed;
-        for(int prv = l, j = l; min(prv, j) <= r; prv = ++j) {
+        int res = (mn-removed);
+        tr(res);
+        int prv = l;
+        for(int j = prv, i = prv; min(prv, j) <= r;) {
             while(prv <= r and a[prv] == mn) prv++;
-            if(prv > r) break;
             j = prv;
+            if(prv > r) break;
             while(j <= r and a[j]^mn) j++;
+            tr(prv, j);
             res += min(self(prv, j-1, mn), pref[j-1]-pref[prv-1]);
+            i = j+1;
+            prv = j+1;
+            j++;
         }
         return min(res, pref[r]-pref[l-1]);
     })(1, n, 0);
 
+    chmin(ans, pref[n]);
     cout << ans;
     return 0;
 }
