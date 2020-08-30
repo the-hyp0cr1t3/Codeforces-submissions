@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF91408874": {
+    "contest_id": 1397,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1397\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Power Sequence",
+    "problem_url": "https://codeforces.com/contest/1397/problem/B",
+    "submission_id": "CF91408874",
+    "submission_url": "https://codeforces.com/contest/1397/submission/91408874",
+    "tags": [
+      "brute force",
+      "math",
+      "number theory",
+      "sortings",
+      "*1500"
+    ],
+    "timestamp": "Aug/30/2020 21:43"
+  },
   "CF91481828": {
     "contest_id": 1397,
     "language": "GNU C++17 (64)",
