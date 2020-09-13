@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF92711550": {
+    "contest_id": 1406,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1406\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Deleting Numbers",
+    "problem_url": "https://codeforces.com/contest/1406/problem/E",
+    "submission_id": "CF92711550",
+    "submission_url": "https://codeforces.com/contest/1406/submission/92711550",
+    "tags": [
+      "interactive",
+      "math",
+      "number theory",
+      "*2600"
+    ],
+    "timestamp": "Sep/13/2020 17:30"
+  },
   "CF92726764": {
     "contest_id": 383,
     "language": "GNU C++17 (64)",
