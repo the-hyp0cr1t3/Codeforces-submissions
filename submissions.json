@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF92749069": {
+    "contest_id": 701,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\701\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Connecting Universities",
+    "problem_url": "https://codeforces.com/contest/701/problem/E",
+    "submission_id": "CF92749069",
+    "submission_url": "https://codeforces.com/contest/701/submission/92749069",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "graphs",
+      "trees",
+      "*1800"
+    ],
+    "timestamp": "Sep/14/2020 02:10"
+  },
   "CF92749094": {
     "contest_id": 700,
     "language": "GNU C++17 (64)",
