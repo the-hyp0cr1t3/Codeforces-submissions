@@ -609,6 +609,26 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF92697887": {
+    "contest_id": 1335,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1335\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Robots on a Grid",
+    "problem_url": "https://codeforces.com/contest/1335/problem/F",
+    "submission_id": "CF92697887",
+    "submission_url": "https://codeforces.com/contest/1335/submission/92697887",
+    "tags": [
+      "data structures",
+      "dfs and similar",
+      "dsu",
+      "graphs",
+      "greedy",
+      "matrices",
+      "*2200"
+    ],
+    "timestamp": "Sep/13/2020 14:23"
+  },
   "CF92711550": {
     "contest_id": 1406,
     "language": "GNU C++17 (64)",
