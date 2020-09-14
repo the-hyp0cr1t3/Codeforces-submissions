@@ -19,12 +19,25 @@ const int64_t DESPACITO = 2e18;
 const int INF = 2e9, MOD = 1e9+7;
 const int N = 2e5 + 5;
 
+struct custom_hash {
+    static int64_t splitmix64(int64_t x) {
+        x += 0x9e3779b97f4a7c15;
+        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
+        return x ^ (x >> 31);
+    }
+    size_t operator()(int64_t x) const {
+        static const int64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
+        return splitmix64(x + FIXED_RANDOM);
+    }
+};
+
 int32_t main() {
     aylmao
     int i, j, n;
     cin >> n;
     vector<int> a(n);
-    map<int64_t, int> f; 
+    unordered_map<int64_t, int, custom_hash> f; 
     for(auto& x: a) cin >> x, f[x]++;
     int ans = count(all(a), 0);
     for(i = 0; i < n; i++) {
