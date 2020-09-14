@@ -33,6 +33,7 @@ int32_t main() {
             int64_t l = a[i], r = a[j];
             f[l]--; f[r]--;
             vector<int64_t> chosen{l, r};
+            chosen.reserve(100);
             int res = 2;
             while(f[l+r]) {
                 chosen.pb(l+r); res++;
