@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF92771502": {
+    "contest_id": 666,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\666\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "World Tour",
+    "problem_url": "https://codeforces.com/contest/666/problem/B",
+    "submission_id": "CF92771502",
+    "submission_url": "https://codeforces.com/contest/666/submission/92771502",
+    "tags": [
+      "graphs",
+      "shortest paths",
+      "*2000"
+    ],
+    "timestamp": "Sep/14/2020 13:42"
+  },
   "CF92780826": {
     "contest_id": 250,
     "language": "GNU C++17 (64)",
