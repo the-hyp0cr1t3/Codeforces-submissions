@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF92999932": {
+    "contest_id": 1005,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1005\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Berland and the Shortest Paths",
+    "problem_url": "https://codeforces.com/contest/1005/problem/F",
+    "submission_id": "CF92999932",
+    "submission_url": "https://codeforces.com/contest/1005/submission/92999932",
+    "tags": [
+      "brute force",
+      "dfs and similar",
+      "graphs",
+      "shortest paths",
+      "*2100"
+    ],
+    "timestamp": "Sep/16/2020 23:49"
+  },
   "CF93001013": {
     "contest_id": 1005,
     "language": "GNU C++17 (64)",
