@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF94270400": {
+    "contest_id": 626,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\626\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Group Projects",
+    "problem_url": "https://codeforces.com/contest/626/problem/F",
+    "submission_id": "CF94270400",
+    "submission_url": "https://codeforces.com/contest/626/submission/94270400",
+    "tags": [
+      "dp",
+      "*2400"
+    ],
+    "timestamp": "Sep/30/2020 13:18"
+  },
   "CF94276114": {
     "contest_id": 466,
     "language": "GNU C++17 (64)",
