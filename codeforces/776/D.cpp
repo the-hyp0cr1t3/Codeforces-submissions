@@ -19,27 +19,23 @@ const int N = 1e5 + 5;
 int vis[2*N], comp[2*N];
 vector<int> g[2*N], rg[2*N], order;
 
-// (p → q) if p is true q is also true
-void implies(int p, int q) {
-    g[p].pb(q); rg[q].pb(p);
-}
-
-// (p ∨ q) at least one is true
-void Or(int p, int q) {
+// (p ∨ q) meaning at least one is true
+void addedge(int p, int q) {
 // (¬p → q) ∧ (¬q → p)
-    implies(p^1, q); implies(q^1, p);
+    g[p^1].pb(q); g[q^1].pb(p);
+    rg[q].pb(p^1); rg[p].pb(q^1);
 }
 
-// (p ⊕ q) exactly one is true
-void Xor(int p, int q) {
+// (p ⊕ q) meaning exactly one is true
+void xoredge(int p, int q) {
 // (p ∨ q) ∧ (¬p ∨ ¬q)
-    Or(p, q); Or(p^1, q^1);
+    addedge(p, q); addedge(p^1, q^1);
 }
 
-// (p ↔ q) both are true or both are not
-void Biconditional(int p, int q) {
+// (p ↔ q) both are true or both are false
+void biconditionaledge(int p, int q) {
 // (p → q) ∧ (q → p) ≡ (p ⊕ ¬q)
-    Xor(p, q^1);
+    xoredge(p, q^1);
 }
 
 void dfs1(int v) {
@@ -93,9 +89,9 @@ int32_t main() {
         int u = switches[i][0];
         int v = switches[i][1];
         if(unlocked[i])
-            Biconditional(u<<1, v<<1);
+            biconditionaledge(u<<1, v<<1);
         else
-            Xor(u<<1, v<<1);
+            xoredge(u<<1, v<<1);
     }
 
     cout << (is_sat(m)? "YES" : "NO") << '\n';
