@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF94741634": {
+    "contest_id": 1422,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1422\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Minlexes",
+    "problem_url": "https://codeforces.com/contest/1422/problem/E",
+    "submission_id": "CF94741634",
+    "submission_url": "https://codeforces.com/contest/1422/submission/94741634",
+    "tags": [
+      "dp",
+      "greedy",
+      "implementation",
+      "strings",
+      "*2700"
+    ],
+    "timestamp": "Oct/05/2020 11:57"
+  },
   "CF94765184": {
     "contest_id": 271,
     "language": "GNU C++17 (64)",
