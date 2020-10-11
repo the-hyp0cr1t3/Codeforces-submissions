@@ -17,8 +17,7 @@ auto chmin = [](auto& A, auto&& B) { return B < A? A = B, true : false; };
 const int64_t DESPACITO = 2e18;
 const int INF = 2e9, MOD = 1e9+7;
 const int N = 18;
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-const int V = uniform_int_distribution<int>(0, 1)(rng) & 1? 42 : 69;
+const int V = 100;
 
 int32_t main() {
     cin.tie(nullptr)->sync_with_stdio(false);
