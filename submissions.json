@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF95334335": {
+    "contest_id": 1430,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1430\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Realistic Gameplay",
+    "problem_url": "https://codeforces.com/contest/1430/problem/F",
+    "submission_id": "CF95334335",
+    "submission_url": "https://codeforces.com/contest/1430/submission/95334335",
+    "tags": [
+      "dp",
+      "greedy",
+      "*2600"
+    ],
+    "timestamp": "Oct/12/2020 16:24"
+  },
   "CF95340479": {
     "contest_id": 1172,
     "language": "GNU C++17 (64)",
