@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF95664213": {
+    "contest_id": 1234,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1234\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Yet Another Substring Reverse",
+    "problem_url": "https://codeforces.com/contest/1234/problem/F",
+    "submission_id": "CF95664213",
+    "submission_url": "https://codeforces.com/contest/1234/submission/95664213",
+    "tags": [
+      "bitmasks",
+      "dp",
+      "*2200"
+    ],
+    "timestamp": "Oct/16/2020 18:51"
+  },
   "CF95719573": {
     "contest_id": 1216,
     "language": "GNU C++17 (64)",
