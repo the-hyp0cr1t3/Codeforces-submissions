@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF95660367": {
+    "contest_id": 1234,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1234\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Special Permutations",
+    "problem_url": "https://codeforces.com/contest/1234/problem/E",
+    "submission_id": "CF95660367",
+    "submission_url": "https://codeforces.com/contest/1234/submission/95660367",
+    "tags": [
+      "math",
+      "*2000"
+    ],
+    "timestamp": "Oct/16/2020 18:03"
+  },
   "CF95664213": {
     "contest_id": 1234,
     "language": "GNU C++17 (64)",
