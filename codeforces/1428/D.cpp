@@ -19,13 +19,15 @@ int a[N];
 
 int32_t main() {
     cin.tie(nullptr)->sync_with_stdio(false);
-    int i, n;
+    int i, n; array<int, 4> cnt{};
     cin >> n;
-    array<deque<pair<int, int>>, 4> cols;
-    vector<pair<int, int>> ans;
+    vector<int> columns, threes; columns.reserve(n);
+    set<pair<int, int>> ans;
     for(i = 1; i <= n; i++) {
         cin >> a[i];
-        cols[a[i]].pb(-1, i);
+        cnt[a[i]]++;
+        if(a[i]) columns.pb(i);
+        if(a[i] == 3) threes.pb(i);
     }
 
     auto kek = []() {
@@ -33,45 +35,54 @@ int32_t main() {
         exit(0);
     };
 
-    if(sz(cols[2]) > sz(cols[1])) kek();
+    if(cnt[2] > cnt[1]) kek();
 
-    // place all 1s
-    int currow = n+1 - sz(cols[1]);
-    for(auto& [r, j]: cols[1]) {
-        r = currow;
-        ans.pb(currow++, j);
+    vector<int> marked(n+1);
+    vector<pair<int, int>> ones;
+    int currow = n-cnt[1]+1;
+    for(i = 0; i < sz(columns); i++) {
+        int j = columns[i];
+        if(a[j] != 1) continue;
+        ans.insert({currow, j});
+        ones.pb(currow, j);
+        marked[j] = currow++;
     }
 
-    // place each 2 before a 1
-    for(auto [r, j]: cols[2]) {
-        while(sz(cols[1])) {
-            int k = cols[1].front().second;
-            if(k >= j or a[k] == 2) break;
-            cols[1].pop_front();
-        }
-        auto [k, c] = cols[1].front();
-        if(cols[1].empty() or a[c] == 2) kek();
-        ans.pb(k, j);
-        cols[1].pb(k, j);
-        cols[1].pop_front();
+    vector<pair<int, int>> free;
+    reverse(all(ones));
+    for(i = 0; i < sz(columns); i++) {
+        int j = columns[i];
+        if(a[j] != 2) continue;
+        while(sz(ones) and ones.back().second < j) ones.pop_back();
+        if(ones.empty()) kek();
+        ans.insert({ones.back().first, j});
+        marked[j] = ones.back().first;
+        free.pb(ones.back().first, j);
+        ones.pop_back();
     }
-    
-    // finally place all 3s
+    free.insert(free.end(), all(ones));
+    sort(all(free), [](const auto& A, const auto& B) { 
+        return A.second < B.second;
+    });
+    // tr(free);
+    // sort(all(free), [](const auto& A, const auto& B) { 
+        // return A.first < B.first;
+    // });
     currow = 1;
-    while(sz(cols[3]) > 1) {
-        auto [r, j] = cols[3].front();
-        ans.pb(currow, j);
-        ans.pb(currow++, cols[3][1].second);
-        cols[3].pop_front();
+    for(i = 0; i+1 < sz(threes); i++) {
+        int j = threes[i];
+        ans.insert({currow, j});
+        ans.insert({currow, threes[i+1]});
+        currow++;
     }
 
-    if(sz(cols[3])) {
-        if(cols[1].empty()) kek();
-        auto [lst, mxcol] = *max_element(all(cols[1]));
-        auto [r, j] = cols[3].front();
-        if(mxcol < j) kek();
-        ans.pb(currow, j);
-        ans.pb(currow, mxcol);
+    reverse(all(free));
+    if(i < sz(threes)) {
+        int j = threes[i];
+        while(sz(free) and free.back().second < j) free.pop_back();
+        if(free.empty()) kek();
+        ans.insert({currow, j});
+        ans.insert({currow, free.front().second});
     }
 
     cout << sz(ans) << '\n';
