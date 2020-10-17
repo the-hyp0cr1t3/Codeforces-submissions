@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF95723028": {
+    "contest_id": 1216,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1216\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "White Sheet",
+    "problem_url": "https://codeforces.com/contest/1216/problem/C",
+    "submission_id": "CF95723028",
+    "submission_url": "https://codeforces.com/contest/1216/submission/95723028",
+    "tags": [
+      "geometry",
+      "math",
+      "*1700"
+    ],
+    "timestamp": "Oct/17/2020 14:46"
+  },
   "CF95726122": {
     "contest_id": 1216,
     "language": "GNU C++17 (64)",
