@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF95960166": {
+    "contest_id": 4,
+    "language": "Java 8",
+    "path": "codeforces\\4\\A.java",
+    "problem_index": "A",
+    "problem_name": "Watermelon",
+    "problem_url": "https://codeforces.com/contest/4/problem/A",
+    "submission_id": "CF95960166",
+    "submission_url": "https://codeforces.com/contest/4/submission/95960166",
+    "tags": [
+      "brute force",
+      "math",
+      "*800"
+    ],
+    "timestamp": "Oct/19/2020 14:54"
+  },
   "CF96108806": {
     "contest_id": 1433,
     "language": "Java 8",
