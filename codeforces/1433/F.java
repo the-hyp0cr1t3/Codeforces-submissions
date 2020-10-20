@@ -1,8 +1,4 @@
-/**
- 🍪 the_hyp0cr1t3
- 🍪 20.10.2020 21:04:46
-**/
-// Fuck i forgot to include this
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
