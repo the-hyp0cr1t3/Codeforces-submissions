@@ -609,6 +609,21 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF96145754": {
+    "contest_id": 1433,
+    "language": "Java 8",
+    "path": "codeforces\\1433\\F.java",
+    "problem_index": "F",
+    "problem_name": "Zero Remainder Sum ",
+    "problem_url": "https://codeforces.com/contest/1433/problem/F",
+    "submission_id": "CF96145754",
+    "submission_url": "https://codeforces.com/contest/1433/submission/96145754",
+    "tags": [
+      "dp",
+      "*2100"
+    ],
+    "timestamp": "Oct/20/2020 21:23"
+  },
   "CF96185102": {
     "contest_id": 1433,
     "language": "GNU C++17 (64)",
