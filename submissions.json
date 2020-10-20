@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF96185102": {
+    "contest_id": 1433,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1433\\G.cpp",
+    "problem_index": "G",
+    "problem_name": "Reducing Delivery Cost",
+    "problem_url": "https://codeforces.com/contest/1433/problem/G",
+    "submission_id": "CF96185102",
+    "submission_url": "https://codeforces.com/contest/1433/submission/96185102",
+    "tags": [
+      "brute force",
+      "graphs",
+      "shortest paths",
+      "*2100"
+    ],
+    "timestamp": "Oct/21/2020 01:34"
+  },
   "CF96185597": {
     "contest_id": 1433,
     "language": "GNU C++17 (64)",

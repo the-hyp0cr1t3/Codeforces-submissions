@@ -28,7 +28,8 @@ const int N = 2e5 + 5;
 int32_t main() {
     cin.tie(nullptr)->sync_with_stdio(false);
     int i, n, m, k;
-    cin >> n >> m >> k;    
+    cin >> n >> m >> k;
+    
     vector<vector<int>> g(n);
     vector<edge_t> edges; edges.reserve(m);
     for(i = 0; i < m; i++) {
@@ -37,7 +38,9 @@ int32_t main() {
         g[u].pb(i); g[v].pb(i);
     }
 
-    auto dijkstra = [&](int a) {
+    vector<int64_t> cands(m);
+
+    auto dijkstra = [&](int a, int b) {
         vector<int> vis(n);
         vector<int64_t> d(n, DESPACITO);
         priority_queue<pair<int64_t, int>> pq;
@@ -54,17 +57,34 @@ int32_t main() {
                 if(chmin(d[to], curd + w))
                     pq.emplace(-d[to], to);
             }
-        } return d;
-    };
-    
-    vector<int64_t> cands(m);
-    for(i = 0; i < k; i++) {
-        int a, b; cin >> a >> b;
-        auto da = dijkstra(--a);
-        auto db = dijkstra(--b);
+        }
+
+        int64_t best = d[b];
+        vector<int64_t> d2(n, DESPACITO);
+        d2[b] = 0;
+        vis.assign(n, 0);
+        for(int j = 0; j < n; j++)
+            pq.emplace(-d2[j], j);
+        while(!pq.empty()) {
+            auto [curd, v] = pq.top(); pq.pop();
+            if(vis[v]++) continue;
+            curd = -curd;
+            for(auto j: g[v]) {
+                int to = edges[j].u ^ edges[j].v ^ v;
+                int w = edges[j].w;
+                if(chmin(d2[to], curd + w))
+                    pq.emplace(-d2[to], to);
+            }
+        }
+
         for(int j = 0; j < m; j++) {
             int u = edges[j].u, v = edges[j].v;
-            cands[j] += min({da[b], da[u] + db[v], da[v] + db[u]});
+            cands[j] += min({best, d[u] + d2[v], d[v] + d2[u]});
         }
+    };
+    
+    for(i = 0; i < k; i++) {
+        int a, b; cin >> a >> b;
+        dijkstra(--a, --b);
     } cout << *min_element(all(cands));
 }
