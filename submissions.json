@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF97267744": {
+    "contest_id": 1077,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1077\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Cutting Out",
+    "problem_url": "https://codeforces.com/contest/1077/problem/D",
+    "submission_id": "CF97267744",
+    "submission_url": "https://codeforces.com/contest/1077/submission/97267744",
+    "tags": [
+      "binary search",
+      "sortings",
+      "*1600"
+    ],
+    "timestamp": "Nov/01/2020 01:15"
+  },
   "CF97268188": {
     "contest_id": 1077,
     "language": "GNU C++17 (64)",
