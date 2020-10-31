@@ -1,4 +1,20 @@
 {
+  "AC17765599": {
+    "contest_id": "arc107",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/arc107/B.cpp",
+    "platform": "AtCoder",
+    "problem_index": "B",
+    "problem_name": "Quadruple",
+    "problem_url": "https://atcoder.jp/contests/arc107/tasks/arc107_b",
+    "submission_id": "AC17765599",
+    "submission_url": "https://atcoder.jp/contests/arc107/submissions/17765599",
+    "tags": [
+      "AtCoder",
+      "*400"
+    ],
+    "timestamp": "Oct/31/2020 21:17"
+  },
   "AC17766200": {
     "contest_id": "arc107",
     "language": "C++ (GCC 9.2.1)",
