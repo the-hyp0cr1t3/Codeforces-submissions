@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF97268188": {
+    "contest_id": 1077,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1077\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Thematic Contests",
+    "problem_url": "https://codeforces.com/contest/1077/problem/E",
+    "submission_id": "CF97268188",
+    "submission_url": "https://codeforces.com/contest/1077/submission/97268188",
+    "tags": [
+      "greedy",
+      "sortings",
+      "*1800"
+    ],
+    "timestamp": "Nov/01/2020 01:25"
+  },
   "CF97271711": {
     "contest_id": 1077,
     "language": "GNU C++17 (64)",
