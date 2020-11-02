@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF97479295": {
+    "contest_id": 1443,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1443\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Identify the Operations",
+    "problem_url": "https://codeforces.com/contest/1443/problem/F",
+    "submission_id": "CF97479295",
+    "submission_url": "https://codeforces.com/contest/1443/submission/97479295",
+    "tags": [
+      "brute force",
+      "combinatorics",
+      "data structures",
+      "greedy",
+      "math",
+      "*1800"
+    ],
+    "timestamp": "Nov/02/2020 21:34"
+  },
   "CF97503177": {
     "contest_id": 1443,
     "language": "GNU C++17 (64)",
