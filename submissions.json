@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF97995352": {
+    "contest_id": 1102,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1102\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Elongated Matrix",
+    "problem_url": "https://codeforces.com/contest/1102/problem/F",
+    "submission_id": "CF97995352",
+    "submission_url": "https://codeforces.com/contest/1102/submission/97995352",
+    "tags": [
+      "binary search",
+      "bitmasks",
+      "brute force",
+      "dp",
+      "graphs",
+      "*2000"
+    ],
+    "timestamp": "Nov/09/2020 19:08"
+  },
   "CF97996507": {
     "contest_id": 416,
     "language": "GNU C++17 (64)",
