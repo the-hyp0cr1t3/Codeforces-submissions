@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF98527487": {
+    "contest_id": 1092,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1092\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Tree with Maximum Cost",
+    "problem_url": "https://codeforces.com/contest/1092/problem/F",
+    "submission_id": "CF98527487",
+    "submission_url": "https://codeforces.com/contest/1092/submission/98527487",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "trees",
+      "*1900"
+    ],
+    "timestamp": "Nov/16/2020 13:07"
+  },
   "CF98530528": {
     "contest_id": 1092,
     "language": "GNU C++17 (64)",
