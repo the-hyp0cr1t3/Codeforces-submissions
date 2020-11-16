@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF98530528": {
+    "contest_id": 1092,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1092\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Minimal Diameter Forest",
+    "problem_url": "https://codeforces.com/contest/1092/problem/E",
+    "submission_id": "CF98530528",
+    "submission_url": "https://codeforces.com/contest/1092/submission/98530528",
+    "tags": [
+      "constructive algorithms",
+      "dfs and similar",
+      "greedy",
+      "trees",
+      "*2000"
+    ],
+    "timestamp": "Nov/16/2020 13:43"
+  },
   "CF98534395": {
     "contest_id": 1092,
     "language": "GNU C++17 (64)",
