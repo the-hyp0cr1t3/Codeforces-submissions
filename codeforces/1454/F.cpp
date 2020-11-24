@@ -1,6 +1,6 @@
 /**
  🍪 the_hyp0cr1t3
- 🍪 25.11.2020 11:10:17
+ 🍪 24.11.2020 20:16:31
 **/
 #ifdef W
 #include "k_II.h"
@@ -11,107 +11,70 @@ using namespace std;
 #define pb emplace_back
 #define sz(x) int(x.size())
 #define all(x) x.begin(), x.end()
-#include <ext/pb_ds/assoc_container.hpp>
-
-struct custom_hash {
-    static uint64_t splitmix64(uint64_t x) {
-        x += 0x9e3779b97f4a7c15;
-        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
-        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
-        return x ^ (x >> 31);
-    }
-    size_t operator()(uint64_t x) const {
-        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-        return splitmix64(x + FIXED_RANDOM);
-    }
-};
-
-template<typename K, typename V, typename Hash = custom_hash>
-using hash_map = __gnu_pbds::gp_hash_table<K, V, Hash>;
-
-template<class T, class F>
-struct Sparse {
-    int N, K; F cmp;
-    vector<vector<T>> table; vector<vector<int>> idx;
-    template<class Iter, class Func> 
-    explicit Sparse(Iter beg, Iter end, Func&& f)
-        : N(end-beg), K(this->lg(N)), cmp(forward<Func>(f)),
-            table(K+1, vector<T>(N)), idx(K+1, vector<int>(N)) {
-        for(int i = 0; i < N; i++) {
-            table[0][i] = *(beg+i);
-            idx[0][i] = i;
-        }
-        for(int k = 1; k <= K; k++) {
-            for(int i = 0; i+(1<<k) <= N; i++) {
-                if(cmp(table[k-1][i], table[k-1][i+(1<<(k-1))])) {
-                    table[k][i] = table[k-1][i];
-                    idx[k][i] = idx[k-1][i];
-                }
-                else {
-                    table[k][i] = table[k-1][i+(1<<(k-1))];
-                    idx[k][i] = idx[k-1][i+(1<<(k-1))];
-                }
-            }
-        }
-    }
-
-    int lg(int x) const {
-        return 31 - __builtin_clz(x);
-    }
-
-    int query(int l, int r) const {
-        int k = lg(r-l+1);
-        r = r-(1<<k)+1;
-        return cmp(table[k][l], table[k][r])? idx[k][l] : idx[k][r];
-    }
-};
-
-template<class T, class F>
-Sparse(T, T, F) -> Sparse<typename iterator_traits<T>::value_type, F>;
 
 const int64_t DESPACITO = 2e18;
 const int INF = 2e9, MOD = 1e9+7;
 const int N = 2e5 + 5;
 
 int ocoiek() {
-    int i, n;
+    int i, j, n, m = 0;
     cin >> n;
     vector<int> a(n);
-    for(auto& x: a) cin >> x;
-    Sparse Min(all(a), less{});
-    Sparse Max(all(a), greater{});
-    hash_map<int, int> fst, lst;
+    map<int, int> compress;
+    for(auto& x: a) cin >> x, compress[x];
+    for(auto& [k, v]: compress)
+        v = m++;
+    vector<vector<int>> pos(m);
     for(i = 0; i < n; i++) {
-        if(fst.find(a[i]) == fst.end()) fst[a[i]] = i;
-        lst[a[i]] = i;
+        a[i] = compress[a[i]];
+        pos[a[i]].pb(i);
     }
 
-    auto get = [&](const auto& st, int l, int r) {
-        return a[st.query(l, r)];
+    vector<int> par(n+1, -1), active(n);
+    auto get_par = [&](int A) {
+        while(par[A] >= 0) {
+            if(par[par[A]] >= 0) par[A] = par[par[A]];
+            A = par[A];
+        } return A;
+    }; auto SZ = [&](int x) { return -par[x]; };
+    
+    auto merge = [&](int A, int B) {
+        A = get_par(A); B = get_par(B);
+        if(A == B) return false;
+        if(-par[A] < -par[B]) swap(A, B);
+        par[A] += par[B]; par[B] = A;
+        return true;
     };
 
-    for(i = 0; i < n; i++) {
-        if(fst[a[i]] == i or i == lst[a[i]]) continue;
-        int lo = fst[a[i]]+1, hi = i;
-        while(lo <= hi) {
-            int mid = lo + hi >> 1;
-            if(get(Min, mid, i) == a[i]) hi = mid - 1;
-            else lo = mid + 1;
-        } int l = lo;
-        lo = i, hi = lst[a[i]]-1;
-        while(lo <= hi) {
-            int mid = lo + hi >> 1;
-            if(get(Min, i, mid) == a[i]) lo = mid + 1;
-            else hi = mid - 1;
-        } int r = hi;
+    int cnt = 0, L = n+1, R = -2;
+    auto push = [&](int idx) {
+        if(active[idx]) return;
+        if(idx-1 >= 0 and active[idx-1])
+            merge(idx, idx-1);
+        if(idx+1 < n and active[idx+1])
+            merge(idx, idx+1);
+        active[idx] = true; cnt++;
+        L = min(L, idx);
+        R = max(R, idx);
+    };
 
-        if(get(Max, 0, l-1) == a[i] and get(Max, r+1, n-1) == a[i]) {
-            cout << "YES" << '\n';
-            cout << l << ' ' << r-l+1 << ' ' << n-1-r << '\n';
-            return 0;
+    for(i = m-1; ~i; --i) {
+        int inseg = 0;
+        for(j = 1; j < sz(pos[i])-1; j++)
+            if(L-1 <= pos[i][j] and pos[i][j] <= R+1)
+                push(pos[i][j]), inseg++;
+        if(sz(pos[i]) > 2) {
+            if(!cnt) push(pos[i][1]), inseg++;
+            if(SZ(get_par(L)) == cnt and inseg) {
+                cout << "YES" << '\n';
+                cout << L << ' ' << cnt << ' ' << n-1 - R << '\n';
+                return 0;                
+            }
         }
-    } cout << "NO" << '\n';
+        for(auto p: pos[i]) push(p);
+    }
 
+    cout << "NO" << '\n';
     return 0;
 }
 
