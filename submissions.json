@@ -609,6 +609,24 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF99527593": {
+    "contest_id": 1454,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1454\\F.cpp",
+    "problem_index": "F",
+    "problem_name": "Array Partition",
+    "problem_url": "https://codeforces.com/contest/1454/problem/F",
+    "submission_id": "CF99527593",
+    "submission_url": "https://codeforces.com/contest/1454/submission/99527593",
+    "tags": [
+      "binary search",
+      "data structures",
+      "greedy",
+      "two pointers",
+      "*2100"
+    ],
+    "timestamp": "Nov/25/2020 11:49"
+  },
   "CF99918589": {
     "contest_id": 1457,
     "language": "GNU C++17 (64)",
