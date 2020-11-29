@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF99927761": {
+    "contest_id": 1457,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1457\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "New Game Plus!",
+    "problem_url": "https://codeforces.com/contest/1457/problem/E",
+    "submission_id": "CF99927761",
+    "submission_url": "https://codeforces.com/contest/1457/submission/99927761",
+    "tags": [
+      "data structures",
+      "greedy",
+      "*2200"
+    ],
+    "timestamp": "Nov/29/2020 22:42"
+  },
   "CF99993613": {
     "contest_id": 1455,
     "language": "GNU C++17 (64)",
