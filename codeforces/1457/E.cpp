@@ -18,24 +18,25 @@ const int N = 2e5 + 5;
 
 int main() {
     cin.tie(nullptr)->sync_with_stdio(false);
-    int i, n, k;
+    int i, n, k; int64_t ans = 0, cursum = 0;
     cin >> n >> k; ++k;
     vector<int> a(n);
     for(auto& x: a) cin >> x;
     sort(all(a), greater{});
 
-    priority_queue<array<int64_t, 2>> pq;
-    while(k--) pq.push({0, 0});
+    priority_queue<tuple<int64_t, int64_t, int64_t>> pq;
+    while(k--) pq.emplace(0, 0, 0);
 
     for(i = 0; i < n; i++) {
-        auto [nxt, sum] = pq.top(); pq.pop();
-        sum += nxt; nxt += a[i];
-        pq.push({nxt, sum});
+        auto [nxt, sum, cur] = pq.top(); pq.pop();
+        cur = nxt; sum += nxt; nxt += a[i];
+        pq.emplace(nxt, sum, cur);
     }
 
-    int64_t ans = 0;
-    while(!pq.empty())
-        ans += pq.top()[1], pq.pop();
+    while(!pq.empty()) {
+        ans += get<1>(pq.top());
+        pq.pop();
+    }
 
     cout << ans << '\n';
 } // ~W
