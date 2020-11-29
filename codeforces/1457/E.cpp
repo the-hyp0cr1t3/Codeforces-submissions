@@ -15,7 +15,7 @@ using namespace std;
 const int64_t DESPACITO = 2e18;
 const int INF = 2e9, MOD = 1e9+7;
 const int N = 2e5 + 5;
-
+using pii = tuple<int64_t, int64_t, int64_t>;
 int main() {
     cin.tie(nullptr)->sync_with_stdio(false);
     int i, n, k; int64_t ans = 0, cursum = 0;
@@ -24,7 +24,14 @@ int main() {
     for(auto& x: a) cin >> x;
     sort(all(a), greater{});
 
-    priority_queue<tuple<int64_t, int64_t, int64_t>> pq;
+    // for(i = 0; i < n and cursum >= 0; i++) {
+        // if()
+        // ans += cursum;
+        // cursum += a[i];
+    // }
+
+    // priority_queue<pii, vector<pii>, greater<pii>> pq;
+    priority_queue<pii> pq;
     while(k--) pq.emplace(0, 0, 0);
 
     for(i = 0; i < n; i++) {
