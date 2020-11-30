@@ -1,4 +1,21 @@
 {
+  "CF100018071": {
+    "contest_id": 1455,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1455\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Sequence and Swaps",
+    "problem_url": "https://codeforces.com/contest/1455/problem/D",
+    "submission_id": "CF100018071",
+    "submission_url": "https://codeforces.com/contest/1455/submission/100018071",
+    "tags": [
+      "dp",
+      "greedy",
+      "sortings",
+      "*1600"
+    ],
+    "timestamp": "Nov/30/2020 20:46"
+  },
   "CF100141246": {
     "contest_id": 1375,
     "language": "GNU C++17 (64)",
