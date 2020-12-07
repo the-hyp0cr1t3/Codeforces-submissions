@@ -1,4 +1,20 @@
 {
+  "CF100619862": {
+    "contest_id": 1450,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1450\\C2.cpp",
+    "problem_index": "C2",
+    "problem_name": "Errich-Tac-Toe (Hard Version)",
+    "problem_url": "https://codeforces.com/contest/1450/problem/C2",
+    "submission_id": "CF100619862",
+    "submission_url": "https://codeforces.com/contest/1450/submission/100619862",
+    "tags": [
+      "constructive algorithms",
+      "math",
+      "*2300"
+    ],
+    "timestamp": "Dec/07/2020 16:11"
+  },
   "CF100624173": {
     "contest_id": 1450,
     "language": "GNU C++17 (64)",
