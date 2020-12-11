@@ -1,6 +1,6 @@
 /**
- 🍪 the_hyp0cr1t3
- 🍪 11.12.2020 23:48:00
+  the_hyp0cr1t3
+  11.12.2020 21:05:29
 **/
 #ifdef W
 #include "k_II.h"
@@ -14,40 +14,51 @@ using namespace std;
 
 const int64_t DESPACITO = 2e18;
 const int INF = 2e9, MOD = 1e9+7;
-const int N = 1e6 + 5;
-bitset<N> seen;
+using bigint = __int128;
+// using bigint = uint64_t;
+int N = 5e5+5;
+
+void kek(bigint t) {
+    cout << (t < 0? "Yes" : "No"); exit(0);
+}
 
 int main() {
     cin.tie(nullptr)->sync_with_stdio(false);
-    int64_t k, l, r, t, x, y, b, times;
-    cin >> k >> l >> r >> t >> x >> y;
-    b = max(l-1, r - y);
+    int64_t _k, _A, _B, _t, _x, _y;
+    cin >> _k >> _A >> _B >> _t >> _y >> _x;
+    bigint k, A, B, t, x, y, times, b, zero{0};
+    k = _k; A = _A; B = _B;
+    t = _t; x = _x; y = _y;
+    b = max(A-1, B-x);
 
-    auto kek = [](int64_t o) {
-        cout << (o < 0? "Yes" : "No"); exit(0);
-    };
-
-    if(x == y) {
-        kek(k + y <= r or k-x >= l? -1 : t);
-    } else if(x > y) {
-        t--;
-        k -= (k + y <= r)? x - y : x;
-        if(k < l) kek(t);
-        kek(t -= (k-l+1+x-y-1)/(x-y));
-    } else {
-        while(true) {
-            if(k + y <= r) {
-                times = (b-k+1+y-x-1)/(y-x);
-                k += times * (y-x);
-                t -= times;
-                if(seen[k%x]) kek(-1);
-                seen[k%x] = 1;
-            } else {
-                times = (k-b+x-1)/x;
-                t -= times;
-                if((k -= times * x) < l) kek(t);
-            }
-        }
+    if(x-y == zero) {
+        if(k <= b) kek(-1);
+        times = (max(zero, k-b) + y-1) / y;
+        k -= times * y;
+        t -= times;
+        if(k < A) kek(t);
+        kek(-1);
     }
-    
+
+    if(x-y < zero) {
+        times = (max(zero, k-b) + y-1) / y;
+        t -= times;
+        k -= times * y;
+        if(k < A) kek(t);
+        t -= (k-A+1 + y-x-1) / (y-x);
+        kek(t);
+    }
+
+    set<bigint> seen;
+    while(N--) {
+        times = (max(zero, b-k+1) + x-y-1) / (x-y);
+        t -= times;
+        k += times * (x-y);
+        if(seen.count(k)) kek(-1);
+        seen.insert(k);
+        times = (max(zero, k-b) + y-1) / y;
+        k -= times * y;
+        t -= times;
+        if(k < A) kek(t);
+    } cout << "Yes";
 } // ~W 
