@@ -1,4 +1,22 @@
 {
+  "CF101041979": {
+    "contest_id": 893,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\893\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Counting Arrays",
+    "problem_url": "https://codeforces.com/contest/893/problem/E",
+    "submission_id": "CF101041979",
+    "submission_url": "https://codeforces.com/contest/893/submission/101041979",
+    "tags": [
+      "combinatorics",
+      "dp",
+      "math",
+      "number theory",
+      "*2000"
+    ],
+    "timestamp": "Dec/12/2020 21:44"
+  },
   "CF101048095": {
     "contest_id": 1230,
     "language": "GNU C++17 (64)",
