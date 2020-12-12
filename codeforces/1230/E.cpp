@@ -113,9 +113,9 @@ int main() {
         g[u].pb(v); g[v].pb(u);
     }
     
-    unordered_map<int64_t, int> have;
+    unordered_map<int64_t, int, custom_hash> have;
     Y([&](auto self, int v, int p) -> void {
-        unordered_map<int64_t, int> store;
+        unordered_map<int64_t, int, custom_hash> store;
         store[a[v]] = 1; ans += a[v];
         for(auto [gcd, cnt]: have) {
             int64_t g = __gcd(gcd, a[v]);
