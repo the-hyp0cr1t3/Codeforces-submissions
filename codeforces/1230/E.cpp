@@ -26,6 +26,9 @@ struct custom_hash {
     }
 };
 
+template<typename K, typename V, typename Hash = custom_hash>
+using hash_map = __gnu_pbds::gp_hash_table<K, V, Hash>;
+
 template<class T> class Y {
     T f;
 public:
@@ -113,9 +116,9 @@ int main() {
         g[u].pb(v); g[v].pb(u);
     }
     
-    map<int64_t, int> have;
+    hash_map<int64_t, int> have;
     Y([&](auto self, int v, int p) -> void {
-        map<int64_t, int> store;
+        hash_map<int64_t, int> store;
         store[a[v]] = 1; ans += a[v];
         for(auto [gcd, cnt]: have) {
             int64_t g = __gcd(gcd, a[v]);
