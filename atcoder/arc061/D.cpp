@@ -47,7 +47,7 @@ int main() {
     array<int64_t, 10> ans{};
     ans[0] = 1ll * (n-2) * (m-2);
 
-    set<pair<int, int>> black, used;
+    hash_set<pair<int, int>> black, used;
     for(i = 0; i < q; i++) {
         int x, y; cin >> x >> y;
         black.insert({x, y});
