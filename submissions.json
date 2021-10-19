@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF132422184": {
+    "contest_id": 1575,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1575/J.cpp",
+    "platform": "Codeforces",
+    "problem_index": "J",
+    "problem_name": "Jeopardy of Dropped Balls",
+    "problem_url": "https://codeforces.com/contest/1575/problem/J",
+    "submission_id": "CF132422184",
+    "submission_url": "https://codeforces.com/contest/1575/submission/132422184",
+    "tags": [
+      "binary search",
+      "brute force",
+      "dsu",
+      "implementation",
+      "*1500"
+    ],
+    "timestamp": "Oct/19/2021 15:14"
+  },
   "CF132445148": {
     "contest_id": 1560,
     "language": "GNU C++20 (64)",
