@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF132445148": {
+    "contest_id": 1560,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1560/E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Polycarp and String Transformation",
+    "problem_url": "https://codeforces.com/contest/1560/problem/E",
+    "submission_id": "CF132445148",
+    "submission_url": "https://codeforces.com/contest/1560/submission/132445148",
+    "tags": [
+      "binary search",
+      "implementation",
+      "sortings",
+      "strings",
+      "*1800"
+    ],
+    "timestamp": "Oct/19/2021 19:07"
+  },
   "CF132448635": {
     "contest_id": 1573,
     "language": "GNU C++20 (64)",
