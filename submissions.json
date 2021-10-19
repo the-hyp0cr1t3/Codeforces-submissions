@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF132448635": {
+    "contest_id": 1573,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1573/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Countdown",
+    "problem_url": "https://codeforces.com/contest/1573/problem/A",
+    "submission_id": "CF132448635",
+    "submission_url": "https://codeforces.com/contest/1573/submission/132448635",
+    "tags": [
+      "greedy",
+      "*800"
+    ],
+    "timestamp": "Oct/19/2021 19:46"
+  },
   "CF132452123": {
     "contest_id": 1573,
     "language": "GNU C++20 (64)",
