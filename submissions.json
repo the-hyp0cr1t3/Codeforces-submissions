@@ -609,6 +609,26 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF132904364": {
+    "contest_id": 1582,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1582/F2.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F2",
+    "problem_name": "Korney Korneevich and XOR (hard version)",
+    "problem_url": "https://codeforces.com/contest/1582/problem/F2",
+    "submission_id": "CF132904364",
+    "submission_url": "https://codeforces.com/contest/1582/submission/132904364",
+    "tags": [
+      "binary search",
+      "brute force",
+      "dp",
+      "greedy",
+      "two pointers",
+      "*2400"
+    ],
+    "timestamp": "Oct/24/2021 17:09"
+  },
   "CF133042464": {
     "contest_id": 1601,
     "language": "GNU C++20 (64)",
