@@ -11,7 +11,6 @@
 
 int main() {
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
-    namespace r = ranges; namespace v = views;
     const int LG = 30;
 
     int tests; cin >> tests;
@@ -29,8 +28,8 @@ int main() {
         for(i = 0; i < LG; i++)
             g = gcd(g, cnt[i]);
 
-        for(auto x: v::iota(1, n + 1) | v::filter([g](int x) { return !(g % x); }))
-            cout << x << ' ';
+        for(i = 1; i <= n; i++)
+            if(!(g % i)) cout << i << ' ';
         cout << '\n';
     }();
 
