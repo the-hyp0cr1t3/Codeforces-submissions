@@ -29,7 +29,7 @@ int main() {
             g = gcd(g, cnt[i]);
 
         for(i = 1; i <= n; i++)
-            if(!(g % i)) cout << i << ' ';
+            if(!g or !(g % i)) cout << i << ' ';
         cout << '\n';
     }();
 
