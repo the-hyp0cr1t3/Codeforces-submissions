@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF135409189": {
+    "contest_id": 1588,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1588/B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Guess the Permutation",
+    "problem_url": "https://codeforces.com/contest/1588/problem/B",
+    "submission_id": "CF135409189",
+    "submission_url": "https://codeforces.com/contest/1588/submission/135409189",
+    "tags": [
+      "binary search",
+      "combinatorics",
+      "implementation",
+      "interactive",
+      "*2000"
+    ],
+    "timestamp": "Nov/14/2021 16:22"
+  },
   "CF136246345": {
     "contest_id": 1567,
     "language": "GNU C++20 (64)",
