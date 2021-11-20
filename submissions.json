@@ -1,4 +1,20 @@
 {
+  "AC27405974": {
+    "contest_id": "abc228",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/abc228/F.cpp",
+    "platform": "AtCoder",
+    "problem_index": "F",
+    "problem_name": "Stamp Game",
+    "problem_url": "https://atcoder.jp/contests/abc228/tasks/abc228_f",
+    "submission_id": "AC27405974",
+    "submission_url": "https://atcoder.jp/contests/abc228/submissions/27405974",
+    "tags": [
+      "AtCoder",
+      "*500"
+    ],
+    "timestamp": "Nov/20/2021 20:12"
+  },
   "AC27424211": {
     "contest_id": "arc129",
     "language": "C++ (GCC 9.2.1)",
