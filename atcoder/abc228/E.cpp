@@ -14,7 +14,6 @@ int64_t expo(int64_t A, int64_t B, int64_t MOD) {
     int64_t res{1}; while(B) {
         if(B & 1) res = res * A % MOD;
         B >>= 1; A = A * A % MOD;
-        assert(res >= 0);
     } return res;
 }
 
