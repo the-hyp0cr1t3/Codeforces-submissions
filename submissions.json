@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF136317423": {
+    "contest_id": 1573,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1573/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Xor of 3",
+    "problem_url": "https://codeforces.com/contest/1573/problem/D",
+    "submission_id": "CF136317423",
+    "submission_url": "https://codeforces.com/contest/1573/submission/136317423",
+    "tags": [
+      "constructive algorithms",
+      "*2500"
+    ],
+    "timestamp": "Nov/21/2021 14:17"
+  },
   "CF136318827": {
     "contest_id": 1579,
     "language": "GNU C++20 (64)",
