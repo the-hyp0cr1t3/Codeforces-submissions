@@ -609,6 +609,22 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF136325005": {
+    "contest_id": 1579,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1579/G.cpp",
+    "platform": "Codeforces",
+    "problem_index": "G",
+    "problem_name": "Minimal Coverage",
+    "problem_url": "https://codeforces.com/contest/1579/problem/G",
+    "submission_id": "CF136325005",
+    "submission_url": "https://codeforces.com/contest/1579/submission/136325005",
+    "tags": [
+      "dp",
+      "*2200"
+    ],
+    "timestamp": "Nov/21/2021 16:02"
+  },
   "CF136623062": {
     "contest_id": 1610,
     "language": "GNU C++20 (64)",
