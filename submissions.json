@@ -609,6 +609,23 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF136318827": {
+    "contest_id": 1579,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1579/E2.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E2",
+    "problem_name": "Array Optimization by Deque",
+    "problem_url": "https://codeforces.com/contest/1579/problem/E2",
+    "submission_id": "CF136318827",
+    "submission_url": "https://codeforces.com/contest/1579/submission/136318827",
+    "tags": [
+      "data structures",
+      "greedy",
+      "*1700"
+    ],
+    "timestamp": "Nov/21/2021 14:35"
+  },
   "CF136323081": {
     "contest_id": 1579,
     "language": "GNU C++20 (64)",
