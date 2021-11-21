@@ -1,4 +1,20 @@
 {
+  "AC27424693": {
+    "contest_id": "arc129",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/arc129/B.cpp",
+    "platform": "AtCoder",
+    "problem_index": "B",
+    "problem_name": "Range Point Distance",
+    "problem_url": "https://atcoder.jp/contests/arc129/tasks/arc129_b",
+    "submission_id": "AC27424693",
+    "submission_url": "https://atcoder.jp/contests/arc129/submissions/27424693",
+    "tags": [
+      "AtCoder",
+      "*400"
+    ],
+    "timestamp": "Nov/21/2021 17:42"
+  },
   "AC27513796": {
     "contest_id": "abc229",
     "language": "C++ (GCC 9.2.1)",
