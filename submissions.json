@@ -1,4 +1,20 @@
 {
+  "AC27552141": {
+    "contest_id": "abc229",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/abc229/G.cpp",
+    "platform": "AtCoder",
+    "problem_index": "G",
+    "problem_name": "Longest Y",
+    "problem_url": "https://atcoder.jp/contests/abc229/tasks/abc229_g",
+    "submission_id": "AC27552141",
+    "submission_url": "https://atcoder.jp/contests/abc229/submissions/27552141",
+    "tags": [
+      "AtCoder",
+      "*600"
+    ],
+    "timestamp": "Nov/27/2021 20:10"
+  },
   "AC27568462": {
     "contest_id": "arc130",
     "language": "C++ (GCC 9.2.1)",
