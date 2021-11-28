@@ -609,6 +609,26 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF137245719": {
+    "contest_id": 1609,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1609/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Social Network",
+    "problem_url": "https://codeforces.com/contest/1609/problem/D",
+    "submission_id": "CF137245719",
+    "submission_url": "https://codeforces.com/contest/1609/submission/137245719",
+    "tags": [
+      "dsu",
+      "graphs",
+      "greedy",
+      "implementation",
+      "trees",
+      "*1600"
+    ],
+    "timestamp": "Nov/28/2021 21:06"
+  },
   "CF137615958": {
     "contest_id": 1580,
     "language": "GNU C++20 (64)",
