@@ -609,6 +609,27 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF137240695": {
+    "contest_id": 1609,
+    "language": "GNU C++17",
+    "path": "codeforces/1609/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Complex Market Analysis",
+    "problem_url": "https://codeforces.com/contest/1609/problem/C",
+    "submission_id": "CF137240695",
+    "submission_url": "https://codeforces.com/contest/1609/submission/137240695",
+    "tags": [
+      "binary search",
+      "dp",
+      "implementation",
+      "number theory",
+      "schedules",
+      "two pointers",
+      "*1400"
+    ],
+    "timestamp": "Nov/28/2021 20:50"
+  },
   "CF137245719": {
     "contest_id": 1609,
     "language": "GNU C++20 (64)",
