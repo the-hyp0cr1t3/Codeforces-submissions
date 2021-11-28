@@ -1,4 +1,20 @@
 {
+  "AC27568462": {
+    "contest_id": "arc130",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/arc130/A.cpp",
+    "platform": "AtCoder",
+    "problem_index": "A",
+    "problem_name": "Remove One Character",
+    "problem_url": "https://atcoder.jp/contests/arc130/tasks/arc130_a",
+    "submission_id": "AC27568462",
+    "submission_url": "https://atcoder.jp/contests/arc130/submissions/27568462",
+    "tags": [
+      "AtCoder",
+      "*300"
+    ],
+    "timestamp": "Nov/28/2021 17:32"
+  },
   "AC27569786": {
     "contest_id": "arc130",
     "language": "C++ (GCC 9.2.1)",
