@@ -1,4 +1,20 @@
 {
+  "AC27606493": {
+    "contest_id": "arc130",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/arc130/D.cpp",
+    "platform": "AtCoder",
+    "problem_index": "D",
+    "problem_name": "Zigzag Tree",
+    "problem_url": "https://atcoder.jp/contests/arc130/tasks/arc130_d",
+    "submission_id": "AC27606493",
+    "submission_url": "https://atcoder.jp/contests/arc130/submissions/27606493",
+    "tags": [
+      "AtCoder",
+      "*600"
+    ],
+    "timestamp": "Nov/30/2021 19:31"
+  },
   "AC27645926": {
     "contest_id": "abc230",
     "language": "C++ (GCC 9.2.1)",
