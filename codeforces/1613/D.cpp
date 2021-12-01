@@ -69,6 +69,7 @@ int main() {
 #endif
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
     using mint = Modint<998244353>;
+    const int N = 5e5 + 5;
 
     int tests; cin >> tests;
     while(tests--) [&]() {
@@ -79,13 +80,25 @@ int main() {
 
         vector<mint> good(n + 2), bad(n + 2);
         for(auto x: a) {
-            good[x] = good[x] * 2 + (x? good[x - 1] : 1);
-            bad[x + 1] *= 2;
-            if(x) bad[x - 1] = bad[x - 1] * 2 + (x > 1? good[x - 2] : 1);
+            if(x == 0) {
+                good[x] = good[x] * 2 + 1;
+                bad[x + 1] *= 2;
+            } else if(x == 1) {
+                good[x] = good[x] * 2 + good[x - 1];
+                bad[x + 1] *= 2;
+                bad[x - 1] = bad[x - 1] * 2 + 1;
+            } else {
+                good[x] = good[x] * 2 + good[x - 1];
+                bad[x + 1] *= 2;
+                bad[x - 1] = bad[x - 1] * 2 + good[x - 2];
+            }
         }
 
-        cout << accumulate(good.begin(), good.end(), mint())
-                    + accumulate(bad.begin(), bad.end(), mint()) << '\n';
+        mint ans;
+        for(i = 0; i <= n + 1; i++)
+            ans += good[i] + bad[i];
+
+        cout << ans << '\n';
     }();
 
 } // ~W
