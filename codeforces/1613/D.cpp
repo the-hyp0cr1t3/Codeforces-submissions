@@ -72,11 +72,13 @@ int main() {
 
     int tests; cin >> tests;
     while(tests--) [&]() {
-        int i, n, x;
+        int i, n;
         cin >> n;
+        vector<int> a(n);
+        for(auto& x: a) cin >> x;
+
         vector<mint> good(n + 2), bad(n + 2);
-        while(n--) {
-            cin >> x;
+        for(auto x: a) {
             good[x] = good[x] * 2 + (x? good[x - 1] : 1);
             bad[x + 1] *= 2;
             if(x) bad[x - 1] = bad[x - 1] * 2 + (x > 1? good[x - 2] : 1);
