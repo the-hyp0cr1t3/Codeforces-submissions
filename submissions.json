@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF138380120": {
+    "contest_id": 1606,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1606/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Red-Blue Matrix",
+    "problem_url": "https://codeforces.com/contest/1606/problem/D",
+    "submission_id": "CF138380120",
+    "submission_url": "https://codeforces.com/contest/1606/submission/138380120",
+    "tags": [
+      "brute force",
+      "constructive algorithms",
+      "implementation",
+      "sortings",
+      "*2400"
+    ],
+    "timestamp": "Dec/08/2021 00:50"
+  },
   "CF138381563": {
     "contest_id": 1606,
     "language": "GNU C++20 (64)",
