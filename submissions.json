@@ -609,6 +609,25 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF138900752": {
+    "contest_id": 1591,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1591/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Yet Another Sorting Problem",
+    "problem_url": "https://codeforces.com/contest/1591/problem/D",
+    "submission_id": "CF138900752",
+    "submission_url": "https://codeforces.com/contest/1591/submission/138900752",
+    "tags": [
+      "constructive algorithms",
+      "data structures",
+      "math",
+      "sortings",
+      "*1900"
+    ],
+    "timestamp": "Dec/12/2021 21:41"
+  },
   "CF138910998": {
     "contest_id": 1591,
     "language": "GNU C++20 (64)",
