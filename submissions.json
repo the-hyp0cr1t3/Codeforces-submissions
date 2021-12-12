@@ -609,6 +609,26 @@
     ],
     "timestamp": "Dec/22/2020 00:43"
   },
+  "CF138910998": {
+    "contest_id": 1591,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1591/E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Frequency Queries",
+    "problem_url": "https://codeforces.com/contest/1591/problem/E",
+    "submission_id": "CF138910998",
+    "submission_url": "https://codeforces.com/contest/1591/submission/138910998",
+    "tags": [
+      "binary search",
+      "data structures",
+      "dfs and similar",
+      "trees",
+      "two pointers",
+      "*2400"
+    ],
+    "timestamp": "Dec/12/2021 22:08"
+  },
   "CF60785574": {
     "contest_id": 1220,
     "language": "GNU C++17",
