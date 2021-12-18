@@ -3840,6 +3840,25 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF139811357": {
+    "contest_id": 1620,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1620/E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Replace the Numbers",
+    "problem_url": "https://codeforces.com/contest/1620/problem/E",
+    "submission_id": "CF139811357",
+    "submission_url": "https://codeforces.com/contest/1620/submission/139811357",
+    "tags": [
+      "constructive algorithms",
+      "data structures",
+      "dsu",
+      "implementation",
+      "*1900"
+    ],
+    "timestamp": "Dec/18/2021 22:46"
+  },
   "CF140447674": {
     "contest_id": 1615,
     "language": "GNU C++20 (64)",
