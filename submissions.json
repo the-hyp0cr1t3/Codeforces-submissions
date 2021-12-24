@@ -3840,6 +3840,23 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF140447674": {
+    "contest_id": 1615,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1615/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Closing The Gap",
+    "problem_url": "https://codeforces.com/contest/1615/problem/A",
+    "submission_id": "CF140447674",
+    "submission_url": "https://codeforces.com/contest/1615/submission/140447674",
+    "tags": [
+      "greedy",
+      "math",
+      "*800"
+    ],
+    "timestamp": "Dec/24/2021 20:06"
+  },
   "CF140453712": {
     "contest_id": 1615,
     "language": "GNU C++20 (64)",
