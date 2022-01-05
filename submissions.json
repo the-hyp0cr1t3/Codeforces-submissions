@@ -3840,6 +3840,24 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF141726332": {
+    "contest_id": 1621,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1621/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "The Winter Hike",
+    "problem_url": "https://codeforces.com/contest/1621/problem/D",
+    "submission_id": "CF141726332",
+    "submission_url": "https://codeforces.com/contest/1621/submission/141726332",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "math",
+      "*2100"
+    ],
+    "timestamp": "Jan/05/2022 16:54"
+  },
   "CF141808074": {
     "contest_id": 1621,
     "language": "GNU C++20 (64)",
