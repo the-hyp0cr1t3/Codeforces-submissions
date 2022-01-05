@@ -32,7 +32,7 @@ int main() {
 
         for(int x: { 0, n - 1 })
             for(int y: { n, 2 * n - 1 })
-                clear = min({ clear, a[x][y], a[y][x] });
+                clear = min({ clear, a[x][y], a[x + n][y - n] });
 
         cout << base + clear << '\n';
     }();
