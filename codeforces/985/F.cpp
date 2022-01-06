@@ -18,20 +18,20 @@ namespace Hashing {
     struct single_hash {
         static inline vector<int> pows{1};
         int n;
-        vector<int> pref;
+        vector<int> suf;
         void build(const string& s, char c) {
             n = s.size();
             assert(base < mod);
-            pref.resize(n + 1); pows.reserve(n + 1);
+            suf.resize(n + 1); pows.reserve(n + 1);
             while(pows.size() <= n)
                 pows.push_back(1LL * pows.back() * base % mod);
-            for(int i = 1; i <= n; i++)
-                pref[i] = (1ll * pref[i - 1] * base + (s[i - 1] == c)) % mod;
+            for(int i = n - 1; ~i; i--)
+                suf[i] = (1ll * suf[i + 1] * base + (s[i] == c)) % mod;
         }
 
         // hash [l, r) 0-based
-        int operator()(int l, int r) const { l++; r++;
-            int res = pref[r - 1] - 1ll * pref[l - 1] * pows[r - l] % mod;
+        int operator()(int l, int r) const {
+            int res = suf[l] - 1ll * suf[r] * pows[r - l] % mod;
             return res < 0? res + mod : res;
         }
         int operator()() const { return (*this)(0, n); }
