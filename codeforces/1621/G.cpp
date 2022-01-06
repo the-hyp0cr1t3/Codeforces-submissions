@@ -183,9 +183,12 @@ int main() {
         for(i = n - 1; ~i; i--) {
             auto cnt_right = bit.query(m) - bit.query(a[i]) + 1;
             bit.update(a[i], cnt_right);
+
             Node extra(Node(i, 1), seg.query(a[i] + 1, m - 1));
             seg.update(a[i], extra);
+
             ans += cnt_left[i] * (cnt_right - extra);
+            auto x = cnt_left[i] * (cnt_right - extra);
         }
 
         cout << ans << '\n';
