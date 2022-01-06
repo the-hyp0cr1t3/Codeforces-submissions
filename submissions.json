@@ -3840,6 +3840,24 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF141808258": {
+    "contest_id": 1621,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1621/G.cpp",
+    "platform": "Codeforces",
+    "problem_index": "G",
+    "problem_name": "Weighted Increasing Subsequences",
+    "problem_url": "https://codeforces.com/contest/1621/problem/G",
+    "submission_id": "CF141808258",
+    "submission_url": "https://codeforces.com/contest/1621/submission/141808258",
+    "tags": [
+      "data structures",
+      "dp",
+      "math",
+      "*3200"
+    ],
+    "timestamp": "Jan/06/2022 16:08"
+  },
   "CF141840383": {
     "contest_id": 1442,
     "language": "GNU C++20 (64)",
