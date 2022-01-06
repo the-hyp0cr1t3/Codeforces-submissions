@@ -9,26 +9,13 @@
     using namespace std;
 #endif
 
-const int MOD = 998244353, K = 20;
 template<typename T>
-T expo(T A, int64_t B) {
+T expo(T A, int64_t B, int MOD) {
     T res{1}; while(B) {
         if(B & 1) res = res * A % MOD;
         B >>= 1; A = A * A % MOD;
     } return res;
 }
-
-struct state {
-    int v, k, d;
-    state() = default;
-    state(int v, int k, int d)
-        : v(v), k(k), d(d) {}
-    int64_t dist() const { return (1LL << k) - 1 + d; }
-    std::strong_ordering operator<=>(const state& o) const {
-        return max(k, o.k) < K? dist() <=> o.dist()
-                                    : pair(k, d) <=> pair(o.k, o.d);
-    }
-};
 
 int main() {
 #if __cplusplus > 201703L
@@ -37,6 +24,7 @@ int main() {
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
     auto chmax = [](auto& A, auto&& B) { return B > A? A = B, true : false; };
     auto chmin = [](auto& A, auto&& B) { return B < A? A = B, true : false; };
+    const int MOD = 998244353, K = 26;
 
     int i, j, n, m;
     cin >> n >> m;
@@ -46,6 +34,18 @@ int main() {
         g[--u].push_back(--v);
         rg[v].push_back(u);
     }
+
+    struct state {
+        int v, k, d;
+        state() = default;
+        state(int v, int k, int d)
+            : v(v), k(k), d(d) {}
+        int64_t dist() const { return (1LL << k) - 1 + d; }
+        std::strong_ordering operator<=>(const state& o) const {
+            return max(k, o.k) < K? dist() <=> o.dist()
+                                        : pair(k, d) <=> pair(o.k, o.d);
+        }
+    };
 
     vector<vector<state>> d(n, vector<state>(K + 2));
     for(i = 0; i < n; i++) {
@@ -77,7 +77,7 @@ int main() {
             ans = min(ans, d[n - 1][i].dist());
     if(ans == 2e18) {
         auto best = min(d[n - 1][K], d[n - 1][K + 1]);
-        ans = expo(2LL, best.k) + best.d + MOD - 1;
+        ans = expo(2LL, best.k, MOD) + best.d + MOD - 1;
     }
 
     cout << ans % MOD;
