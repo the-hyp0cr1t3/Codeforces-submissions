@@ -13,28 +13,39 @@ namespace Hashing {
     constexpr int _mod = 1e9 + 123;
     mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
     static const int _base = uniform_int_distribution<int>(256, _mod - 2)(rng) | 1;
+    using hash_t = pair<int, uint64_t>;
+    vector<uint64_t> pow2{1};
 
     template<const int& base = _base, int mod = _mod>
-    struct single_hash {
-        static inline vector<int> pows{1};
+    struct double_hash {
+        static inline vector<int> pow1{1};
         int n;
-        vector<int> suf;
+        vector<int> suf1;
+        vector<uint64_t> suf2;
+
         void build(const string& s, char c) {
             n = s.size();
             assert(base < mod);
-            suf.resize(n + 1); pows.reserve(n + 1);
-            while(pows.size() <= n)
-                pows.push_back(1LL * pows.back() * base % mod);
-            for(int i = n - 1; ~i; i--)
-                suf[i] = (1ll * suf[i + 1] * base + (s[i] == c)) % mod;
+            suf1.resize(n + 1); suf2.resize(n + 1);
+            pow1.reserve(n + 1); pow2.reserve(n + 1);
+            while(pow1.size() <= n)
+                pow1.push_back(1LL * pow1.back() * base % mod);
+            while(pow2.size() <= n)
+                pow2.push_back(pow2.back() * base);
+            for(int i = n - 1; ~i; i--) {
+                suf1[i] = (1ll * suf1[i + 1] * base + (s[i] == c)) % mod;
+                suf2[i] = suf2[i + 1] * base + (s[i] == c);
+            }
         }
 
         // hash [l, r) 0-based
-        int operator()(int l, int r) const {
-            int res = suf[l] - 1ll * suf[r] * pows[r - l] % mod;
-            return res < 0? res + mod : res;
+        hash_t operator()(int l, int r) const {
+            int res1 = suf1[l] - 1ll * suf1[r] * pow1[r - l] % mod;
+            if(res1 < 0) res1 += mod;
+            uint64_t res2 = suf2[l] - suf2[r] * pow2[r - l];
+            return {res1, res2};
         }
-        int operator()() const { return (*this)(0, n); }
+        hash_t operator()() const { return (*this)(0, n); }
     };
 
 }
@@ -49,7 +60,7 @@ int main() {
     int i, n, q; string s;
     cin >> n >> q >> s;
 
-    array<Hashing::single_hash<>, M> hsh;
+    array<Hashing::double_hash<>, M> hsh;
     for(i = 0; i < M; i++)
         hsh[i].build(s, 'a' + i);
 
