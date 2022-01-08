@@ -1439,6 +1439,22 @@
     ],
     "timestamp": "Dec/03/2021 17:50"
   },
+  "AC28422639": {
+    "contest_id": "abc234",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/abc234/G.cpp",
+    "platform": "AtCoder",
+    "problem_index": "G",
+    "problem_name": "Divide a Sequence",
+    "problem_url": "https://atcoder.jp/contests/abc234/tasks/abc234_g",
+    "submission_id": "AC28422639",
+    "submission_url": "https://atcoder.jp/contests/abc234/submissions/28422639",
+    "tags": [
+      "AtCoder",
+      "*600"
+    ],
+    "timestamp": "Jan/08/2022 22:55"
+  },
   "AC28527586": {
     "contest_id": "abc235",
     "language": "C++ (GCC 9.2.1)",
