@@ -3840,6 +3840,26 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF142106943": {
+    "contest_id": 1623,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1623/E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Middle Duplication",
+    "problem_url": "https://codeforces.com/contest/1623/problem/E",
+    "submission_id": "CF142106943",
+    "submission_url": "https://codeforces.com/contest/1623/submission/142106943",
+    "tags": [
+      "data structures",
+      "dfs and similar",
+      "greedy",
+      "strings",
+      "trees",
+      "*2500"
+    ],
+    "timestamp": "Jan/09/2022 21:58"
+  },
   "CF142114087": {
     "contest_id": 1622,
     "language": "GNU C++20 (64)",
