@@ -3840,6 +3840,24 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF142114087": {
+    "contest_id": 1622,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1622/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Shuffle",
+    "problem_url": "https://codeforces.com/contest/1622/problem/D",
+    "submission_id": "CF142114087",
+    "submission_url": "https://codeforces.com/contest/1622/submission/142114087",
+    "tags": [
+      "combinatorics",
+      "math",
+      "two pointers",
+      "*2000"
+    ],
+    "timestamp": "Jan/09/2022 23:30"
+  },
   "CF142154741": {
     "contest_id": 1622,
     "language": "GNU C++20 (64)",
