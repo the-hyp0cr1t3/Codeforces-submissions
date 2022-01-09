@@ -21,18 +21,23 @@ int main() {
     while(tests--) [&]() {
         int i, j, n, x, ans = 0, cnt = 0;
         cin >> n;
-        vector<int64_t> a(n + 1);
-        for(i = 1; i <= n; i++)
-            cin >> a[i];
-        cin >> x; a[1] -= x;
+        vector<int> a(n);
+        for(auto& x: a) cin >> x;
+        cin >> x;
+        for(auto& v: a) v -= x;
 
-        vector<array<int, 3>> dp(n + 1);
-        dp[1][1] = 1;
-        for(i = 2; i <= n; i++) {
-            a[i] += a[i - 1] - x;
+        auto sum = [&](int l, int r) {
+            int64_t sum = 0;
+            while(l <= r) sum += a[l++];
+            return sum;
+        };
+
+        vector<array<int, 3>> dp(n);
+        dp[0][1] = 1;
+        for(i = 1; i < n; i++) {
             dp[i][0] = *R::max_element(dp[i - 1]);
-            for(j = 0; j < 3; j++) {
-                if(j > 0 and a[i] - (i == j? 0 : a[i - j - 1]) < 0) break;
+            for(j = 0; j < 3 and i - j >= 0; j++) {
+                if(j > 0 and sum(i - j, i) < 0) break;
                 chmax(dp[i][min(j + 1, 2)], dp[i - 1][j] + 1);
             }
         }
