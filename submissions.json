@@ -3840,6 +3840,26 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF142232174": {
+    "contest_id": 1624,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1624/G.cpp",
+    "platform": "Codeforces",
+    "problem_index": "G",
+    "problem_name": "MinOr Tree",
+    "problem_url": "https://codeforces.com/contest/1624/problem/G",
+    "submission_id": "CF142232174",
+    "submission_url": "https://codeforces.com/contest/1624/submission/142232174",
+    "tags": [
+      "bitmasks",
+      "dfs and similar",
+      "dsu",
+      "graphs",
+      "greedy",
+      "*1900"
+    ],
+    "timestamp": "Jan/10/2022 20:45"
+  },
   "CF142248185": {
     "contest_id": 1624,
     "language": "GNU C++20 (64)",
