@@ -58,7 +58,7 @@ int main() {
         dp[v] = { 0, 0 };
         for(auto& x: g[v]) if(x ^ p) {
             dfs(x, v);
-            int m = min<int>(A, dp[v].size() + dp[x].size());
+            int m = min<int>(A + 2, dp[v].size() + dp[x].size() + 2);
             vector<int> ndp = dp[v];
             ndp.resize(m + 1, 0);
             for(int i = 0; i < dp[v].size(); i++) {
