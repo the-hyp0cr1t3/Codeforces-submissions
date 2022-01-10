@@ -62,9 +62,10 @@ int main() {
             vector<int> ndp = dp[v];
             ndp.resize(m + 1, 0);
             for(int i = 0; i < dp[v].size(); i++) {
-                for(int j = 0; j + i < m and j < dp[x].size(); j++) {
+                for(int j = 0; j + i <= m and j < dp[x].size(); j++) {
                     chmax(ndp[i + j], dp[v][i] + 1);
-                    chmax(ndp[i + j + 1], dp[x][j] + dp[v][i]);
+                    if(i + j < m)
+                        chmax(ndp[i + j + 1], dp[x][j] + dp[v][i]);
                 }
             }
             dp[v] = std::move(ndp);
