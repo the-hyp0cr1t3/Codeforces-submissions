@@ -53,8 +53,6 @@ struct TwoSAT {
         return !bad;
     }
 
-    bool get(int i) { return assignment[i]; }
-
     void dfs(int v, int k, const vector<vector<int>>& gr) {
         comp[v] = k;
         for(auto& x: gr[v])
@@ -99,7 +97,7 @@ int main() {
         Y([&](auto dfs, int v, int p) -> void {
             for(auto& [x, w]: g[v]) if(x ^ p) {
                 cout << v + 1 << ' ' << x + 1 << ' '
-                        << (~w? w : sat.get(v) ^ sat.get(x)) << '\n';
+                        << (~w? w : sat.assignment[v] ^ sat.assignment[x]) << '\n';
                 dfs(x, v);
             }
         })(0, -1);
