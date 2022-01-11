@@ -3840,6 +3840,26 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF142369820": {
+    "contest_id": 1615,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1615/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "X(or)-mas Tree",
+    "problem_url": "https://codeforces.com/contest/1615/problem/D",
+    "submission_id": "CF142369820",
+    "submission_url": "https://codeforces.com/contest/1615/submission/142369820",
+    "tags": [
+      "bitmasks",
+      "dfs and similar",
+      "dsu",
+      "graphs",
+      "trees",
+      "*2200"
+    ],
+    "timestamp": "Jan/11/2022 18:07"
+  },
   "CF142375358": {
     "contest_id": 1615,
     "language": "GNU C++20 (64)",
