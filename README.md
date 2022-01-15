@@ -13,10 +13,11 @@ A repository to keep track of problem solving practice, containing solutions fro
 
 | # | Title | Solution | Tags | Submitted |
 |---| ----- | -------- | ---- | --------- |
-1385 | [F - Not Splitting](https://codeforces.com/contest/1627/problem/F) | [GNU C++20 (64)](./codeforces/1627/F.cpp) | `geometry` `graphs` `implementation` `shortest paths` | Jan/16/2022 00:10 | 
-1384 | [E - Not Escaping](https://codeforces.com/contest/1627/problem/E) | [GNU C++20 (64)](./codeforces/1627/E.cpp) | `data structures` `dp` `implementation` `shortest paths` `sortings` `two pointers` | Jan/15/2022 21:41 | 
-1383 | [D - Not Adding](https://codeforces.com/contest/1627/problem/D) | [GNU C++20 (64)](./codeforces/1627/D.cpp) | `dp` `math` `number theory` | Jan/15/2022 21:05 | 
-1382 | [C - Not Assigning](https://codeforces.com/contest/1627/problem/C) | [GNU C++20 (64)](./codeforces/1627/C.cpp) | `constructive algorithms` `dfs and similar` `number theory` `trees` | Jan/15/2022 20:23 | 
+1386 | [F - Not Splitting](https://codeforces.com/contest/1627/problem/F) | [GNU C++20 (64)](./codeforces/1627/F.cpp) | `geometry` `graphs` `implementation` `shortest paths` | Jan/16/2022 00:10 | 
+1385 | [E - Not Escaping](https://codeforces.com/contest/1627/problem/E) | [GNU C++20 (64)](./codeforces/1627/E.cpp) | `data structures` `dp` `implementation` `shortest paths` `sortings` `two pointers` | Jan/15/2022 21:41 | 
+1384 | [D - Not Adding](https://codeforces.com/contest/1627/problem/D) | [GNU C++20 (64)](./codeforces/1627/D.cpp) | `dp` `math` `number theory` | Jan/15/2022 21:05 | 
+1383 | [C - Not Assigning](https://codeforces.com/contest/1627/problem/C) | [GNU C++20 (64)](./codeforces/1627/C.cpp) | `constructive algorithms` `dfs and similar` `number theory` `trees` | Jan/15/2022 20:23 | 
+1382 | [B - Not Sitting](https://codeforces.com/contest/1627/problem/B) | [GNU C++20 (64)](./codeforces/1627/B.cpp) | `games` `greedy` `sortings` | Jan/15/2022 20:15 | 
 1381 | [F - Variety of Digits](https://atcoder.jp/contests/abc235/tasks/abc235_f) | [C++ (GCC 9.2.1)](./atcoder/abc235/F.cpp) | `AtCoder` `*500` | Jan/15/2022 19:02 | 
 1380 | [E - MST + 1](https://atcoder.jp/contests/abc235/tasks/abc235_e) | [C++ (GCC 9.2.1)](./atcoder/abc235/E.cpp) | `AtCoder` `*500` | Jan/15/2022 17:55 | 
 1379 | [D - Multiply and Rotate](https://atcoder.jp/contests/abc235/tasks/abc235_d) | [C++ (GCC 9.2.1)](./atcoder/abc235/D.cpp) | `AtCoder` `*400` | Jan/15/2022 17:49 | 
