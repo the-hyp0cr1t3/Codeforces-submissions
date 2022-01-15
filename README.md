@@ -13,6 +13,7 @@ A repository to keep track of problem solving practice, containing solutions fro
 
 | # | Title | Solution | Tags | Submitted |
 |---| ----- | -------- | ---- | --------- |
+1382 | [F - Not Splitting](https://codeforces.com/contest/1627/problem/F) | [GNU C++20 (64)](./codeforces/1627/F.cpp) | `geometry` `graphs` `implementation` `shortest paths` | Jan/16/2022 00:10 | 
 1381 | [F - Variety of Digits](https://atcoder.jp/contests/abc235/tasks/abc235_f) | [C++ (GCC 9.2.1)](./atcoder/abc235/F.cpp) | `AtCoder` `*500` | Jan/15/2022 19:02 | 
 1380 | [E - MST + 1](https://atcoder.jp/contests/abc235/tasks/abc235_e) | [C++ (GCC 9.2.1)](./atcoder/abc235/E.cpp) | `AtCoder` `*500` | Jan/15/2022 17:55 | 
 1379 | [D - Multiply and Rotate](https://atcoder.jp/contests/abc235/tasks/abc235_d) | [C++ (GCC 9.2.1)](./atcoder/abc235/D.cpp) | `AtCoder` `*400` | Jan/15/2022 17:49 | 

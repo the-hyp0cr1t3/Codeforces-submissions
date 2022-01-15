@@ -3840,6 +3840,24 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF142892398": {
+    "contest_id": 1627,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1627/F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Not Splitting",
+    "problem_url": "https://codeforces.com/contest/1627/problem/F",
+    "submission_id": "CF142892398",
+    "submission_url": "https://codeforces.com/contest/1627/submission/142892398",
+    "tags": [
+      "geometry",
+      "graphs",
+      "implementation",
+      "shortest paths"
+    ],
+    "timestamp": "Jan/16/2022 00:10"
+  },
   "CF60785574": {
     "contest_id": 1220,
     "language": "GNU C++17",
