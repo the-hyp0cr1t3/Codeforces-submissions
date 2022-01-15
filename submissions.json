@@ -1439,6 +1439,22 @@
     ],
     "timestamp": "Dec/03/2021 17:50"
   },
+  "AC28563330": {
+    "contest_id": "abc235",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/abc235/F.cpp",
+    "platform": "AtCoder",
+    "problem_index": "F",
+    "problem_name": "Variety of Digits",
+    "problem_url": "https://atcoder.jp/contests/abc235/tasks/abc235_f",
+    "submission_id": "AC28563330",
+    "submission_url": "https://atcoder.jp/contests/abc235/submissions/28563330",
+    "tags": [
+      "AtCoder",
+      "*500"
+    ],
+    "timestamp": "Jan/15/2022 19:02"
+  },
   "AC8281756": {
     "contest_id": "dp",
     "language": "C++14 (GCC 5.4.1)",
