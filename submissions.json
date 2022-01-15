@@ -3840,6 +3840,23 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF142856949": {
+    "contest_id": 1627,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1627/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Not Adding",
+    "problem_url": "https://codeforces.com/contest/1627/problem/D",
+    "submission_id": "CF142856949",
+    "submission_url": "https://codeforces.com/contest/1627/submission/142856949",
+    "tags": [
+      "dp",
+      "math",
+      "number theory"
+    ],
+    "timestamp": "Jan/15/2022 21:05"
+  },
   "CF142870653": {
     "contest_id": 1627,
     "language": "GNU C++20 (64)",
