@@ -3840,6 +3840,26 @@
     ],
     "timestamp": "Dec/12/2021 22:08"
   },
+  "CF142870653": {
+    "contest_id": 1627,
+    "language": "GNU C++20 (64)",
+    "path": "codeforces/1627/E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Not Escaping",
+    "problem_url": "https://codeforces.com/contest/1627/problem/E",
+    "submission_id": "CF142870653",
+    "submission_url": "https://codeforces.com/contest/1627/submission/142870653",
+    "tags": [
+      "data structures",
+      "dp",
+      "implementation",
+      "shortest paths",
+      "sortings",
+      "two pointers"
+    ],
+    "timestamp": "Jan/15/2022 21:41"
+  },
   "CF142892398": {
     "contest_id": 1627,
     "language": "GNU C++20 (64)",
