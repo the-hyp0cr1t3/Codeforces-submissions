@@ -1439,6 +1439,22 @@
     ],
     "timestamp": "Dec/03/2021 17:50"
   },
+  "AC28533100": {
+    "contest_id": "abc235",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/abc235/C.cpp",
+    "platform": "AtCoder",
+    "problem_index": "C",
+    "problem_name": "The Kth Time Query",
+    "problem_url": "https://atcoder.jp/contests/abc235/tasks/abc235_c",
+    "submission_id": "AC28533100",
+    "submission_url": "https://atcoder.jp/contests/abc235/submissions/28533100",
+    "tags": [
+      "AtCoder",
+      "*300"
+    ],
+    "timestamp": "Jan/15/2022 17:35"
+  },
   "AC28543895": {
     "contest_id": "abc235",
     "language": "C++ (GCC 9.2.1)",
